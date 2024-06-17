@@ -1,0 +1,371 @@
+<button class="js-toggle-fullscreen-btn toggle-fullscreen-btn" aria-label="Enter fullscreen mode"
+        onclick="openFullscreen('C1');">
+    <svg class="toggle-fullscreen-svg" width="28" height="28" viewBox="-2 -2 28 28">
+        <g class="icon-fullscreen-enter">
+            <path d="M 2 9 v -7 h 7"/>
+            <path d="M 22 9 v -7 h -7"/>
+            <path d="M 22 15 v 7 h -7"/>
+            <path d="M 2 15 v 7 h 7"/>
+        </g>
+
+        <g class="icon-fullscreen-leave">
+            <path d="M 24 17 h -7 v 7"/>
+            <path d="M 0 17 h 7 v 7"/>
+            <path d="M 0 7 h 7 v -7"/>
+            <path d="M 24 7 h -7 v -7"/>
+        </g>
+    </svg>
+</button>
+<pre class="mermaid" id="green-class-diagram">
+  classDiagram
+
+   class DigitalSpecimen { 
+   ID : string 
+   version : integer 
+   created : string 
+   type : string 
+   midsLevel : integer 
+   normalisedPhysicalSpecimenID : string 
+   physicalSpecimenID : string 
+   physicalSpecimenIDType : None 
+   topicOrigin : None 
+   topicDomain : None 
+   topicDiscipline : None 
+   isMarkedAsType : boolean 
+   isKnownToContainMedia : boolean 
+   specimenName : string 
+   sourceSystemID : string 
+   livingOrPreserved : None 
+   language : array 
+   license : string 
+   modified : string 
+   basisOfRecord : string 
+   preparations : string 
+   disposition : string 
+   institutionCode : string 
+   institutionID : string 
+   institutionName : string 
+   collectionCode : string 
+   collectionID : string 
+   informationWithheld : string 
+   dataGeneralizations : string 
+   ownerInstitutionCode : string 
+   recordedBy : string 
+   recordedByID : string 
+   datasetName : string 
+   accessRights : string 
+   rightsHolder : string 
+   verbatimLabel : string 
+   organismID : string 
+   organismName : string 
+   organismScope : string 
+   associatedOrganisms : string 
+   organismRemarks : string 
+   dynamicProperties : object 
+   hasMaterialEntity : array 
+   hasIdentification : array 
+   hasAssertion : array 
+   hasEvent : array 
+   hasEntityRelationship : array 
+   hasCitation : array 
+   hasIdentifier : array 
+   hasChronometricAge : array 
+   hasAgent : array 
+ }
+ class MaterialEntity { 
+   materialEntityID : string 
+   materialEntityType : string 
+   preparations : string 
+   disposition : string 
+   institutionCode : string 
+   institutionID : string 
+   institutionName : string 
+   collectionCode : string 
+   collectionID : string 
+   ownerInstitutionCode : string 
+   recordedBy : string 
+   recordedByID : string 
+   verbatimLabel : string 
+   hasIdentification : array 
+   hasAssertion : array 
+   hasEntityRelationship : array 
+   hasCitation : array 
+   hasIdentifier : array 
+   hasEvent : array 
+   hasAgent : array 
+ }
+ class Identification { 
+   identificationID : string 
+   identificationType : string 
+   taxonFormula : string 
+   verbatimIdentification : string 
+   typeStatus : string 
+   identifiedBy : string 
+   identifiedByID : string 
+   dateIdentified : string 
+   identificationReferences : string 
+   isVerifiedIdentification : boolean 
+   identificationRemarks : string 
+   identificationQualifier : string 
+   hasCitation : array 
+   hasTaxonIdentification : array 
+ }
+ class TaxonIdentification { 
+   taxonID : string 
+   scientificName : string 
+   scientificNameID : string 
+   scientificNameHtmlLabel : string 
+   scientificNameAuthorship : string 
+   nameAccordingTo : string 
+   namePublishedInYear : string 
+   taxonRank : string 
+   verbatimTaxonRank : string 
+   taxonSource : string 
+   taxonRemarks : string 
+   kingdom : string 
+   phylum : string 
+   class : string 
+   order : string 
+   family : string 
+   subfamily : string 
+   genus : string 
+   specificEpithet : string 
+   taxonomicStatus : string 
+   nomenclaturalCode : string 
+   vernacularName : string 
+   subgenus : string 
+   acceptedNameUsage : string 
+   acceptedNameUsageID : string 
+   cultivarEpithet : string 
+   genericName : string 
+   infragenericEpithet : string 
+   infraspecificEpithet : string 
+   nomenclaturalStatus : string 
+   originalNameUsage : string 
+   subtribe : string 
+   superfamily : string 
+   tribe : string 
+ }
+ class Event { 
+   organismQuantity : string 
+   organismQuantityType : string 
+   sex : string 
+   lifeStage : string 
+   reproductiveCondition : string 
+   behavior : string 
+   caste : string 
+   vitality : string 
+   establishmentMeans : string 
+   occurrenceStatus : None 
+   pathway : string 
+   degreeOfEstablishment : string 
+   georeferenceVerificationStatus : string 
+   occurrenceRemarks : string 
+   eventName : string 
+   fieldNumber : string 
+   recordNumber : string 
+   eventType : string 
+   eventDate : string 
+   eventTime : string 
+   endDayOfYear : integer 
+   startDayOfYear : integer 
+   verbatimEventDate : string 
+   year : integer 
+   month : integer 
+   day : integer 
+   habitat : string 
+   protocolDescriptions : string 
+   sampleSizeValue : number 
+   sampleSizeUnit : string 
+   samplingProtocol : string 
+   samplingEffort : string 
+   fieldNotes : string 
+   eventRemarks : string 
+   collectorName : string 
+   collectorID : string 
+   hasAssertion : array 
+   Location : object 
+ }
+ class Location { 
+   locationID : string 
+   continent : string 
+   waterBody : string 
+   islandGroup : string 
+   island : string 
+   country : string 
+   countryCode : string 
+   stateProvince : string 
+   county : string 
+   municipality : string 
+   locality : string 
+   verbatimLocality : string 
+   minimumElevationInMeters : number 
+   higherGeographyID : string 
+   higherGeography : string 
+   maximumElevationInMeters : number 
+   verbatimElevation : string 
+   minimumDistanceAboveSurfaceInMeters : number 
+   maximumDistanceAboveSurfaceInMeters : number 
+   minimumDepthInMeters : number 
+   maximumDepthInMeters : number 
+   verbatimDepth : string 
+   verticalDatum : string 
+   locationAccordingTo : string 
+   locationRemarks : string 
+ }
+ class GeoReference { 
+   verbatimCoordinates : string 
+   decimalLatitude : number 
+   verbatimLatitude : string 
+   decimalLongitude : number 
+   verbatimLongitude : string 
+   verbatimCoordinateSystem : string 
+   geodeticDatum : string 
+   coordinateUncertaintyInMeters : number 
+   coordinatePrecision : number 
+   pointRadiusSpatialFit : number 
+   footprintWKT : string 
+   footprintSRS : string 
+   verbatimSRS : string 
+   footprintSpatialFit : integer 
+   georeferencedBy : string 
+   georeferencedDate : string 
+   georeferenceProtocol : string 
+   georeferenceSources : string 
+   georeferenceRemarks : string 
+   preferredSpatialRepresentation : string 
+ }
+ class GeologicalContext { 
+   earliestEonOrLowestEonothem : string 
+   latestEonOrHighestEonothem : string 
+   earliestEraOrLowestErathem : string 
+   latestEraOrHighestErathem : string 
+   earliestPeriodOrLowestSystem : string 
+   latestPeriodOrHighestSystem : string 
+   earliestEpochOrLowestSeries : string 
+   latestEpochOrHighestSeries : string 
+   earliestAgeOrLowestStage : string 
+   latestAgeOrHighestStage : string 
+   lowestBiostratigraphicZone : string 
+   highestBiostratigraphicZone : string 
+   lithostratigraphicTerms : string 
+   group : string 
+   formation : string 
+   member : string 
+   bed : string 
+ }
+ class Agent { 
+   agentRole : string 
+   agentType : string 
+   agentID : string 
+   agentName : string 
+   agentRoleBegan : string 
+   agentRoleEnded : string 
+   agentRoleOrder : integer 
+   hasIdentifier : array 
+ }
+ class Assertion { 
+   measurementID : string 
+   parentMeasurementID : string 
+   measurementType : string 
+   measurementType : string 
+   measurementDeterminedDate : string 
+   measurementValue : string 
+   measurementValue : string 
+   measurementAccuracy : string 
+   measurementUnit : string 
+   measurementUnit : string 
+   assertionByAgentName : string 
+   assertionByAgentID : string 
+   assertionProtocol : string 
+   assertionProtocolID : string 
+   assertionRemarks : string 
+ }
+ class Citation { 
+   identifier : string 
+   type : string 
+   date : string 
+   title : string 
+   creator : string 
+   citationPageNumber : string 
+   citationRemarks : string 
+   referenceType : string 
+   bibliographicCitation : string 
+   referenceYear : integer 
+   referenceIRI : string 
+   isPeerReviewed : boolean 
+ }
+ class EntityRelationship { 
+   relationshipOfResource : string 
+   relationshipOfResourceID : string 
+   relatedResourceID : string 
+   relatedResourceURI : string 
+   relationshipEstablishedDate : string 
+   entityRelationshipOrder : integer 
+   relationshipAccordingTo : string 
+   relationshipAccordingToID : string 
+   relationshipRemarks : string 
+ }
+ class Identifier { 
+   title : string 
+   localTitle : string 
+   identifier : string 
+   format : string 
+   subject : string 
+   isPartOfLabel : boolean 
+   isBarcodeOrNFC : boolean 
+   isIdPersistent : boolean 
+ }
+ class DigitalEntity { 
+   ID : string 
+   version : integer 
+   created : string 
+   type : string 
+   type : None 
+   accessURI : string 
+   institutionID : string 
+   institutionName : string 
+   format : string 
+   license : string 
+   description : string 
+   rights : string 
+   accessRights : string 
+   rightsHolder : string 
+   source : string 
+   creator : string 
+   created : string 
+   modified : string 
+   hasAssertion : array 
+   hasCitation : array 
+   hasIdentifier : array 
+   hasEntityRelationship : array 
+   hasAgent : array 
+ }
+
+    DigitalSpecimen -- MaterialEntity
+    DigitalSpecimen -- Identification
+    DigitalSpecimen -- Event
+    DigitalSpecimen -- Citation
+    DigitalSpecimen -- Identifier
+    DigitalSpecimen -- Assertion
+    DigitalSpecimen -- Agent
+    DigitalSpecimen -- EntityRelationship
+    Event -- Location
+    Event -- Assertion
+    Location -- GeoReference
+    Location -- GeologicalContext
+    DigitalEntity -- Agent
+    DigitalEntity -- Citation
+    DigitalEntity -- Identifier
+    DigitalEntity -- EntityRelationship
+    MaterialEntity -- Event
+    MaterialEntity -- Citation
+    MaterialEntity -- Identifier
+    MaterialEntity -- EntityRelationship
+    MaterialEntity -- Agent
+    MaterialEntity -- Assertion
+    MaterialEntity -- Identification
+    Agent -- Identifier
+    Identification -- Citation
+    Identification -- TaxonIdentification
+  </pre>

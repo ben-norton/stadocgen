@@ -4,26 +4,13 @@
 <div class="class-set-wrapper">
     <h5><strong>Classes</strong></h5>
     <ul class="cls-list list-2-col">
-        {% for gc in ltcCls if gc == 'ObjectGroup' %}
-            <li><a href="#{{ gc }}_{{ gc }}">ltc:{{ gc }}</a></li>
-        {%  endfor %}
-        {% for gc in ltcCls if not gc == 'ObjectGroup' %}
-            <li><a href="#{{ gc }}_{{ gc }}">ltc:{{ gc }}</a></li>
+        {% for gc in ltcCls %}
+            <li><a href="#{{ gc|replace('.','_') }}">ods:{{ gc }}</a></li>
         {% endfor %}
     </ul>
 </div>
 
-{% for v in termsByClass if v.class == 'ObjectGroup' %}
-        <div class="term-set-by-class-wrapper">
-            <h5>{{ v.class }}</h5>
-            <ul class="term-list list-3-col">
-                {% for k in v.termlist %}
-                    <li><a href="#{{ k[3]|replace('.','_') }}">{{ k[0] }}</a></li>
-                {%  endfor %}
-            </ul>
-         </div>
-{% endfor %}
-{% for v in termsByClass if not v.class == 'ObjectGroup' %}
+{% for v in termsByClass %}
         <div class="term-set-by-class-wrapper">
             <h5>{{ v.class }}</h5>
             <ul class="term-list list-3-col">

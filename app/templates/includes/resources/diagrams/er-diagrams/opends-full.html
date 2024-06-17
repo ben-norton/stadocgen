@@ -1,0 +1,47 @@
+<button class="js-toggle-fullscreen-btn toggle-fullscreen-btn" aria-label="Enter fullscreen mode"
+        onclick="openFullscreen('A');">
+    <svg class="toggle-fullscreen-svg" width="28" height="28" viewBox="-2 -2 28 28">
+        <g class="icon-fullscreen-enter">
+            <path d="M 2 9 v -7 h 7"/>
+            <path d="M 22 9 v -7 h -7"/>
+            <path d="M 22 15 v 7 h -7"/>
+            <path d="M 2 15 v 7 h 7"/>
+        </g>
+
+        <g class="icon-fullscreen-leave">
+            <path d="M 24 17 h -7 v 7"/>
+            <path d="M 0 17 h 7 v 7"/>
+            <path d="M 0 7 h 7 v -7"/>
+            <path d="M 24 7 h -7 v -7"/>
+        </g>
+    </svg>
+</button>
+<pre class="mermaid" id="er-diagram-1">
+erDiagram
+    DigitalSpecimen ||--o{ MaterialEntity : Has
+    DigitalSpecimen ||--o{ Identification : Has
+    DigitalSpecimen ||--o{ Event : Has
+    DigitalSpecimen ||--o{ Citation : Has
+    DigitalSpecimen ||--o{ Identifier : Has
+    DigitalSpecimen ||--o{ Assertion : Has
+    DigitalSpecimen ||--o{ Agent : Has
+    DigitalSpecimen ||--o{ EntityRelationship : Has
+    Event ||--o| Location : Has
+    Event ||--o{ Assertion : Has
+    Location ||--o| GeoReference : Has
+    Location ||--o| GeologicalContext : Has
+    DigitalEntity ||--o{ Agent : Has
+    DigitalEntity ||--o{ Citation : Has
+    DigitalEntity ||--o{ Identifier : Has
+    DigitalEntity ||--o{ EntityRelationship : Has
+    MaterialEntity ||--o{ Event : Has
+    MaterialEntity ||--o{ Citation : Has
+    MaterialEntity ||--o{ Identifier : Has
+    MaterialEntity ||--o{ EntityRelationship : Has
+    MaterialEntity ||--o{ Agent : Has
+    MaterialEntity ||--o{ Assertion : Has
+    MaterialEntity ||--o{ Identification : Has
+    Agent ||--o{ Identifier : Has
+    Identification ||--o{ Citation : Has
+    Identification ||--o| TaxonIdentification : Has
+</pre>

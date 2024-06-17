@@ -8,6 +8,4 @@ pandas
 pathlib
 pytest-shutil
 tableschema
-
-
-
+waitress

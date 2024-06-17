@@ -28,7 +28,7 @@ def internal_error(error):
 
 @app.route('/')
 def home():
-    home_mdfile = 'md/ltc/home-content.md'
+    home_mdfile = 'md/opends/home-content.md'
     marked_text = ''
     with open(home_mdfile, encoding="utf8") as f:
         marked_text = markdown2.markdown(f.read())
@@ -39,19 +39,19 @@ def home():
 
 @app.route('/terms/')
 def terms():
-    header_mdfile = 'md/ltc/termlist-header.md'
+    header_mdfile = 'md/opends/termlist-header.md'
     marked_text = ''
     with open(header_mdfile, encoding="utf8") as f:
         marked_text = markdown2.markdown(f.read(), extras=["tables", "fenced-code-blocks"])
 
     # Terms
-    terms_csv = 'data/ltc/ltc-docs/ltc-termlist.csv'
+    terms_csv = 'data/opends/opends-docs/opends-termlist.csv'
     terms_df = pd.read_csv(terms_csv)
 
-    skoscsv = 'data/ltc/ltc-docs/ltc-skos.csv'
+    skoscsv = 'data/opends/opends-docs/opends-skos.csv'
     skos_df = pd.read_csv(skoscsv)
 
-    sssomcsv = 'data/ltc/ltc-docs/ltc-sssom.csv'
+    sssomcsv = 'data/opends/opends-docs/opends-sssom.csv'
     sssom_df = pd.read_csv(sssomcsv)
 
     terms_skos_df1 = pd.merge(
@@ -98,13 +98,13 @@ def terms():
 
 @app.route('/quick-reference/')
 def quickReference():
-    header_mdfile = 'md/ltc/quick-reference-header.md'
+    header_mdfile = 'md/opends/quick-reference-header.md'
     marked_text = ''
     with open(header_mdfile, encoding="utf8") as f:
         marked_text = markdown2.markdown(f.read())
 
     # Quick Reference Main
-    df = pd.read_csv('data/ltc/ltc-docs/ltc-termlist.csv', encoding='utf8')
+    df = pd.read_csv('data/opends/opends-termlist.csv', encoding='utf8')
     df['examples'] = df['examples'].str.replace(r'"', '')
     df['definition'] = df['definition'].str.replace(r'"', '')
     df['usage'] = df['usage'].str.replace(r'"', '')
@@ -142,11 +142,11 @@ def quickReference():
 
 @app.route('/resources/')
 def docResources():
-    header_mdfile = 'md/ltc/resources-header.md'
+    header_mdfile = 'md/opends/resources-header.md'
     with open(header_mdfile, encoding="utf8") as f:
         marked_text = markdown2.markdown(f.read(), extras=["tables", "fenced-code-blocks"])
 
-    sssom_mdfile = 'md/ltc/sssom-reference.md'
+    sssom_mdfile = 'md/opends/sssom-reference.md'
     with open(sssom_mdfile, encoding="utf8") as f:
         marked_sssom = markdown2.markdown(f.read(), extras=["tables", "fenced-code-blocks"])
 
