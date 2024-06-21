@@ -13,8 +13,6 @@ Getting started[](#getting-started)
 -------------
 First version of the DiSSCo terms page online!
 Please note that this is a temporary version as we are working on some changes in the data model.
-These changes will predominantly impact other digital objects which will be added soon.  
-See the current [Pull Request](https://github.com/DiSSCo/openDS/pull/97) for the upcoming changes.  
 Any additional feedback is very welcome!
 
-*Last Updated: June. 14, 2024*
+*Last Updated: June. 18, 2024*

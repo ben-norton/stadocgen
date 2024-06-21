@@ -1,35 +1,121 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-ltc" id="main-nav">
-	<div class="container">
-	    <a class="navbar-brand d-flex align-items-center" href="https://terms.dissco.tech/">
-	        <img class="me-3" src="https://www.dissco.eu/wp-content/uploads/dissco-logo-web.svg" alt="DiSSCo">
-			Open Digital Specimen
-	    </a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
-			Menu <i class="fas fa-bars"></i>
-		</button>
-		<div class="collapse navbar-collapse" id="navbar-menu">
-			<ul class="navbar-nav ms-auto">
-				<li class="navbar-item">
-					<a class="nav-link {{ 'nav-link-active' if slug == 'home' }}"
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="https://terms.dissco.tech/">
+            <img class="me-3" src="https://www.dissco.eu/wp-content/uploads/dissco-logo-web.svg" alt="DiSSCo">
+            Open Digital Specimen
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+            Menu <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="navbar-item">
+                    <a class="nav-link {{ 'nav-link-active' if slug == 'home' }}"
                        href="{{ url_for('home') }}">Home</a>
-				</li>
-				<li class="navbar-item">
-					<a class="nav-link {{ 'nav-link-active' if slug == 'termlist' }}"
-					href="{{ url_for('terms') }}">Terms</a>
-				</li>
-				<li class="navbar-item">
-					<a class="nav-link {{ 'nav-link-active' if slug == 'quick-reference' }}"
-					href="{{ url_for('quickReference') }}">Guide</a>
-				</li>
-				<li class="navbar-item">
-					<a class="nav-link {{ 'nav-link-active' if slug == 'resources' }}"
-					href="{{ url_for('docResources') }}">Resources</a>
-				</li>
-				<li class="navbar-item">
-					<a class="nav-link" href="https://github.com/DiSSCo/openDS">OpenDS GitHub</a>
-				</li>
-
+                </li>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        Terms
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item {{ 'nav-link-active' if slug == 'digital-specimen-terms' }}"
+                               href="{{ url_for('digitalSpecimenTerms') }}">Digital Specimen</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ 'nav-link-active' if slug == 'digital-media-terms' }}"
+                               href="{{ url_for('digitalMediaTerms') }}">Digital Media</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ 'nav-link-active' if slug == 'annotation-terms' }}"
+                               href="{{ url_for('annotationTerms') }}">Annotation</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ 'nav-link-active' if slug == 'create-update-tombstone-event-term' }}"
+                               href="{{ url_for('createUpdateTombstoneEventTerms') }}">Create Update Tombstone Event</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ 'nav-link-active' if slug == 'machine-annotation-service-terms' }}"
+                               href="{{ url_for('machineAnnotationServiceTerms') }}">Machine Annotation Service</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ 'nav-link-active' if slug == 'data-mapping-terms' }}"
+                               href="{{ url_for('dataMappingTerms') }}">Data Mapping</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ 'nav-link-active' if slug == 'source-system-terms' }}"
+                               href="{{ url_for('sourceSystemTerms') }}">Source System</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        Guide
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item {{ 'nav-link-active' if slug == 'digital-specimen-guide' }}"
+                               href="{{ url_for('digitalSpecimenGuide') }}">Digital Specimen</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ 'nav-link-active' if slug == 'digital-media-guide' }}"
+                               href="{{ url_for('digitalMediaGuide') }}">Digital Media</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ 'nav-link-active' if slug == 'annotation-guide' }}"
+                               href="{{ url_for('annotationGuide') }}">Annotation</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ 'nav-link-active' if slug == 'create-update-tombstone-event-guide' }}"
+                               href="{{ url_for('createUpdateTombstoneGuide') }}">Create Update Tombstone Event</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ 'nav-link-active' if slug == 'machine-annotation-service-guide' }}"
+                               href="{{ url_for('machineAnnotationServiceGuide') }}">Machine Annotation Service</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ 'nav-link-active' if slug == 'data-mapping-guide' }}"
+                               href="{{ url_for('dataMappingGuide') }}">Data Mapping</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ 'nav-link-active' if slug == 'source-system-guide' }}"
+                               href="{{ url_for('sourceSystemGuide') }}">Source System</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        Resources
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item {{ 'nav-link-active' if slug == 'digital-specimen-resource' }}"
+                               href="{{ url_for('digitalSpecimenResources') }}">Digital Specimen</a>
+                        </li>
+                        <li><a class="dropdown-item {{ 'nav-link-active' if slug == 'digital-media-resource' }}"
+                               href="{{ url_for('digitalMediaResources') }}">Digital Media</a>
+                        </li>
+                        <li><a class="dropdown-item {{ 'nav-link-active' if slug == 'annotation-resource' }}"
+                               href="{{ url_for('annotationResources') }}">Annotation</a>
+                        </li>
+                        <li><a class="dropdown-item {{ 'nav-link-active' if slug == 'create-update-tombstone-event-resource' }}"
+                               href="{{ url_for('createUpdateTombstoneEventResources') }}">Create Update Tombstone Event</a>
+                        </li>
+                        <li><a class="dropdown-item {{ 'nav-link-active' if slug == 'machine-annotation-service-resource' }}"
+                               href="{{ url_for('machineAnnotationServiceResources') }}">Machine Annotation Service</a>
+                        </li>
+                        <li><a class="dropdown-item {{ 'nav-link-active' if slug == 'data-mapping-resource' }}"
+                               href="{{ url_for('dataMappingResources') }}">Data Mapping</a>
+                        </li>
+                        <li><a class="dropdown-item {{ 'nav-link-active' if slug == 'source-system-resource' }}"
+                               href="{{ url_for('sourceSystemResources') }}">Source System</a>
+                        </li>
+                    </ul>
+                </div>
+                <li class="navbar-item">
+                    <a class="nav-link" href="https://github.com/DiSSCo/openDS">OpenDS GitHub</a>
+                </li>
             </ul>
-		</div>
-	</div>
+        </div>
+    </div>
 </nav>

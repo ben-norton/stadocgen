@@ -1,0 +1,38 @@
+classDiagram
+ class Annotation { 
+   ID : string 
+   jobID : string 
+   type : string 
+   version : integer 
+   motivation : None 
+   motivatedBy : string 
+   created : string 
+   dateTombstoned : string 
+   issued : string 
+   batchID : string 
+ }
+ class hasTarget { 
+   ID : string 
+   type : string 
+   hasSelector : object 
+ }
+ class hasBody { 
+   value : array 
+   references : string 
+   score : number 
+ }
+ class creator { 
+   name : string 
+ }
+ class generator { 
+   name : string 
+ }
+ class AggregateRating { 
+   ratingCount : integer 
+   ratingValue : number 
+ }
+Annotation -- hasTarget 
+Annotation -- hasBody 
+Annotation -- creator 
+Annotation -- generator 
+Annotation -- AggregateRating 

@@ -7,7 +7,7 @@ current_dir = Path().absolute()
 path = current_dir.parent.parent.parent
 
 # 1.  Create copy of source csv
-sssom_src = str(path)+'/data/opends/mapping/ltc_sssom_mapping.csv'
+sssom_src = str(path)+'/data/opends/data-mapping/ltc_sssom_mapping.csv'
 sssom_csv = str(path)+'/data/opends/opends-sssom.csv'
 shutil.copy(sssom_src, sssom_csv)
 

@@ -1,0 +1,24 @@
+erDiagram
+    DigitalSpecimen ||--o{ MaterialEntity : Has
+    DigitalSpecimen ||--o{ Identification : Has
+    DigitalSpecimen ||--o{ Event : Has
+    DigitalSpecimen ||--o{ Citation : Has
+    DigitalSpecimen ||--o{ Identifier : Has
+    DigitalSpecimen ||--o{ Assertion : Has
+    DigitalSpecimen ||--o{ Agent : Has
+    DigitalSpecimen ||--o{ EntityRelationship : Has
+    DigitalSpecimen ||--o{ ChronometricAge : Has
+    Event ||--o| Location : Has
+    Event ||--o{ Assertion : Has
+    Location ||--o| GeoReference : Has
+    Location ||--o| GeologicalContext : Has
+    MaterialEntity ||--o{ Event : Has
+    MaterialEntity ||--o{ Citation : Has
+    MaterialEntity ||--o{ Identifier : Has
+    MaterialEntity ||--o{ EntityRelationship : Has
+    MaterialEntity ||--o{ Agent : Has
+    MaterialEntity ||--o{ Assertion : Has
+    MaterialEntity ||--o{ Identification : Has
+    Agent ||--o{ Identifier : Has
+    Identification ||--o{ Citation : Has
+    Identification ||--o| TaxonIdentification : Has

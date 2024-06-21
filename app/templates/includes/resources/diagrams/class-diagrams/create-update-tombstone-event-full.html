@@ -1,0 +1,24 @@
+classDiagram
+ class CreateUpdateTombstoneEvent { 
+   ID : string 
+   type : string 
+ }
+ class Activity { 
+   wasAssociatedWith : string 
+   endedAtTime : string 
+   used : string 
+   comment : string 
+   changeValue : array 
+ }
+ class Entity { 
+   value : object 
+   wasRevisionOf : string 
+   wasGeneratedBy : string 
+   wasAttributedTo : string 
+ }
+ class Agent { 
+   name : string 
+ }
+CreateUpdateTombstoneEvent -- Activity 
+CreateUpdateTombstoneEvent -- Entity 
+CreateUpdateTombstoneEvent -- Agent 
