@@ -28,14 +28,14 @@ jobs:
       - name: Trivy - List all vulnerabilities
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: ${{ env.REPO_LC }}
+          image-ref: '${{ github.event.repository.name }}'
           format: 'table'
           ignore-unfixed: true
           vuln-type: 'os,library'
       - name: Trivy - Stop on Severe Vulnerabilities
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: ${{ env.REPO_LC }}
+          image-ref: '${{ github.event.repository.name }}'
           format: 'table'
           ignore-unfixed: true
           trivyignores: .github/workflows/.trivyignore
@@ -46,14 +46,14 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: public.ecr.aws/dissco/${{ env.REPO_LC }}
+          images: public.ecr.aws/dissco/${{ github.event.repository.name }}
           tags: |
             type=sha
             type=raw,value=latest
       - name: Build and Push to ECR
         uses: docker/build-push-action@v3
         with:
-          context: "{{defaultContext}}:data-model"
+          context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
