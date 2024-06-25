@@ -45,7 +45,7 @@ def digitalSpecimenTerms():
                            termsByClass=terms_by_class,
                            pageTitle='Digital Specimen Terms (In Progress)',
                            title='Digital Specimen Term List',
-                           slug='digitalSpecimenTermList'
+                           slug='digital-specimen-term-list'
                            )
 
 
@@ -64,7 +64,7 @@ def machineAnnotationServiceTerms():
                            termsByClass=terms_by_class,
                            pageTitle='Machine Annotation Service Terms (In Progress)',
                            title='Machine Annotation Service Term List',
-                           slug='machineAnnotationServiceTermList'
+                           slug='machine-annotation-service-term-list'
                            )
 
 
@@ -81,9 +81,9 @@ def digitalMediaTerms():
                            terms=terms,
                            sssom=sssom_df,
                            termsByClass=terms_by_class,
-                           pageTitle='Digital Entity Terms (In Progress)',
-                           title='Digital Entity Term List',
-                           slug='digitalEntityTermList'
+                           pageTitle='Digital Media Terms (In Progress)',
+                           title='Digital Media Term List',
+                           slug='digital-media-term-list'
                            )
 
 
@@ -102,7 +102,7 @@ def annotationTerms():
                            termsByClass=terms_by_class,
                            pageTitle='Annotation Terms (In Progress)',
                            title='Annotation Term List',
-                           slug='annotationTermList'
+                           slug='annotation-term-list'
                            )
 
 
@@ -121,7 +121,7 @@ def createUpdateTombstoneEventTerms():
                            termsByClass=terms_by_class,
                            pageTitle='Create Update Tombstone Event Terms (In Progress)',
                            title='Create Update Tombstone Event Term List',
-                           slug='createUpdateTombstoneEventTermList'
+                           slug='create-update-tombstone-event-term-list'
                            )
 
 
@@ -140,7 +140,7 @@ def dataMappingTerms():
                            termsByClass=terms_by_class,
                            pageTitle='Data Mapping Terms (In Progress)',
                            title='Data Mapping Term List',
-                           slug='dataMappingTermList'
+                           slug='data-mapping-term-list'
                            )
 
 
@@ -159,7 +159,7 @@ def sourceSystemTerms():
                            termsByClass=terms_by_class,
                            pageTitle='Source System Terms (In Progress)',
                            title='Source System Term List',
-                           slug='sourceSystemTermList'
+                           slug='source-system-term-list'
                            )
 
 

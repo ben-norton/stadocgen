@@ -16,21 +16,19 @@
 : 0.3.0
 
 **Abstract**
-: The data model for an Annotation within the DiSSCo infrastructure. This model is inspired by the W3C Web Annotation model.
-An annotation can be attached to any digital object in the DiSSCo infrastructure and can contain any of the following motivations:  
-- adding: The user wants to add new information to the object  
-- assessing: The user wants to assess the quality of the data in the object  
-- editing: The user wants to edit an existing value of the object  
-- commenting: The users wants to make a generic comment on the object   
-There are several levels on which an annotation can be made:  
-- The whole object: The annotation is made on the whole object, used when a user wants to create a comment on for example the whole Digital Specimen  
-- A class: The annotation is made on the whole class, used when a user wants to add for example an additional Identification  
-- An individual property: The annotation is made on a specific property of the class, used when a user wants to edit a particular fields, for example the collector of a specimen  
-- A RegionOfInterest: The annotation is made on a specific region of the object. This type of annotation is mainly used when it is attached to a digital entity. For example it can indicate a specific ROI in an image and attach a value to that ROI.  
+: 
+The data model for an Annotation within the DiSSCo infrastructure. This model is inspired by the W3C Web Annotation model. An annotation can be attached to any digital object in the DiSSCo infrastructure, and can contain any of the following motivations:
 
-The value of the annotation can be attached in the body.
-This can be in the form of an array of strings.
-When a full class is replaced the body can contain the full new class in JSON format.
+adding: The user wants to add new information to the object  
+assessing: The user wants to assess the quality of the data in the object  
+editing: The user wants to edit an existing value of the object  
+commenting: The user wants to make a generic comment on the object  
+There are several levels on which an annotation can be made:
+The whole object: The annotation is made on the whole object, used when a user wants to create a comment on, for example, the whole Digital Specimen
+A class: The annotation is made on the whole class, used when a user wants to add, for example, an additional Identification  
+An individual property: The annotation is made on a specific property of the class, used when a user wants to edit a particular field, for example, the collector of a specimen  
+A RegionOfInterest: The annotation is made on a specific region of the object. This type of annotation is mainly used when it is attached to a digital media object. For example, it can indicate a specific ROI in an image and attach a value to that ROI.  
+The value of the annotation can be attached in the body. This can be in the form of an array of strings. When a full class is replaced, the body can contain the full new class in JSON format.  
 
 The AggregateRating has not been implemented yet.
 
@@ -56,13 +54,13 @@ The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL 
 ### 1.3 Naming Convention <span id="13-categories-of-terms"></span>
 This document contains all the terms in use the DiSSCo Digital Objects.
 Most objects can be directly related to a openDS class, for example the Machine Annotation Service, or the Source System.
-However, the DigitalSpecimen and the Digital Entity are more complex objects.
+However, the Digital Specimen and the Digital Media are more complex objects.
 They can contain classes as nested object in itself.
 In general, class names are capitalized, use the UpperCamelCase naming convention and are singular.
 For example, the class that represents a Digital Specimen is called `DigitalSpecimen`.
 The properties of a class start with a lowercase and use the lowerCamelCase naming convention.
 When a class contains a property which contains a list of another class we use the convention `hasXXX` where XXX is the class name.
-For example, the DigitalSpecimen can contain a list of Event objects, so it has a property called `hasEvent`.
+For example, the Digital Specimen can contain a list of Event objects, so it has a property called `hasEvent`.
 When a class is directly nested (not through a list) we use the class name as property name.
 For example, the Location class contains the property `ods:GeoReference` which contains the Geo Reference class.  
 

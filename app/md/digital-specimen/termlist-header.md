@@ -45,13 +45,13 @@ The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL 
 ### 1.3 Naming Convention <span id="13-categories-of-terms"></span>
 This document contains all the terms in use the DiSSCo Digital Objects.
 Most objects can be directly related to a openDS class, for example the Machine Annotation Service, or the Source System.
-However, the DigitalSpecimen and the Digital Entity are more complex objects.
+However, the Digital Specimen and the Digital Media are more complex objects.
 They can contain classes as nested object in itself.
 In general, class names are capitalized, use the UpperCamelCase naming convention and are singular.
 For example, the class that represents a Digital Specimen is called `DigitalSpecimen`.
 The properties of a class start with a lowercase and use the lowerCamelCase naming convention.
 When a class contains a property which contains a list of another class we use the convention `hasXXX` where XXX is the class name.
-For example, the DigitalSpecimen can contain a list of Event objects, so it has a property called `hasEvent`.
+For example, the Digital Specimen can contain a list of Event objects, so it has a property called `hasEvent`.
 When a class is directly nested (not through a list) we use the class name as property name.
 For example, the Location class contains the property `ods:GeoReference` which contains the Geo Reference class.  
 
