@@ -1,0 +1,93 @@
+classDiagram
+ class DigitalMedia { 
+   ID : string 
+   version : integer 
+   created : string 
+   type : string 
+   type : None 
+   accessURI : string 
+   institutionID : string 
+   institutionName : string 
+   format : string 
+   license : string 
+   description : string 
+   rights : string 
+   accessRights : string 
+   rightsHolder : string 
+   source : string 
+   creator : string 
+   created : string 
+   modified : string 
+   hasAssertion : array 
+   hasCitation : array 
+   hasIdentifier : array 
+   hasEntityRelationship : array 
+   hasAgent : array 
+ }
+ class Agent { 
+   agentRole : string 
+   agentType : string 
+   agentID : string 
+   agentName : string 
+   agentRoleBegan : string 
+   agentRoleEnded : string 
+   agentRoleOrder : integer 
+   hasIdentifier : array 
+ }
+ class Assertion { 
+   measurementID : string 
+   parentMeasurementID : string 
+   measurementType : string 
+   measurementType : string 
+   measurementDeterminedDate : string 
+   measurementValue : string 
+   measurementValue : string 
+   measurementAccuracy : string 
+   measurementUnit : string 
+   measurementUnit : string 
+   assertionByAgentName : string 
+   assertionByAgentID : string 
+   assertionProtocol : string 
+   assertionProtocolID : string 
+   assertionRemarks : string 
+ }
+ class Citation { 
+   identifier : string 
+   type : string 
+   date : string 
+   title : string 
+   creator : string 
+   citationPageNumber : string 
+   citationRemarks : string 
+   referenceType : string 
+   bibliographicCitation : string 
+   referenceYear : integer 
+   referenceIRI : string 
+   isPeerReviewed : boolean 
+ }
+ class EntityRelationship { 
+   relationshipOfResource : string 
+   relationshipOfResourceID : string 
+   relatedResourceID : string 
+   relatedResourceURI : string 
+   relationshipEstablishedDate : string 
+   entityRelationshipOrder : integer 
+   relationshipAccordingTo : string 
+   relationshipAccordingToID : string 
+   relationshipRemarks : string 
+ }
+ class Identifier { 
+   title : string 
+   localTitle : string 
+   identifier : string 
+   format : string 
+   subject : string 
+   isPartOfLabel : boolean 
+   isBarcodeOrNFC : boolean 
+   isIDPersistent : boolean 
+ }
+DigitalMedia -- Agent 
+DigitalMedia -- Assertion 
+DigitalMedia -- Citation 
+DigitalMedia -- EntityRelationship 
+DigitalMedia -- Identifier 

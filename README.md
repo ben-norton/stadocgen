@@ -2,6 +2,18 @@
 **Development Version** of the Web-based Documentation Generator for TDWG Data Standards  
 Built using Python Flask, the application transforms a set of CSV files into data standards documentation pages. This application is currently under active development. The current iteration of the application is being used to generate the docs here: [https://tdwg.github.io/ltc](https://tdwg.github.io/ltc). The main application is located under StaDocGen. Ltc is a legacy application that was migrated from the Latimer Core repository.
 
+## DiSSCo Application Specifics
+The DiSSCo version of the application contains a few changes to the original.
+DiSSCo contains not just one object but a range of objects for each we created a terms, guide and resources page.
+This means we morphed the menu in a dropdown button with the different objects as submenus.
+
+We also wanted the csv-files to be based on the json schemas we publish on schemas.dissco.tech.
+For this we created a utility file which generates or updates the csv files behind the terms and guides pages.
+For the resources the classDiagrams are also generated based on the json schemas.
+The only thing not generated are the Entity Relationship Diagrams.
+These can easily being made by hand based on the Class Diagrams.
+The script to generate this content needs to be kicked off by hand, by running the python main function in the `utlis/generation/main.py`.
+
 ## Application Specifications
 
 ### Naming Conventions for Files

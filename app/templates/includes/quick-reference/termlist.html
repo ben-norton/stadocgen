@@ -1,5 +1,5 @@
-<h1>Latimer Core</h1>
-<a id="latimerCore"></a>
+<h1>Open Digital Specimen</h1>
+<a id="openDigitalSpecimen"></a>
 
 {% for v in grplists %}
     <h2 id="{{ v }}">{{  v.class }}</h2>
@@ -18,7 +18,7 @@
                             <span class="title">{{ k[13] }}</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
-                        {%  elif(k[8] == 'http://www.w3.org/2000/01/rdf-schema#Class') %}
+                        {%  elif(k[7] == 'http://www.w3.org/2000/01/rdf-schema#Class') %}
                         <th class="class" colspan="2">
                             <span class="title">{{ k[13] }}</span>
                             <span class="badge badge-class float-end">Class</span>

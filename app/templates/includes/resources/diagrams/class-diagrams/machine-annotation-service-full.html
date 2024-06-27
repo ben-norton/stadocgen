@@ -1,0 +1,38 @@
+classDiagram
+ class MachineAnnotationService { 
+   ID : string 
+   type : string 
+   version : integer 
+   name : string 
+   description : string 
+   dateCreated : string 
+   dateTombstoned : string 
+   creator : string 
+   containerImage : string 
+   containerTag : string 
+   TargetDigitalObjectFilter : object 
+   creativeWorkStatus : string 
+   codeRepository : string 
+   programmingLanguage : string 
+   serviceAvailability : string 
+   license : string 
+   dependency : array 
+   slaDocumentation : string 
+   topicName : string 
+   batchingPermitted : boolean 
+   timeToLive : integer 
+ }
+ class maintainer { 
+   identifier : string 
+   name : string 
+   email : string 
+   url : string 
+ }
+ class ContactPoint { 
+   description : string 
+   email : string 
+   url : string 
+   telephone : string 
+ }
+MachineAnnotationService -- maintainer 
+MachineAnnotationService -- ContactPoint 

@@ -1,23 +1,74 @@
 {% extends "base.html" %}
 {% block main %}
-<main>
-	{% include 'includes/page-header.html' %}
-	<div class="container content">
-		<div class="row">
-			<div class="col-lg-2 mx-auto">
-				{% include 'includes/resources/sidebar.html' %}
-			</div>
-			<div class="col-lg-10 order-lg-first mx-auto">
-				<div class="content-header-wrapper">
-					{{ headerMarkdown }}
-				</div>
-				<div class="ref-wrapper">
-					{{ sssomRefMarkdown }}
-				</div>
+    <main>
+        {% include 'includes/page-header.html' %}
+        <div class="container content">
+            <div class="row">
+                <div class="col-lg-2 mx-auto">
+                    {% include 'includes/resources/sidebar.html' %}
+                </div>
+                <div class="col-lg-10 order-lg-first mx-auto">
+                    <div class="content-header-wrapper">
+                        {{ headerMarkdown }}
+                    </div>
 
-				{%  include 'includes/resources/diagrams.html' %}
-	 		</div>
-	 	</div>
- 	</div>
-</main>
-{%  endblock %}
+                    <div class="diagrams-wrapper">
+                        <h2 id="diagrams">Diagrams</h2>
+                        <h4 id="classDiagrams">Class Diagrams</h4>
+                        <div class="diagram-wrapper">
+                            <button class="js-toggle-fullscreen-btn toggle-fullscreen-btn"
+                                    aria-label="Enter fullscreen mode" onclick="openFullscreen('C1');">
+                                <svg class="toggle-fullscreen-svg" width="28" height="28" viewBox="-2 -2 28 28">
+                                    <g class="icon-fullscreen-enter">
+                                        <path d="M 2 9 v -7 h 7"/>
+                                        <path d="M 22 9 v -7 h -7"/>
+                                        <path d="M 22 15 v 7 h -7"/>
+                                        <path d="M 2 15 v 7 h 7"/>
+                                    </g>
+                                    <g class="icon-fullscreen-leave">
+                                        <path d="M 24 17 h -7 v 7"/>
+                                        <path d="M 0 17 h 7 v 7"/>
+                                        <path d="M 0 7 h 7 v -7"/>
+                                        <path d="M 24 7 h -7 v -7"/>
+                                    </g>
+                                </svg>
+                            </button>
+                            <pre class="mermaid" id="green-class-diagram">
+                            {{ classDiagram }}
+                            </pre>
+                        </div>
+                    </div>
+                    <h4 id="erDiagrams">Entity-Relationship Diagrams</h4>
+                    <div class="diagram-wrapper">
+                        <button class="js-toggle-fullscreen-btn toggle-fullscreen-btn"
+                                aria-label="Enter fullscreen mode"
+                                onclick="openFullscreen('A');">
+                            <svg class="toggle-fullscreen-svg" width="28" height="28" viewBox="-2 -2 28 28">
+                                <g class="icon-fullscreen-enter">
+                                    <path d="M 2 9 v -7 h 7"/>
+                                    <path d="M 22 9 v -7 h -7"/>
+                                    <path d="M 22 15 v 7 h -7"/>
+                                    <path d="M 2 15 v 7 h 7"/>
+                                </g>
+
+                                <g class="icon-fullscreen-leave">
+                                    <path d="M 24 17 h -7 v 7"/>
+                                    <path d="M 0 17 h 7 v 7"/>
+                                    <path d="M 0 7 h 7 v -7"/>
+                                    <path d="M 24 7 h -7 v -7"/>
+                                </g>
+                            </svg>
+                        </button>
+                        <pre class="mermaid" id="er-diagram-1">
+                            {{ erDiagram }}
+                        </pre>
+                    </div>
+                </div>
+                <p><em>Built with Mermaid.js</em></p>
+
+            </div>
+        </div>
+        </div>
+        </div>
+    </main>
+{% endblock %}
