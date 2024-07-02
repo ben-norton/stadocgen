@@ -1,15 +1,21 @@
 classDiagram
  class Annotation { 
    ID : string 
+   status : None 
    jobID : string 
    type : string 
    version : integer 
    motivation : None 
    motivatedBy : string 
+   creator : object 
    created : string 
-   dateTombstoned : string 
    issued : string 
+   generator : object 
    batchID : string 
+   mergingDecisionStatus : None 
+   mergingStateChangeDate : string 
+   MergingStateChangedBy : object 
+   TombstoneMetadata : object 
  }
  class hasTarget { 
    ID : string 
@@ -21,18 +27,28 @@ classDiagram
    references : string 
    score : number 
  }
- class creator { 
-   name : string 
- }
- class generator { 
-   name : string 
- }
  class AggregateRating { 
    ratingCount : integer 
    ratingValue : number 
  }
+ class TombstoneMetadata { 
+   tombstonedDate : string 
+   tombstonedText : string 
+   TombstonedByAgent : object 
+   hasRelatedPID : array 
+ }
+ class Agent { 
+   name : string 
+   roleName : string 
+   startDate : string 
+   endDate : string 
+   roleOrder : integer 
+   email : string 
+   url : string 
+   hasIdentifier : array 
+ }
 Annotation -- hasTarget 
 Annotation -- hasBody 
-Annotation -- creator 
-Annotation -- generator 
 Annotation -- AggregateRating 
+Annotation -- TombstoneMetadata 
+Annotation -- Agent 

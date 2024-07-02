@@ -2,12 +2,12 @@ classDiagram
  class MachineAnnotationService { 
    ID : string 
    type : string 
+   status : None 
    version : integer 
    name : string 
    description : string 
    dateCreated : string 
-   dateTombstoned : string 
-   creator : string 
+   creator : object 
    containerImage : string 
    containerTag : string 
    TargetDigitalObjectFilter : object 
@@ -15,18 +15,14 @@ classDiagram
    codeRepository : string 
    programmingLanguage : string 
    serviceAvailability : string 
+   maintainer : object 
    license : string 
    dependency : array 
    slaDocumentation : string 
    topicName : string 
    batchingPermitted : boolean 
    timeToLive : integer 
- }
- class maintainer { 
-   identifier : string 
-   name : string 
-   email : string 
-   url : string 
+   TombstoneMetadata : object 
  }
  class ContactPoint { 
    description : string 
@@ -34,5 +30,22 @@ classDiagram
    url : string 
    telephone : string 
  }
-MachineAnnotationService -- maintainer 
+ class TombstoneMetadata { 
+   tombstonedDate : string 
+   tombstonedText : string 
+   TombstonedByAgent : object 
+   hasRelatedPID : array 
+ }
+ class Agent { 
+   name : string 
+   roleName : string 
+   startDate : string 
+   endDate : string 
+   roleOrder : integer 
+   email : string 
+   url : string 
+   hasIdentifier : array 
+ }
 MachineAnnotationService -- ContactPoint 
+MachineAnnotationService -- TombstoneMetadata 
+MachineAnnotationService -- Agent 

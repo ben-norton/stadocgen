@@ -2,13 +2,32 @@ classDiagram
  class Mapping { 
    ID : string 
    type : string 
+   status : None 
    version : integer 
    name : string 
    description : string 
    dateCreated : string 
-   dateTombstoned : string 
-   creator : string 
+   creator : object 
    DefaultMapping : array 
    FieldMapping : array 
    mappingDataStandard : None 
+   TombstoneMetadata : object 
  }
+ class TombstoneMetadata { 
+   tombstonedDate : string 
+   tombstonedText : string 
+   TombstonedByAgent : object 
+   hasRelatedPID : array 
+ }
+ class Agent { 
+   name : string 
+   roleName : string 
+   startDate : string 
+   endDate : string 
+   roleOrder : integer 
+   email : string 
+   url : string 
+   hasIdentifier : array 
+ }
+Mapping -- TombstoneMetadata 
+Mapping -- Agent 
