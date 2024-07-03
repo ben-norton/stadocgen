@@ -2,6 +2,7 @@ classDiagram
  class DigitalSpecimen { 
    ID : string 
    version : integer 
+   status : None 
    created : string 
    type : string 
    midsLevel : integer 
@@ -22,14 +23,14 @@ classDiagram
    basisOfRecord : string 
    preparations : string 
    disposition : string 
-   institutionCode : string 
-   institutionID : string 
-   institutionName : string 
+   organisationCode : string 
+   organisationID : string 
+   organisationName : string 
    collectionCode : string 
    collectionID : string 
    informationWithheld : string 
    dataGeneralizations : string 
-   ownerInstitutionCode : string 
+   ownerOrganisationCode : string 
    recordedBy : string 
    recordedByID : string 
    datasetName : string 
@@ -42,7 +43,7 @@ classDiagram
    organismScope : string 
    associatedOrganisms : string 
    organismRemarks : string 
-   dynamicProperties : object 
+   dynamicProperties : string 
    hasMaterialEntity : array 
    hasIdentification : array 
    hasAssertion : array 
@@ -52,18 +53,19 @@ classDiagram
    hasIdentifier : array 
    hasChronometricAge : array 
    hasAgent : array 
+   TombstoneMetadata : object 
  }
  class MaterialEntity { 
    materialEntityID : string 
    materialEntityType : string 
    preparations : string 
    disposition : string 
-   institutionCode : string 
-   institutionID : string 
-   institutionName : string 
+   organisationCode : string 
+   organisationID : string 
+   organisationName : string 
    collectionCode : string 
    collectionID : string 
-   ownerInstitutionCode : string 
+   ownerOrganisationCode : string 
    recordedBy : string 
    recordedByID : string 
    verbatimLabel : string 
@@ -235,13 +237,13 @@ classDiagram
    bed : string 
  }
  class Agent { 
-   agentRole : string 
-   agentType : string 
-   agentID : string 
-   agentName : string 
-   agentRoleBegan : string 
-   agentRoleEnded : string 
-   agentRoleOrder : integer 
+   name : string 
+   roleName : string 
+   startDate : string 
+   endDate : string 
+   roleOrder : integer 
+   email : string 
+   url : string 
    hasIdentifier : array 
  }
  class Assertion { 
@@ -255,8 +257,7 @@ classDiagram
    measurementAccuracy : string 
    measurementUnit : string 
    measurementUnit : string 
-   assertionByAgentName : string 
-   assertionByAgentID : string 
+   AssertionByAgent : object 
    assertionProtocol : string 
    assertionProtocolID : string 
    assertionRemarks : string 
@@ -266,7 +267,7 @@ classDiagram
    type : string 
    date : string 
    title : string 
-   creator : string 
+   creator : object 
    citationPageNumber : string 
    citationRemarks : string 
    referenceType : string 
@@ -282,8 +283,8 @@ classDiagram
    relatedResourceURI : string 
    relationshipEstablishedDate : string 
    entityRelationshipOrder : integer 
+   RelationshipAccordingToAgent : object 
    relationshipAccordingTo : string 
-   relationshipAccordingToID : string 
    relationshipRemarks : string 
  }
  class Identifier { 
@@ -316,6 +317,12 @@ classDiagram
    chronometricAgeReferences : string 
    chronometricAgeRemarks : string 
  }
+ class TombstoneMetadata { 
+   tombstonedDate : string 
+   tombstonedText : string 
+   TombstonedByAgent : object 
+   hasRelatedPID : array 
+ }
 
     DigitalSpecimen -- MaterialEntity
     DigitalSpecimen -- Identification
@@ -326,6 +333,7 @@ classDiagram
     DigitalSpecimen -- Agent
     DigitalSpecimen -- EntityRelationship
     DigitalSpecimen -- ChronometricAge
+    DigitalSpecimen -- TombstoneMetadata
     Event -- Location
     Event -- Assertion
     Location -- GeoReference

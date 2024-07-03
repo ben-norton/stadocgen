@@ -2,9 +2,10 @@ classDiagram
  class CreateUpdateTombstoneEvent { 
    ID : string 
    type : string 
+   hasProvAgent : array 
  }
  class Activity { 
-   wasAssociatedWith : string 
+   wasAssociatedWith : array 
    endedAtTime : string 
    used : string 
    comment : string 
@@ -14,10 +15,16 @@ classDiagram
    value : object 
    wasRevisionOf : string 
    wasGeneratedBy : string 
-   wasAttributedTo : string 
  }
  class Agent { 
    name : string 
+   roleName : string 
+   startDate : string 
+   endDate : string 
+   roleOrder : integer 
+   email : string 
+   url : string 
+   hasIdentifier : array 
  }
 CreateUpdateTombstoneEvent -- Activity 
 CreateUpdateTombstoneEvent -- Entity 

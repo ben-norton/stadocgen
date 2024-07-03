@@ -72,6 +72,12 @@ schema_objects = [
                 'class_name': 'ChronometricAge',
                 'class_description': 'The Chronometric Age of the digital specimen',
                 'is_required': False
+            },
+            {
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json',
+                'class_name': 'TombstoneMetadata',
+                'class_description': 'The tombstone metadata about the tombstoned digital object',
+                'is_required': False
             }
         ]
     },
@@ -113,6 +119,12 @@ schema_objects = [
                 'class_name': 'Identifier',
                 'class_description': 'The Identifier of the digital specimen',
                 'is_required': False
+            },
+            {
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json',
+                'class_name': 'TombstoneMetadata',
+                'class_description': 'The tombstone metadata about the tombstoned digital object',
+                'is_required': False
             }
         ]
     },
@@ -120,10 +132,22 @@ schema_objects = [
         'csv_prefix': 'machine-annotation-service',
         'objects': [
             {
-                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/machine-annotation-service/0.3.0/mas.json',
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/machine-annotation-service/0.3.0/machine-annotation-service.json',
                 'class_name': 'MachineAnnotationService',
                 'class_description': 'A Machine Annotation Service',
                 'is_required': True
+            },
+            {
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json',
+                'class_name': 'TombstoneMetadata',
+                'class_description': 'The tombstone metadata about the tombstoned digital object',
+                'is_required': False
+            },
+            {
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json',
+                'class_name': 'Agent',
+                'class_description': 'Description of the agents connected to the digital object',
+                'is_required': False
             }
         ]
     },
@@ -135,6 +159,18 @@ schema_objects = [
                 'class_name': 'Annotation',
                 'class_description': 'Annotation model based on the W3C Web Annotation Data Model (https://www.w3.org/TR/annotation-model/)',
                 'is_required': True
+            },
+            {
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json',
+                'class_name': 'TombstoneMetadata',
+                'class_description': 'The tombstone metadata about the tombstoned digital object',
+                'is_required': False
+            },
+            {
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json',
+                'class_name': 'Agent',
+                'class_description': 'Description of the agents connected to the digital object',
+                'is_required': False
             }
         ]
     },
@@ -142,10 +178,16 @@ schema_objects = [
         'csv_prefix': 'create-update-tombstone-event',
         'objects': [
             {
-                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/create-update-tombstone-event/0.3.0/create-update-tombstone.json',
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/create-update-tombstone-event/0.3.0/create-update-tombstone-event.json',
                 'class_name': 'CreateUpdateTombstoneEvent',
                 'class_description': 'Create Update Tombstone Event, based on W3C PROV Data Model (https://www.w3.org/TR/prov-o/)',
                 'is_required': True
+            },
+            {
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json',
+                'class_name': 'Agent',
+                'class_description': 'Description of the agents connected to the digital object',
+                'is_required': False
             }
         ]
     },
@@ -157,6 +199,18 @@ schema_objects = [
                 'class_name': 'Mapping',
                 'class_description': 'Mapping data model, used for data-mapping between different data models',
                 'is_required': True
+            },
+            {
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json',
+                'class_name': 'TombstoneMetadata',
+                'class_description': 'The tombstone metadata about the tombstoned digital object',
+                'is_required': False
+            },
+            {
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json',
+                'class_name': 'Agent',
+                'class_description': 'Description of the agents connected to the digital object',
+                'is_required': False
             }
         ]
     },
@@ -168,6 +222,18 @@ schema_objects = [
                 'class_name': 'SourceSystem',
                 'class_description': 'Source System Model, used to describe data providing systems',
                 'is_required': True
+            },
+            {
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json',
+                'class_name': 'TombstoneMetadata',
+                'class_description': 'The tombstone metadata about the tombstoned digital object',
+                'is_required': False
+            },
+            {
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json',
+                'class_name': 'Agent',
+                'class_description': 'Description of the agents connected to the digital object',
+                'is_required': False
             }
         ]
     }
@@ -357,6 +423,7 @@ def add_digital_specimen_relationships(mermaid_string):
     DigitalSpecimen -- Agent
     DigitalSpecimen -- EntityRelationship
     DigitalSpecimen -- ChronometricAge
+    DigitalSpecimen -- TombstoneMetadata
     Event -- Location
     Event -- Assertion
     Location -- GeoReference

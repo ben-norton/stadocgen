@@ -2,12 +2,13 @@ classDiagram
  class DigitalMedia { 
    ID : string 
    version : integer 
+   status : None 
    created : string 
    type : string 
    type : None 
    accessURI : string 
-   institutionID : string 
-   institutionName : string 
+   organisationID : string 
+   organisationName : string 
    format : string 
    license : string 
    description : string 
@@ -23,15 +24,16 @@ classDiagram
    hasIdentifier : array 
    hasEntityRelationship : array 
    hasAgent : array 
+   TombstoneMetadata : object 
  }
  class Agent { 
-   agentRole : string 
-   agentType : string 
-   agentID : string 
-   agentName : string 
-   agentRoleBegan : string 
-   agentRoleEnded : string 
-   agentRoleOrder : integer 
+   name : string 
+   roleName : string 
+   startDate : string 
+   endDate : string 
+   roleOrder : integer 
+   email : string 
+   url : string 
    hasIdentifier : array 
  }
  class Assertion { 
@@ -45,8 +47,7 @@ classDiagram
    measurementAccuracy : string 
    measurementUnit : string 
    measurementUnit : string 
-   assertionByAgentName : string 
-   assertionByAgentID : string 
+   AssertionByAgent : object 
    assertionProtocol : string 
    assertionProtocolID : string 
    assertionRemarks : string 
@@ -56,7 +57,7 @@ classDiagram
    type : string 
    date : string 
    title : string 
-   creator : string 
+   creator : object 
    citationPageNumber : string 
    citationRemarks : string 
    referenceType : string 
@@ -72,8 +73,8 @@ classDiagram
    relatedResourceURI : string 
    relationshipEstablishedDate : string 
    entityRelationshipOrder : integer 
+   RelationshipAccordingToAgent : object 
    relationshipAccordingTo : string 
-   relationshipAccordingToID : string 
    relationshipRemarks : string 
  }
  class Identifier { 
@@ -86,8 +87,15 @@ classDiagram
    isBarcodeOrNFC : boolean 
    isIDPersistent : boolean 
  }
+ class TombstoneMetadata { 
+   tombstonedDate : string 
+   tombstonedText : string 
+   TombstonedByAgent : object 
+   hasRelatedPID : array 
+ }
 DigitalMedia -- Agent 
 DigitalMedia -- Assertion 
 DigitalMedia -- Citation 
 DigitalMedia -- EntityRelationship 
 DigitalMedia -- Identifier 
+DigitalMedia -- TombstoneMetadata 

@@ -2,14 +2,33 @@ classDiagram
  class SourceSystem { 
    ID : string 
    type : string 
+   status : None 
    version : integer 
    name : string 
    description : string 
    dateCreated : string 
-   dateTombstoned : string 
-   creator : string 
+   creator : object 
    url : string 
    collectionManagementSystem : string 
    translatorType : None 
    dataMappingID : string 
+   TombstoneMetadata : object 
  }
+ class TombstoneMetadata { 
+   tombstonedDate : string 
+   tombstonedText : string 
+   TombstonedByAgent : object 
+   hasRelatedPID : array 
+ }
+ class Agent { 
+   name : string 
+   roleName : string 
+   startDate : string 
+   endDate : string 
+   roleOrder : integer 
+   email : string 
+   url : string 
+   hasIdentifier : array 
+ }
+SourceSystem -- TombstoneMetadata 
+SourceSystem -- Agent 
