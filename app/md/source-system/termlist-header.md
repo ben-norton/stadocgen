@@ -59,6 +59,7 @@ Table 1. Vocabularies from which terms have been borrowed (non-normative)
 |---------------------------------------------|--------------|----------------------------------------------------------------------------| 
 | [Latimer Core](https://ltc.tdwg.org/terms/) | LtC          | `lct: = 	http://rs.tdwg.org/ltc/terms/`                                    |
 | [Schema.org](https://schema.org/)           | Schema       | `schema: =  https://schema.org/version/latest/schemaorg-current-https.rdf` | 
+| [Activity Streams](https://www.w3.org/TR/activitystreams-vocabulary/) | AS         | `as: = https://www.w3.org/ns/activitystreams#`                             |
 
 ## 3 Namespaces, Prefixes and Term Names <span id="3-namespace-prefixes-term-names"></span>
 

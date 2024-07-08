@@ -78,7 +78,6 @@ Table 1. Vocabularies from which terms have been borrowed (non-normative)
 | [Schema.org](https://schema.org/)                                | Schema       | `schema: =  https://schema.org/version/latest/schemaorg-current-https.rdf` |
 | [Resource Description Framework](https://www.w3.org/RDF/)         | RDF          | `rdf: = http://www.w3.org/1999/02/22-rdf-syntax-ns#`                       |
 | [Web Annotation](https://www.w3.org/TR/annotation-vocab/)         | OA           | `oa: = http://www.w3.org/ns/oa#`                                           |
-| [Friend of a Friend](http://xmlns.com/foaf/spec/)                | FOAF         | `foaf: = http://xmlns.com/foaf/0.1/`                                       |
 | [Activity Streams](https://www.w3.org/TR/activitystreams-vocabulary/) | AS         | `as: = https://www.w3.org/ns/activitystreams#`                             |
 
 

@@ -81,6 +81,7 @@ Table 1. Vocabularies from which terms have been borrowed (non-normative)
 | [Darwin Core IRI Terms](https://dwc.tdwg.org/terms/)       | DwC IRI      | `dwciri: = http://rs.tdwg.org/dwc/terms/`                                  |                              
 | [Dublin Core](http://dublincore.org/documents/dcmi-terms/) | DC           | `dcterms: = http://purl.org/dc/terms/`                                     |
 | [Audiovisual Core](https://ac.tdwg.org/termlist/)          | AC           | `ac: = http://rs.tdwg.org/ac/terms/`                                       |
+| [Schema.org](https://schema.org/)                                | Schema       | `schema: =  https://schema.org/version/latest/schemaorg-current-https.rdf` |
 
 ## 3 Namespaces, Prefixes and Term Names <span id="3-namespace-prefixes-term-names"></span>
 

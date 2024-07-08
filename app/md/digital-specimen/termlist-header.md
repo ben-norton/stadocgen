@@ -69,6 +69,8 @@ Table 1. Vocabularies from which terms have been borrowed (non-normative)
 | [Darwin Core IRI Terms](https://dwc.tdwg.org/terms/)                      | DwC IRI      | `dwciri: = http://rs.tdwg.org/dwc/terms/`                                  
 | [Darwin Core Chronometric Age Vocabulary](https://tdwg.github.io/chrono/) | Chrono       | `chrono: = http://rs.tdwg.org/chrono/terms/`                               
 | [Dublin Core](http://dublincore.org/documents/dcmi-terms/)                | DC           | `dcterms: = http://purl.org/dc/terms/`                                     |
+| [Schema.org](https://schema.org/)                                | Schema       | `schema: =  https://schema.org/version/latest/schemaorg-current-https.rdf` |
+| [Humboldt Extension for Ecological Inventories](https://eco.tdwg.org/)                                | ECO          | `eco: =  http://rs.tdwg.org/dwc/doc/eco/`                                  |
 
 ## 3 Namespaces, Prefixes and Term Names <span id="3-namespace-prefixes-term-names"></span>
 The namespace of terms borrowed from other vocabularies is that of the original. 

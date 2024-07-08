@@ -56,6 +56,7 @@ Table 1. Vocabularies from which terms have been borrowed (non-normative)
 | Vocabulary                                                                | Abbreviation | Namespaces and abbreviations                                               |
 |---------------------------------------------------------------------------|--------------|----------------------------------------------------------------------------|
 | [Schema.org](https://schema.org/)                                         | Schema       | `schema: =  https://schema.org/version/latest/schemaorg-current-https.rdf` | 
+| [Activity Streams](https://www.w3.org/TR/activitystreams-vocabulary/) | AS         | `as: = https://www.w3.org/ns/activitystreams#`                             |
 
 ## 3 Namespaces, Prefixes and Term Names <span id="3-namespace-prefixes-term-names"></span>
 The namespace of terms borrowed from other vocabularies is that of the original. 
