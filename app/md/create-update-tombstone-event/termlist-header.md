@@ -22,7 +22,7 @@ The model has been based on the W3C PROV model.
 It consists of three interlinked objects:  
 - The Activity: This contains information about the action that was performed. It includes the time when the change was made (`prov:endedAtTime`) and in case of an Update it contains the full change (`ods:changeValue`) as a [JSON Patch object](https://jsonpatch.com/).    
 - The Entity: The entity indicates the object that was changed. In case of an Create or Update it will hold the newly create object, in serialised as JSON in the field `prov:value`.  
-- The Agent: The agent is the person or system that made the change. It contains the identifier of the Agent en the agent name (`foaf:name`).  
+- The Agent: The agent is the person or system that made the change. It contains the identifier of the Agent en the agent name (`schema:name`).  
 Each object refers to the other objects through a set of properties, following the PROV model.
 
 **Main contributors**
@@ -68,8 +68,8 @@ Table 1. Vocabularies from which terms have been borrowed (non-normative)
 | Vocabulary                                       | Abbreviation | Namespaces and abbreviations                                               |
 |--------------------------------------------------|--------------|----------------------------------------------------------------------------|
 | [Schema.org](https://schema.org/)                | Schema       | `schema: =  https://schema.org/version/latest/schemaorg-current-https.rdf` |
-| [Friend of a Friend](http://xmlns.com/foaf/spec/) | FOAF         | `foaf: = http://xmlns.com/foaf/0.1/`                                       |
 | [PROV](https://www.w3.org/TR/prov-o/)             | PROV         | `prov: = 	http://www.w3.org/ns/prov#`                                      |
+| [Activity Streams](https://www.w3.org/TR/activitystreams-vocabulary/) | AS         | `as: = https://www.w3.org/ns/activitystreams#`                             |
 
 ## 3 Namespaces, Prefixes and Term Names <span id="3-namespace-prefixes-term-names"></span>
 The namespace of terms borrowed from other vocabularies is that of the original. 
