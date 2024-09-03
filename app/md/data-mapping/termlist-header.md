@@ -1,4 +1,4 @@
-# Data Mapping List of Terms (In Progress)
+# Data Mapping List of Terms 
 
 **Title**
 : Data Mapping List of Terms

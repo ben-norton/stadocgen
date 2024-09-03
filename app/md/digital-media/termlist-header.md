@@ -1,4 +1,4 @@
-# Digital Media List of Terms (In Progress)
+# Digital Media List of Terms 
 
 **Title**
 : Digital Media List of Terms

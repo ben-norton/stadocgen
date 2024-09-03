@@ -171,8 +171,20 @@ schema_objects = [
                 'class_name': 'Agent',
                 'class_description': 'Description of the agents connected to the digital object',
                 'is_required': False
+            },
+            {
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/annotation/0.3.0/annotation-target.json',
+                'class_name': 'AnnotationTarget',
+                'class_description': 'Description of the target of the annotation',
+                'is_required': True
+            },
+            {
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/annotation/0.3.0/annotation-body.json',
+                'class_name': 'AnnotationBody',
+                'class_description': 'Description of the body of the annotation',
+                'is_required': True
             }
-        ]
+        ],
     },
     {
         'csv_prefix': 'create-update-tombstone-event',

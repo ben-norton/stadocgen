@@ -9,13 +9,11 @@ Getting started[](#getting-started)
 *   [Normative Term List Digital Specimen](digital-specimen-terms)
 *   [Quick Reference Guide Digital Specimen](digital-specimen-guide)
 *   [Json Schema](https://schemas.dissco.tech) provide the original schemas on which this site is generated
-*   The [OpenDS Github](https://github.com/DiSSCo/openDS) provides any additional information available, including examples.
-*   For questions and change requests please create a [Github Issue](https://github.com/DiSSCo/openDS/issues)
-*   Add or join a [Discussion](https://github.com/DiSSCo/openDS/discussions)
+*   The [openDS Github](https://github.com/DiSSCo/openDS) provides any additional information available, including examples.
+*   For questions and change requests please create a [Github Issue](https://github.com/DiSSCo/openDS/issues/new/choose)
 
 -------------
-First version of the DiSSCo terms page online!
-Please note that this is a temporary version as we are working on some changes in the data model.
-Any additional feedback is very welcome!
+Open Review has been extended until 10th of September.
+Please feel free to provide feedback on [Github Issue](https://github.com/DiSSCo/openDS/issues/new/choose).
 
-*Last Updated: June. 18, 2024*
+*Last Updated: September. 3, 2024*

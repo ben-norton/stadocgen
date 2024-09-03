@@ -1,4 +1,4 @@
-# Source System List of Terms (In Progress)
+# Source System List of Terms 
 
 **Title**
 : Source System List of Terms

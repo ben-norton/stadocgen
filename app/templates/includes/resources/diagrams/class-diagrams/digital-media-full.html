@@ -9,6 +9,7 @@ classDiagram
    type : None 
    accessURI : string 
    sourceSystemID : string 
+   sourceSystemName : string 
    organisationID : string 
    organisationName : string 
    format : string 
@@ -88,8 +89,8 @@ classDiagram
    isIDPersistent : boolean 
  }
  class TombstoneMetadata { 
-   tombstonedDate : string 
-   tombstonedText : string 
+   tombstoneDate : string 
+   tombstoneText : string 
    TombstonedByAgent : object 
    hasRelatedPID : array 
  }

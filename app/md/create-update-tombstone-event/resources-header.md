@@ -1,4 +1,4 @@
-# Create Update Delete Tombstone Resources (In Progress)
+# Create Update Delete Tombstone Resources 
 This page contains an assortment of resources to help explain the structure and relationship of the Create Update Tombstone Event object.
 The Create Update Tombstone Event data model is based on the W3C PROV model and is used to track the history of an object in the DiSSCo infrastructure.
 Within each object (Agent, Activity, Entity) are properties which indicate the relationship to each-other.

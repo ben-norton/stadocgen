@@ -1,4 +1,4 @@
-# Machine Annotation Service List of Terms (In Progress)
+# Machine Annotation Service List of Terms 
 
 **Title**
 : Machine Annotation Service List of Terms

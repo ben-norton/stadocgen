@@ -17,6 +17,7 @@ classDiagram
    isKnownToContainMedia : boolean 
    specimenName : string 
    sourceSystemID : string 
+   sourceSystemName : string 
    livingOrPreserved : None 
    language : array 
    license : string 
@@ -318,8 +319,8 @@ classDiagram
    chronometricAgeRemarks : string 
  }
  class TombstoneMetadata { 
-   tombstonedDate : string 
-   tombstonedText : string 
+   tombstoneDate : string 
+   tombstoneText : string 
    TombstonedByAgent : object 
    hasRelatedPID : array 
  }
