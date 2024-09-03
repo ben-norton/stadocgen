@@ -1,4 +1,4 @@
-# Digital Specimen List of Terms (In Progress)
+# Digital Specimen List of Terms
 
 **Title**
 : Digital Specimen List of Terms
@@ -74,6 +74,6 @@ Table 1. Vocabularies from which terms have been borrowed (non-normative)
 
 ## 3 Namespaces, Prefixes and Term Names <span id="3-namespace-prefixes-term-names"></span>
 The namespace of terms borrowed from other vocabularies is that of the original. 
-The namespace of de openDS terms is http://rs.dissco.eu/opends/terms/. In the table of terms, each term entry has a row with the term name. 
+The namespace of the openDS terms is http://rs.dissco.eu/opends/terms/. In the table of terms, each term entry has a row with the term name. 
 This term name is generally an “unqualified name” preceded by a widely accepted prefix designating an abbreviation for the namespace It is RECOMMENDED that implementers who need a namespace prefix for the openDS namespace use ods. 
 In this web document, hovering over a term in the Index By Term Name list below will reveal a complete URL that can be used in other web documents to link to this document’s treatment of that term, even if it is from a borrowed vocabulary. 

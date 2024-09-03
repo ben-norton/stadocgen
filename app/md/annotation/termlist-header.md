@@ -1,4 +1,4 @@
-# Annotation List of Terms (In Progress)
+# Annotation List of Terms 
 
 **Title**
 : Annotation List of Terms

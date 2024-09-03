@@ -7,34 +7,27 @@ classDiagram
    version : integer 
    motivation : None 
    motivatedBy : string 
+   hasTarget : object 
+   hasBody : object 
    creator : object 
    created : string 
    modified : string 
    issued : string 
    generator : object 
    batchID : string 
+   placeInBatch : integer 
    mergingDecisionStatus : None 
    mergingStateChangeDate : string 
    MergingStateChangedBy : object 
    TombstoneMetadata : object 
- }
- class hasTarget { 
-   ID : string 
-   type : string 
-   hasSelector : object 
- }
- class hasBody { 
-   value : array 
-   references : string 
-   score : number 
  }
  class AggregateRating { 
    ratingCount : integer 
    ratingValue : number 
  }
  class TombstoneMetadata { 
-   tombstonedDate : string 
-   tombstonedText : string 
+   tombstoneDate : string 
+   tombstoneText : string 
    TombstonedByAgent : object 
    hasRelatedPID : array 
  }
@@ -48,8 +41,18 @@ classDiagram
    url : string 
    hasIdentifier : array 
  }
-Annotation -- hasTarget 
-Annotation -- hasBody 
+ class AnnotationTarget { 
+   ID : string 
+   type : string 
+   hasSelector : object 
+ }
+ class AnnotationBody { 
+   value : array 
+   references : string 
+   score : number 
+ }
 Annotation -- AggregateRating 
 Annotation -- TombstoneMetadata 
 Annotation -- Agent 
+Annotation -- AnnotationTarget 
+Annotation -- AnnotationBody 

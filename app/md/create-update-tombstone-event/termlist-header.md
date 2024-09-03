@@ -1,4 +1,4 @@
-# Create Update Tombstone Event List of Terms (In Progress)
+# Create Update Tombstone Event List of Terms 
 
 **Title**
 : Create Update Tombstone Event List of Terms
