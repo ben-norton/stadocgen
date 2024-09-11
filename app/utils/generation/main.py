@@ -338,7 +338,7 @@ def iterate_over_object(json_data, term_array, class_name, compound_name):
             'definition': term_value.get('description'),
             'usage': '',
             'notes': '',
-            'examples': term_value.get('examples'),
+            'examples': format_examples(term_value),
             'rdf_type': determine_rdf_type(is_class),
             'class_name': compound_name,
             'is_required': False,
@@ -377,6 +377,10 @@ def iterate_over_object(json_data, term_array, class_name, compound_name):
             set_required(term_value, term_array)
 
 
+def format_examples(term_value):
+    return ', '.join(map(str, term_value.get('examples'))) if term_value.get('examples') is not None else ''
+
+
 def determine_rdf_type(is_class: bool) -> str:
     if is_class:
         return 'http://www.w3.org/2000/01/rdf-schema#Class'
@@ -391,6 +395,8 @@ def determine_namespace(term: str) -> str:
 def camel_case_to_title(camel_case_str):
     # Split the camel case string at each uppercase letter, insert space, and capitalize each word
     title_str = re.sub('([a-z])([A-Z])', r'\1 \2', camel_case_str).title()
+    abbreviations = ['Id', 'Wkt', 'Uri', 'Url', 'Nfc', 'Srs', 'Html', 'Mids']
+    title_str = ' '.join(list(map(lambda word: word.upper() if word in abbreviations else word, title_str.split(' '))))
     return title_str
 
 

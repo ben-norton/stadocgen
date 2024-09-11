@@ -49,13 +49,13 @@
 
 						{% if v['examples'] is number %}
 						{% else %}
-						{% set list1 = v['examples'].split('`, `') %}
+						{% set list1 = v['examples'].split(', ') %}
 						<tr>
 							<th scope="row">Examples</th>
 							<td>
 								<ul class="td-list">
 									{% for item in list1 %}
-										<li><span>{{ item|replace("`","") }}</span></li>
+										<li><span>{{ item }}</span></li>
 									{% endfor %}
 								</ul>
 
