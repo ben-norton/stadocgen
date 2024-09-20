@@ -64,6 +64,22 @@
 
 						{% endif %}
 
+						{% if v['enum'] is number %}
+						{% else %}
+						{% set list1 = v['enum'].split(', ') %}
+						<tr>
+							<th scope="row">Controlled Vocabulary</th>
+							<td>
+								<ul class="td-list">
+									{% for item in list1 %}
+										<li><span>{{ item }}</span></li>
+									{% endfor %}
+								</ul>
+
+							</td>
+						</tr>
+						{% endif %}
+
 						{% if v['datatype'] is number %}
 						{% else %}
 						<tr>

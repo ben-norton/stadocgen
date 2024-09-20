@@ -1,6 +1,9 @@
 import requests
 import re
+import logging
 import pandas as pd
+
+logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
 
 schema_objects = [
     {
@@ -9,74 +12,74 @@ schema_objects = [
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.3.0/digital-specimen.json',
                 'class_name': 'DigitalSpecimen',
-                'class_description': 'A digital representation of a physical specimen',
+                'class_description': 'A digital representation of a physical specimen, following the concept of the FAIR Digital Object (FDO). Each physical specimen that has been administrated as a separate entity will be a Digital Specimen.',
                 'is_required': True
             }
             ,
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.3.0/material-entity.json',
                 'class_name': 'MaterialEntity',
-                'class_description': 'Material Entities that are part of the Digital Specimen',
-                'is_required': False
+                'class_description': 'Contains the information about the Material object attached to the Digital Specimen. The array will always have one MaterialEntity object of type `ods:Specimen` which is the main MaterialEntity object of the Digital Specimen. It can have additional MaterialEntities which will then be a `ods:SpecimenPart`',
+                'is_required': True
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.3.0/identification.json',
                 'class_name': 'Identification',
-                'class_description': 'The Identification of a specimen',
+                'class_description': 'A generic identification class, containing information about who and when the identification was made, including the status of the identification.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.3.0/event.json',
                 'class_name': 'Event',
-                'class_description': 'The Event that occurred at a particular time and place',
+                'class_description': 'A generic event class containing information about a particular activity at a certain place an time. An example is the collecting event.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.3.0/location.json',
                 'class_name': 'Location',
-                'class_description': 'The Location of the digital specimen',
+                'class_description': 'A generic location class containing information about a where a specific event took place.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json',
                 'class_name': 'Agent',
-                'class_description': 'The Agent of the digital specimen',
+                'class_description': 'A generic agent class, containing information about the actor who performed an activity. This could be a person, an organization or a machine.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/assertion.json',
                 'class_name': 'Assertion',
-                'class_description': 'The Assertion of the digital specimen',
+                'class_description': 'A generic assertion class, containing information about a statement that is made about a digital object. An example is the measurement of the leaf or the wingspan of a specimen.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/citation.json',
                 'class_name': 'Citation',
-                'class_description': 'The Citation of the digital specimen',
+                'class_description': 'A generic class containing the information about a citation in which the Digital Object is mentioned or which had influence on the Digital Object.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/entity-relationship.json',
                 'class_name': 'EntityRelationship',
-                'class_description': 'The Entity Relationship of the digital specimen',
+                'class_description': 'Describes relationships between digital object and any external resources. An example could be a relationship to the Sequence record of the specimen in a DNA database.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/identifier.json',
                 'class_name': 'Identifier',
-                'class_description': 'The Identifier of the digital specimen',
+                'class_description': 'A generic Identifier class which can be attached to multiple classes. It captures information about any identifier of the class.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.3.0/chronometric-age.json',
                 'class_name': 'ChronometricAge',
-                'class_description': 'The Chronometric Age of the digital specimen',
+                'class_description': 'An approximation of a temporal position (in the sense conveyed by https://www.w3.org/TR/owl-time/#time:TemporalPosition) that is supported via evidence.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json',
                 'class_name': 'TombstoneMetadata',
-                'class_description': 'The tombstone metadata about the tombstoned digital object',
+                'class_description': 'The tombstone metadata about the tombstoned digital object, including the what, who and when of the tombstoning.',
                 'is_required': False
             }
         ]
@@ -93,37 +96,37 @@ schema_objects = [
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json',
                 'class_name': 'Agent',
-                'class_description': 'The Agent of the digital specimen',
+                'class_description': 'A generic agent class, containing information about the actor who performed an activity. This could be a person, an organization or a machine.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/assertion.json',
                 'class_name': 'Assertion',
-                'class_description': 'The Assertion of the digital specimen',
+                'class_description': 'A generic assertion class, containing information about a statement that is made about a digital object. An example is the measurement of the leaf or the wingspan of a specimen.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/citation.json',
                 'class_name': 'Citation',
-                'class_description': 'The Citation of the digital specimen',
+                'class_description': 'A generic class containing the information about a citation in which the Digital Object is mentioned or which had influence on the Digital Object.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/entity-relationship.json',
                 'class_name': 'EntityRelationship',
-                'class_description': 'The Entity Relationship of the digital specimen',
+                'class_description': 'Describes relationships between digital object and any external resources. An example could be a relationship to the Sequence record of the specimen in a DNA database.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/identifier.json',
                 'class_name': 'Identifier',
-                'class_description': 'The Identifier of the digital specimen',
+                'class_description': 'A generic Identifier class which can be attached to multiple classes. It captures information about any identifier of the class.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json',
                 'class_name': 'TombstoneMetadata',
-                'class_description': 'The tombstone metadata about the tombstoned digital object',
+                'class_description': 'The tombstone metadata about the tombstoned digital object, including the what, who and when of the tombstoning.',
                 'is_required': False
             }
         ]
@@ -134,19 +137,31 @@ schema_objects = [
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/machine-annotation-service/0.3.0/machine-annotation-service.json',
                 'class_name': 'MachineAnnotationService',
-                'class_description': 'A Machine Annotation Service',
+                'class_description': 'A machine agent which will perform an action on the Digital Object potentially resulting in a new annotation on the object',
                 'is_required': True
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json',
                 'class_name': 'TombstoneMetadata',
-                'class_description': 'The tombstone metadata about the tombstoned digital object',
+                'class_description': 'The tombstone metadata about the tombstoned digital object, including the what, who and when of the tombstoning.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json',
                 'class_name': 'Agent',
-                'class_description': 'Description of the agents connected to the digital object',
+                'class_description': 'A generic agent class, containing information about the actor who performed an activity. This could be a person, an organization or a machine.',
+                'is_required': False
+            },
+            {
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/secret-variable.json',
+                'class_name': 'SecretVariable',
+                'class_description': 'A class containing information about which secret the Machine Annotation Service requires. The secret value will be supplied separately to DiSSCo.',
+                'is_required': False
+            },
+            {
+                'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/environmental-variable.json',
+                'class_name': 'EnvironmentalVariable',
+                'class_description': 'A class containing information about which (non-secret) environmental values the application requires.',
                 'is_required': False
             }
         ]
@@ -157,31 +172,31 @@ schema_objects = [
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/annotation/0.3.0/annotation.json',
                 'class_name': 'Annotation',
-                'class_description': 'Annotation model based on the W3C Web Annotation Data Model (https://www.w3.org/TR/annotation-model/)',
+                'class_description': 'A new or additional piece of information about a Digital Object. The Annotation model is based on the W3C Web Annotation Data Model (https://www.w3.org/TR/annotation-model/)',
                 'is_required': True
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json',
                 'class_name': 'TombstoneMetadata',
-                'class_description': 'The tombstone metadata about the tombstoned digital object',
+                'class_description': 'The tombstone metadata about the tombstoned digital object, including the what, who and when of the tombstoning.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json',
                 'class_name': 'Agent',
-                'class_description': 'Description of the agents connected to the digital object',
+                'class_description': 'A generic agent class, containing information about the actor who performed an activity. This could be a person, an organization or a machine.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/annotation/0.3.0/annotation-target.json',
                 'class_name': 'AnnotationTarget',
-                'class_description': 'Description of the target of the annotation',
+                'class_description': 'The AnnotationTarget describes the Digital Object the annotation is attached to, could contain additional information on which part of the object the annotation is attached to.',
                 'is_required': True
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/annotation/0.3.0/annotation-body.json',
                 'class_name': 'AnnotationBody',
-                'class_description': 'Description of the body of the annotation',
+                'class_description': 'Describes the body of the annotation. The body is the full content of the annotation, as provided by the agent.',
                 'is_required': True
             }
         ],
@@ -192,13 +207,13 @@ schema_objects = [
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/create-update-tombstone-event/0.3.0/create-update-tombstone-event.json',
                 'class_name': 'CreateUpdateTombstoneEvent',
-                'class_description': 'Create Update Tombstone Event, based on W3C PROV Data Model (https://www.w3.org/TR/prov-o/)',
+                'class_description': 'An provenance event describing any change that has been made to a Digital Object, this could be the creation, modification or tombstoning of an object. Model is based on the W3C PROV Data Model (https://www.w3.org/TR/prov-o/)',
                 'is_required': True
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json',
                 'class_name': 'Agent',
-                'class_description': 'Description of the agents connected to the digital object',
+                'class_description': 'A generic agent class, containing information about the actor who performed an activity. This could be a person, an organization or a machine.',
                 'is_required': False
             }
         ]
@@ -208,20 +223,20 @@ schema_objects = [
         'objects': [
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/data-mapping/0.3.0/data-mapping.json',
-                'class_name': 'Mapping',
-                'class_description': 'Mapping data model, used for data-mapping between different data models',
+                'class_name': 'DataMapping',
+                'class_description': 'This object described the data mapping for used when ingesting the data. It can set default values or contain an explicit mapping between the local term and an openDS term. This object is attached to a source system object.',
                 'is_required': True
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json',
                 'class_name': 'TombstoneMetadata',
-                'class_description': 'The tombstone metadata about the tombstoned digital object',
+                'class_description': 'The tombstone metadata about the tombstoned digital object, including the what, who and when of the tombstoning.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json',
                 'class_name': 'Agent',
-                'class_description': 'Description of the agents connected to the digital object',
+                'class_description': 'A generic agent class, containing information about the actor who performed an activity. This could be a person, an organization or a machine.',
                 'is_required': False
             }
         ]
@@ -232,19 +247,19 @@ schema_objects = [
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/source-system/0.3.0/source-system.json',
                 'class_name': 'SourceSystem',
-                'class_description': 'Source System Model, used to describe data providing systems',
+                'class_description': 'The Source System describes the system from which the data is ingested. It contains information about the system, the endpoint and the data mapping.',
                 'is_required': True
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json',
                 'class_name': 'TombstoneMetadata',
-                'class_description': 'The tombstone metadata about the tombstoned digital object',
+                'class_description': 'The tombstone metadata about the tombstoned digital object, including the what, who and when of the tombstoning.',
                 'is_required': False
             },
             {
                 'endpoint': 'https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json',
                 'class_name': 'Agent',
-                'class_description': 'Description of the agents connected to the digital object',
+                'class_description': 'A generic agent class, containing information about the actor who performed an activity. This could be a person, an organization or a machine.',
                 'is_required': False
             }
         ]
@@ -277,12 +292,10 @@ def determine_namespace_uri(namespace: str) -> str:
         return 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
     if namespace == 'schema:':
         return 'http://schema.org/'
-    if namespace == 'schema:':
+    if namespace == 'prov:':
         return 'http://www.w3.org/ns/prov#'
     if namespace == 'as:':
         return 'http://www.w3.org/ns/activitystreams#'
-    if namespace == 'foaf:':
-        return 'http://xmlns.com/foaf/0.1/'
     if namespace == 'rdfs:':
         return 'http://www.w3.org/2000/01/rdf-schema#'
     if namespace == 'ltc:':
@@ -338,7 +351,8 @@ def iterate_over_object(json_data, term_array, class_name, compound_name):
             'definition': term_value.get('description'),
             'usage': '',
             'notes': '',
-            'examples': format_examples(term_value),
+            'examples': format_array(term_value, 'examples'),
+            'enum': format_array(term_value, 'enum'),
             'rdf_type': determine_rdf_type(is_class),
             'class_name': compound_name,
             'is_required': False,
@@ -347,7 +361,7 @@ def iterate_over_object(json_data, term_array, class_name, compound_name):
             'namespace_iri': determine_namespace_uri(namespace),
             'term_iri': determine_namespace_uri(namespace) + term_local_name,
             'term_ns_name': term_key,
-            'datatype': term_value.get('type')
+            'datatype': determine_type(term_value, term_key)
         })
 
         if term_value.get('properties'):
@@ -359,7 +373,7 @@ def iterate_over_object(json_data, term_array, class_name, compound_name):
                 'namespace': 'ods:',
                 'term_local_name': class_name,
                 'label': camel_case_to_title(class_name),
-                'definition': 'A taxonomic identification of the specimen',
+                'definition': 'A taxonomic determination, containing the full taxonomic tree of the identification.',
                 'usage': '',
                 'notes': '',
                 'examples': '',
@@ -377,8 +391,28 @@ def iterate_over_object(json_data, term_array, class_name, compound_name):
             set_required(term_value, term_array)
 
 
-def format_examples(term_value):
-    return ', '.join(map(str, term_value.get('examples'))) if term_value.get('examples') is not None else ''
+def determine_type(term_value, term_key):
+    term_type = term_value.get('type')
+    type_dict = {'ods:hasCitation': 'ods:Citation', 'ods:language': 'string',
+                 'ods:hasEntityRelationship': 'ods:EntityRelationship', 'ods:hasEvent': 'ods:Event',
+                 'ods:hasLocation': 'ods:Location', 'ods:hasAgent': 'ods:Agent', 'ods:hasAssertion': 'ods:Assertion',
+                 'ods:hasIdentifier': 'ods:Identifier', 'ods:hasChronometricAge': 'ods:ChronometricAge',
+                 'ods:hasTombstoneMetadata': 'ods:TombstoneMetadata',
+                 'ods:hasTaxonIdentification': 'ods:TaxonIdentification',
+                 'ods:hasMaterialEntity': 'ods:MaterialEntity', 'ods:hasRelatedPID': 'object',
+                 'prov:wasAssociatedWith': 'ods:Agent', 'ods:hasIdentification': 'ods:Identification',
+                 'ods:dependency': 'string', 'oa:value': 'string', 'ods:changeValue': 'object',
+                 'ods:DefaultMapping': 'ods:DefaultMapping', 'ods:FieldMapping': 'ods:FieldMapping',
+                 'ods:hasProvAgent': 'ods:Agent', 'ods:hasEnvironmentalVariable': 'ods:EnvironmentalVariable',
+                 'ods:hasSecretVariable': 'ods:SecretVariable'}
+    if term_type != 'array':
+        return term_type
+    else:
+        return f'array<{type_dict[term_key]}>'
+
+
+def format_array(term_value, term_attributes):
+    return ', '.join(map(str, term_value.get(term_attributes))) if term_value.get(term_attributes) is not None else ''
 
 
 def determine_rdf_type(is_class: bool) -> str:
@@ -394,7 +428,7 @@ def determine_namespace(term: str) -> str:
 
 def camel_case_to_title(camel_case_str):
     # Split the camel case string at each uppercase letter, insert space, and capitalize each word
-    title_str = re.sub('([a-z])([A-Z])', r'\1 \2', camel_case_str).title()
+    title_str = re.sub(r'(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])', ' ', camel_case_str).title()
     abbreviations = ['Id', 'Wkt', 'Uri', 'Url', 'Nfc', 'Srs', 'Html', 'Mids']
     title_str = ' '.join(list(map(lambda word: word.upper() if word in abbreviations else word, title_str.split(' '))))
     return title_str
@@ -427,7 +461,7 @@ def generate_class_diagram(df, schema_object):
     with open(f'../../templates/includes/resources/diagrams/class-diagrams/{schema_object.get("csv_prefix")}-full.html',
               'w') as text_file:
         text_file.write(class_mermaid_string)
-    print(f'Class diagram for object: {schema_object.get("csv_prefix")} has been successfully generated')
+    logging.info(f'Class diagram for object: {schema_object.get("csv_prefix")} has been successfully generated')
 
 
 def add_digital_specimen_relationships(mermaid_string):
@@ -475,10 +509,13 @@ def main():
             for schema in schema_object.get('objects'):
                 endpoint = schema.get('endpoint')
                 json_data = fetch_json_schema(endpoint)
-                format_json(term_array, json_data, schema)
-                print(f"JSON data from {endpoint} has been successfully written to {csv_file_path}")
+                if json_data is not None:
+                    format_json(term_array, json_data, schema)
+                    logging.info(f"JSON data from {endpoint} has been successfully written to {csv_file_path}")
+                else:
+                    logging.error(f"An error occurred while fetching JSON data from {endpoint}")
         except Exception as e:
-            print(f"An error occurred: {e}")
+            logging.error(f"An error occurred: {e}")
         df = pd.DataFrame(term_array)
         df.to_csv(csv_file_path, index=False)
         generate_class_diagram(df, schema_object)

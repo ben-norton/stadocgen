@@ -1,5 +1,5 @@
 classDiagram
- class Mapping { 
+ class DataMapping { 
    ID : string 
    type : string 
    status : None 
@@ -9,8 +9,8 @@ classDiagram
    dateCreated : string 
    dateModified : string 
    creator : object 
-   DefaultMapping : array 
-   FieldMapping : array 
+   DefaultMapping : array<ods:DefaultMapping> 
+   FieldMapping : array<ods:FieldMapping> 
    mappingDataStandard : None 
    TombstoneMetadata : object 
  }
@@ -18,7 +18,7 @@ classDiagram
    tombstoneDate : string 
    tombstoneText : string 
    TombstonedByAgent : object 
-   hasRelatedPID : array 
+   hasRelatedPID : array<object> 
  }
  class Agent { 
    name : string 
@@ -28,7 +28,7 @@ classDiagram
    roleOrder : integer 
    email : string 
    url : string 
-   hasIdentifier : array 
+   hasIdentifier : array<ods:Identifier> 
  }
-Mapping -- TombstoneMetadata 
-Mapping -- Agent 
+DataMapping -- TombstoneMetadata 
+DataMapping -- Agent 

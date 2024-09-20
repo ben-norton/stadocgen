@@ -20,7 +20,7 @@ classDiagram
    tombstoneDate : string 
    tombstoneText : string 
    TombstonedByAgent : object 
-   hasRelatedPID : array 
+   hasRelatedPID : array<object> 
  }
  class Agent { 
    name : string 
@@ -30,7 +30,7 @@ classDiagram
    roleOrder : integer 
    email : string 
    url : string 
-   hasIdentifier : array 
+   hasIdentifier : array<ods:Identifier> 
  }
 SourceSystem -- TombstoneMetadata 
 SourceSystem -- Agent 

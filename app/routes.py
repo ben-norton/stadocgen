@@ -476,8 +476,9 @@ def generate_terms(header_mdfile, term_file):
         on=['compound_name'], how='left'
     )
     terms = terms_skos_df.sort_values(by=['class_name'])
-    terms['examples'] = terms['examples'].str.replace(r'"', '')
-    terms['definition'] = terms['definition'].str.replace(r'"', '')
+    terms['examples'] = terms['examples'].str.replace(r'"', '').replace("'", "").replace("[", "").replace("]", "")
+    terms['enum'] = terms['enum'].str.replace(r'"', '').replace("'", "").replace("[", "").replace("]", "")
+    terms['definition'] = terms['definition'].str.replace(r'"', '').replace("'", "").replace("[", "").replace("]", "")
 
     # Unique Class Names
     opends_classes = terms_df["class_name"].dropna().unique()

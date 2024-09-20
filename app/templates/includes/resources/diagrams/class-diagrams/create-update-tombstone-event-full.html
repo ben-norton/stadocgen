@@ -2,14 +2,14 @@ classDiagram
  class CreateUpdateTombstoneEvent { 
    ID : string 
    type : string 
-   hasProvAgent : array 
+   hasProvAgent : array<ods:Agent> 
  }
  class Activity { 
-   wasAssociatedWith : array 
+   wasAssociatedWith : array<ods:Agent> 
    endedAtTime : string 
    used : string 
    comment : string 
-   changeValue : array 
+   changeValue : array<object> 
  }
  class Entity { 
    value : object 
@@ -24,7 +24,7 @@ classDiagram
    roleOrder : integer 
    email : string 
    url : string 
-   hasIdentifier : array 
+   hasIdentifier : array<ods:Identifier> 
  }
 CreateUpdateTombstoneEvent -- Activity 
 CreateUpdateTombstoneEvent -- Entity 

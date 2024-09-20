@@ -20,11 +20,11 @@ classDiagram
    rightsHolder : string 
    source : string 
    creator : string 
-   hasAssertion : array 
-   hasCitation : array 
-   hasIdentifier : array 
-   hasEntityRelationship : array 
-   hasAgent : array 
+   hasAssertion : array<ods:Assertion> 
+   hasCitation : array<ods:Citation> 
+   hasIdentifier : array<ods:Identifier> 
+   hasEntityRelationship : array<ods:EntityRelationship> 
+   hasAgent : array<ods:Agent> 
    TombstoneMetadata : object 
  }
  class Agent { 
@@ -35,7 +35,7 @@ classDiagram
    roleOrder : integer 
    email : string 
    url : string 
-   hasIdentifier : array 
+   hasIdentifier : array<ods:Identifier> 
  }
  class Assertion { 
    measurementID : string 
@@ -92,7 +92,7 @@ classDiagram
    tombstoneDate : string 
    tombstoneText : string 
    TombstonedByAgent : object 
-   hasRelatedPID : array 
+   hasRelatedPID : array<object> 
  }
 DigitalMedia -- Agent 
 DigitalMedia -- Assertion 
