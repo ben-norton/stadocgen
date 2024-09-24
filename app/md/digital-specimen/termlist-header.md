@@ -53,7 +53,7 @@ The properties of a class start with a lowercase and use the lowerCamelCase nami
 When a class contains a property which contains a list of another class we use the convention `hasXXX` where XXX is the class name.
 For example, the Digital Specimen can contain a list of Event objects, so it has a property called `hasEvent`.
 When a class is directly nested (not through a list) we use the class name as property name.
-For example, the Location class contains the property `ods:GeoReference` which contains the Geo Reference class.  
+For example, the Location class contains the property `ods:Georeference` which contains the Geo Reference class.  
 
 When terms are borrowed from other vocabularies, such as Darwin Core, Annotation Vocabulary, Schema.org or others, we use the same naming convention as in the original vocabulary.
 This could conflict with the openDS vocabulary naming convention.

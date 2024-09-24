@@ -412,7 +412,7 @@ def determine_type(term_value, term_key):
 
 
 def format_array(term_value, term_attributes):
-    return ', '.join(map(str, term_value.get(term_attributes))) if term_value.get(term_attributes) is not None else ''
+    return '| '.join(map(str, term_value.get(term_attributes))) if term_value.get(term_attributes) is not None else ''
 
 
 def determine_rdf_type(is_class: bool) -> str:
@@ -429,7 +429,7 @@ def determine_namespace(term: str) -> str:
 def camel_case_to_title(camel_case_str):
     # Split the camel case string at each uppercase letter, insert space, and capitalize each word
     title_str = re.sub(r'(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])', ' ', camel_case_str).title()
-    abbreviations = ['Id', 'Wkt', 'Uri', 'Url', 'Nfc', 'Srs', 'Html', 'Mids']
+    abbreviations = ['Id', 'Wkt', 'Uri', 'Url', 'Nfc', 'Srs', 'Html', 'Mids', 'Pid']
     title_str = ' '.join(list(map(lambda word: word.upper() if word in abbreviations else word, title_str.split(' '))))
     return title_str
 
@@ -478,7 +478,7 @@ def add_digital_specimen_relationships(mermaid_string):
     DigitalSpecimen -- TombstoneMetadata
     Event -- Location
     Event -- Assertion
-    Location -- GeoReference
+    Location -- Georeference
     Location -- GeologicalContext
     MaterialEntity -- Event
     MaterialEntity -- Citation
