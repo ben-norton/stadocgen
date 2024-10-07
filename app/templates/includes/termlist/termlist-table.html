@@ -47,21 +47,37 @@
 						{% endif %}
 
 
-						{% if v['examples'] is number %}
-						{% else %}
-						{% set list1 = v['examples'].split('`, `') %}
+                        {% if v['examples'] is number or v['examples'] is float %}
+                        {% elif v['examples'] is not none and v['examples'] is not number and v['examples'] is not float and v['examples']|length > 0 %}
+                        {% set list1 = v['examples'].split('| ') %}
 						<tr>
 							<th scope="row">Examples</th>
 							<td>
 								<ul class="td-list">
 									{% for item in list1 %}
-										<li><span>{{ item|replace("`","") }}</span></li>
+										<li><span>{{ item }}</span></li>
 									{% endfor %}
 								</ul>
 
 							</td>
 						</tr>
 
+						{% endif %}
+
+						{% if v['enum'] is number or v['enum'] is float %}
+						{% elif v['enum'] is not none and v['enum'] is not number and v['enum'] is not float and v['enum']|length > 0 %}
+						{% set list1 = v['enum'].split('| ') %}
+						<tr>
+							<th scope="row">Controlled Vocabulary</th>
+							<td>
+								<ul class="td-list">
+									{% for item in list1 %}
+										<li><span>{{ item }}</span></li>
+									{% endfor %}
+								</ul>
+
+							</td>
+						</tr>
 						{% endif %}
 
 						{% if v['datatype'] is number %}

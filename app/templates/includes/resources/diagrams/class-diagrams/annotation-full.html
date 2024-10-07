@@ -29,7 +29,7 @@ classDiagram
    tombstoneDate : string 
    tombstoneText : string 
    TombstonedByAgent : object 
-   hasRelatedPID : array 
+   hasRelatedPID : array<object> 
  }
  class Agent { 
    name : string 
@@ -39,7 +39,7 @@ classDiagram
    roleOrder : integer 
    email : string 
    url : string 
-   hasIdentifier : array 
+   hasIdentifier : array<ods:Identifier> 
  }
  class AnnotationTarget { 
    ID : string 
@@ -47,7 +47,7 @@ classDiagram
    hasSelector : object 
  }
  class AnnotationBody { 
-   value : array 
+   value : array<string> 
    references : string 
    score : number 
  }

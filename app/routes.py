@@ -476,8 +476,8 @@ def generate_terms(header_mdfile, term_file):
         on=['compound_name'], how='left'
     )
     terms = terms_skos_df.sort_values(by=['class_name'])
-    terms['examples'] = terms['examples'].str.replace(r'"', '')
-    terms['definition'] = terms['definition'].str.replace(r'"', '')
+    terms['examples'] = parse_list_to_string(terms['examples'])
+    terms['enum'] = parse_list_to_string(terms['enum'])
 
     # Unique Class Names
     opends_classes = terms_df["class_name"].dropna().unique()
@@ -491,6 +491,11 @@ def generate_terms(header_mdfile, term_file):
             'termlist': grpdict2[i]
         })
     return marked_text, opends_classes, sssom_df, terms, terms_by_class
+
+
+def parse_list_to_string(terms):
+    if not terms.isna().values.all():
+        return terms.str.replace(r'"', '').replace("'", "").replace("[", "").replace("]", "")
 
 
 def generate_guide(header_mdfile, term_file):

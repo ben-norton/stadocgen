@@ -18,13 +18,15 @@ classDiagram
    serviceAvailability : string 
    maintainer : object 
    license : string 
-   dependency : array 
+   dependency : array<string> 
    slaDocumentation : string 
    topicName : string 
    maxReplicas : integer 
    batchingPermitted : boolean 
    timeToLive : integer 
    TombstoneMetadata : object 
+   hasEnvironmentalVariable : array<ods:EnvironmentalVariable> 
+   hasSecretVariable : array<ods:SecretVariable> 
  }
  class ContactPoint { 
    description : string 
@@ -36,7 +38,7 @@ classDiagram
    tombstoneDate : string 
    tombstoneText : string 
    TombstonedByAgent : object 
-   hasRelatedPID : array 
+   hasRelatedPID : array<object> 
  }
  class Agent { 
    name : string 
@@ -46,8 +48,18 @@ classDiagram
    roleOrder : integer 
    email : string 
    url : string 
-   hasIdentifier : array 
+   hasIdentifier : array<ods:Identifier> 
+ }
+ class SecretVariable { 
+   name : string 
+   secretKeyRef : string 
+ }
+ class EnvironmentalVariable { 
+   name : string 
+   value : ['string', 'integer', 'boolean'] 
  }
 MachineAnnotationService -- ContactPoint 
 MachineAnnotationService -- TombstoneMetadata 
 MachineAnnotationService -- Agent 
+MachineAnnotationService -- SecretVariable 
+MachineAnnotationService -- EnvironmentalVariable 

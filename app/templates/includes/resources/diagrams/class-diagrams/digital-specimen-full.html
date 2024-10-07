@@ -19,7 +19,7 @@ classDiagram
    sourceSystemID : string 
    sourceSystemName : string 
    livingOrPreserved : None 
-   language : array 
+   language : array<string> 
    license : string 
    basisOfRecord : string 
    preparations : string 
@@ -45,15 +45,15 @@ classDiagram
    associatedOrganisms : string 
    organismRemarks : string 
    dynamicProperties : string 
-   hasMaterialEntity : array 
-   hasIdentification : array 
-   hasAssertion : array 
-   hasEvent : array 
-   hasEntityRelationship : array 
-   hasCitation : array 
-   hasIdentifier : array 
-   hasChronometricAge : array 
-   hasAgent : array 
+   hasMaterialEntity : array<ods:MaterialEntity> 
+   hasIdentification : array<ods:Identification> 
+   hasAssertion : array<ods:Assertion> 
+   hasEvent : array<ods:Event> 
+   hasEntityRelationship : array<ods:EntityRelationship> 
+   hasCitation : array<ods:Citation> 
+   hasIdentifier : array<ods:Identifier> 
+   hasChronometricAge : array<ods:ChronometricAge> 
+   hasAgent : array<ods:Agent> 
    TombstoneMetadata : object 
  }
  class MaterialEntity { 
@@ -70,13 +70,13 @@ classDiagram
    recordedBy : string 
    recordedByID : string 
    verbatimLabel : string 
-   hasIdentification : array 
-   hasAssertion : array 
-   hasEntityRelationship : array 
-   hasCitation : array 
-   hasIdentifier : array 
-   hasEvent : array 
-   hasAgent : array 
+   hasIdentification : array<ods:Identification> 
+   hasAssertion : array<ods:Assertion> 
+   hasEntityRelationship : array<ods:EntityRelationship> 
+   hasCitation : array<ods:Citation> 
+   hasIdentifier : array<ods:Identifier> 
+   hasEvent : array<ods:Event> 
+   hasAgent : array<ods:Agent> 
  }
  class Identification { 
    identificationID : string 
@@ -91,8 +91,8 @@ classDiagram
    isVerifiedIdentification : boolean 
    identificationRemarks : string 
    identificationQualifier : string 
-   hasCitation : array 
-   hasTaxonIdentification : array 
+   hasCitation : array<ods:Citation> 
+   hasTaxonIdentification : array<ods:TaxonIdentification> 
  }
  class TaxonIdentification { 
    taxonID : string 
@@ -167,7 +167,7 @@ classDiagram
    eventRemarks : string 
    collectorName : string 
    collectorID : string 
-   hasAssertion : array 
+   hasAssertion : array<ods:Assertion> 
    Location : object 
  }
  class Location { 
@@ -245,7 +245,7 @@ classDiagram
    roleOrder : integer 
    email : string 
    url : string 
-   hasIdentifier : array 
+   hasIdentifier : array<ods:Identifier> 
  }
  class Assertion { 
    measurementID : string 
@@ -322,7 +322,7 @@ classDiagram
    tombstoneDate : string 
    tombstoneText : string 
    TombstonedByAgent : object 
-   hasRelatedPID : array 
+   hasRelatedPID : array<object> 
  }
 
     DigitalSpecimen -- MaterialEntity
