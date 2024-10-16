@@ -2,7 +2,7 @@ erDiagram
     Annotation ||--|| hasAggregateRating : Has
     Annotation ||--o| TombstoneMetadata : Has
     TombstoneMetadata ||--o{ RelatedPID : Has
-    TombstoneMetadata ||--|{ Agent
+    TombstoneMetadata ||--|{ Agent : Has
     Annotation ||--o{ Agent : Has
     Agent ||--|{ Role : Has
     Agent ||--o{ Identifier : Has
