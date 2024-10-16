@@ -1,352 +1,352 @@
 classDiagram
  class DigitalSpecimen { 
-   ID : string 
-   version : integer 
-   status : None 
-   modified : string 
-   created : string 
-   type : string 
-   midsLevel : integer 
-   normalisedPhysicalSpecimenID : string 
-   physicalSpecimenID : string 
-   physicalSpecimenIDType : None 
-   topicOrigin : None 
-   topicDomain : None 
-   topicDiscipline : None 
-   isMarkedAsType : boolean 
-   isKnownToContainMedia : boolean 
-   specimenName : string 
-   sourceSystemID : string 
-   sourceSystemName : string 
-   livingOrPreserved : None 
-   language : array<string> 
-   license : string 
-   basisOfRecord : string 
-   preparations : string 
-   disposition : string 
-   organisationCode : string 
-   organisationID : string 
-   organisationName : string 
-   collectionCode : string 
-   collectionID : string 
-   informationWithheld : string 
-   dataGeneralizations : string 
-   ownerOrganisationCode : string 
-   recordedBy : string 
-   recordedByID : string 
-   datasetName : string 
-   datasetID : string 
-   accessRights : string 
-   rightsHolder : string 
-   verbatimLabel : string 
-   organismID : string 
-   organismName : string 
-   organismScope : string 
-   associatedOrganisms : string 
-   organismRemarks : string 
-   dynamicProperties : string 
-   hasMaterialEntity : array<ods:MaterialEntity> 
-   hasIdentification : array<ods:Identification> 
-   hasAssertion : array<ods:Assertion> 
-   hasEvent : array<ods:Event> 
-   hasEntityRelationship : array<ods:EntityRelationship> 
-   hasCitation : array<ods:Citation> 
-   hasIdentifier : array<ods:Identifier> 
-   hasChronometricAge : array<ods:ChronometricAge> 
-   hasAgent : array<ods:Agent> 
-   TombstoneMetadata : object 
+   dcterms:identifier : string 
+   ods:version : integer 
+   ods:status : string 
+   dcterms:modified : string 
+   dcterms:created : string 
+   ods:fdoType : string 
+   ods:midsLevel : integer 
+   ods:normalisedPhysicalSpecimenID : string 
+   ods:physicalSpecimenID : string 
+   ods:physicalSpecimenIDType : string 
+   ods:isKnownToContainMedia : boolean 
+   ods:sourceSystemID : string 
+   ods:sourceSystemName : string 
+   ods:metadataLanguages : array<string> 
+   dcterms:license : string 
+   dwc:basisOfRecord : string 
+   ods:organisationCode : string 
+   ods:organisationID : string 
+   ods:organisationName : string 
+   dwc:collectionCode : string 
+   dwc:collectionID : string 
+   ods:topicOrigin : string 
+   ods:topicDomain : string 
+   ods:topicDiscipline : string 
+   ods:topicCategory : string 
+   ods:specimenName : string 
+   dwc:informationWithheld : string 
+   dwc:preparations : string 
+   dwc:disposition : string 
+   ods:isMarkedAsType : boolean 
+   dwc:dataGeneralizations : string 
+   ods:ownerOrganisationCode : string 
+   dwc:datasetName : string 
+   dwc:datasetID : string 
+   dcterms:accessRights : string 
+   dcterms:rightsHolder : string 
+   dwc:organismID : string 
+   dwc:organismName : string 
+   dwc:organismScope : string 
+   dwc:organismRemarks : string 
+   dwc:organismQuantity : string 
+   dwc:organismQuantityType : string 
+   dwc:dynamicProperties : string 
+   ods:hasSpecimenParts : array<ods:SpecimenPart> 
+   ods:hasAssertions : array<ods:Assertion> 
+   ods:hasEntityRelationships : array<ods:EntityRelationship> 
+   ods:hasIdentifications : array<ods:Identification> 
+   ods:hasIdentifiers : array<ods:Identifier> 
+   ods:hasCitations : array<ods:Citation> 
+   ods:hasAgents : array<ods:Agent> 
+   ods:hasEvents : array<ods:Event> 
+   ods:hasTombstoneMetadata : object 
  }
- class MaterialEntity { 
-   materialEntityID : string 
-   materialEntityType : string 
-   preparations : string 
-   disposition : string 
-   organisationCode : string 
-   organisationID : string 
-   organisationName : string 
-   collectionCode : string 
-   collectionID : string 
-   ownerOrganisationCode : string 
-   recordedBy : string 
-   recordedByID : string 
-   verbatimLabel : string 
-   hasIdentification : array<ods:Identification> 
-   hasAssertion : array<ods:Assertion> 
-   hasEntityRelationship : array<ods:EntityRelationship> 
-   hasCitation : array<ods:Citation> 
-   hasIdentifier : array<ods:Identifier> 
-   hasEvent : array<ods:Event> 
-   hasAgent : array<ods:Agent> 
+ class SpecimenPart { 
+   dwc:materialEntityID : string 
+   dwc:recordNumber : string 
+   dwc:preparations : string 
+   ods:isMarkedAsType : boolean 
+   ods:topicOrigin : string 
+   ods:topicDomain : string 
+   ods:topicDiscipline : string 
+   ods:topicCategory : string 
+   ods:specimenName : string 
+   dwc:organismID : string 
+   dwc:organismName : string 
+   dwc:organismScope : string 
+   dwc:organismRemarks : string 
+   dwc:organismQuantity : string 
+   dwc:organismQuantityType : string 
+   ods:hasIdentifications : array<ods:Identification> 
+   ods:hasAssertions : array<ods:Assertion> 
+   ods:hasIdentifiers : array<ods:Identifier> 
+   ods:hasEvents : array<ods:Event> 
+   ods:hasAgents : array<ods:Agent> 
+   ods:hasChronometricAges : array<ods:ChronometricAge> 
  }
  class Identification { 
-   identificationID : string 
-   identificationType : string 
-   taxonFormula : string 
-   verbatimIdentification : string 
-   typeStatus : string 
-   identifiedBy : string 
-   identifiedByID : string 
-   dateIdentified : string 
-   identificationReferences : string 
-   isVerifiedIdentification : boolean 
-   identificationRemarks : string 
-   identificationQualifier : string 
-   hasCitation : array<ods:Citation> 
-   hasTaxonIdentification : array<ods:TaxonIdentification> 
- }
- class TaxonIdentification { 
-   taxonID : string 
-   scientificName : string 
-   scientificNameID : string 
-   scientificNameHtmlLabel : string 
-   scientificNameAuthorship : string 
-   nameAccordingTo : string 
-   namePublishedInYear : string 
-   taxonRank : string 
-   verbatimTaxonRank : string 
-   taxonSource : string 
-   taxonRemarks : string 
-   kingdom : string 
-   phylum : string 
-   class : string 
-   order : string 
-   family : string 
-   subfamily : string 
-   genus : string 
-   specificEpithet : string 
-   taxonomicStatus : string 
-   nomenclaturalCode : string 
-   vernacularName : string 
-   subgenus : string 
-   acceptedNameUsage : string 
-   acceptedNameUsageID : string 
-   cultivarEpithet : string 
-   genericName : string 
-   infragenericEpithet : string 
-   infraspecificEpithet : string 
-   nomenclaturalStatus : string 
-   originalNameUsage : string 
-   subtribe : string 
-   superfamily : string 
-   tribe : string 
+   dwc:identificationID : string 
+   ods:identificationType : string 
+   dwc:verbatimIdentification : string 
+   dwc:typeStatus : string 
+   dwc:dateIdentified : string 
+   ods:isVerifiedIdentification : boolean 
+   dwc:identificationRemarks : string 
+   dwc:identificationQualifier : string 
+   ods:hasAgents : array<ods:Agent> 
+   ods:hasCitations : array<ods:Citation> 
+   ods:hasTaxonIdentifications : array<ods:TaxonIdentification> 
  }
  class Event { 
-   organismQuantity : string 
-   organismQuantityType : string 
-   sex : string 
-   lifeStage : string 
-   reproductiveCondition : string 
-   behavior : string 
-   caste : string 
-   vitality : string 
-   establishmentMeans : string 
-   occurrenceStatus : None 
-   pathway : string 
-   degreeOfEstablishment : string 
-   georeferenceVerificationStatus : string 
-   occurrenceRemarks : string 
-   eventName : string 
-   fieldNumber : string 
-   recordNumber : string 
-   eventType : string 
-   eventDate : string 
-   eventTime : string 
-   endDayOfYear : integer 
-   startDayOfYear : integer 
-   verbatimEventDate : string 
-   year : integer 
-   month : integer 
-   day : integer 
-   habitat : string 
-   protocolDescriptions : string 
-   sampleSizeValue : number 
-   sampleSizeUnit : string 
-   samplingProtocol : string 
-   samplingEffort : string 
-   fieldNotes : string 
-   eventRemarks : string 
-   collectorName : string 
-   collectorID : string 
-   hasAssertion : array<ods:Assertion> 
-   Location : object 
+   dwc:behavior : string 
+   dwc:sex : string 
+   dwc:lifeStage : string 
+   dwc:reproductiveCondition : string 
+   dwc:caste : string 
+   dwc:vitality : string 
+   dwc:establishmentMeans : string 
+   dwc:pathway : string 
+   dwc:degreeOfEstablishment : string 
+   dwc:georeferenceVerificationStatus : string 
+   dwc:fieldNumber : string 
+   dwc:eventType : string 
+   dwc:eventDate : string 
+   dwc:eventTime : string 
+   dwc:endDayOfYear : integer 
+   dwc:startDayOfYear : integer 
+   dwc:verbatimEventDate : string 
+   dwc:year : integer 
+   dwc:month : integer 
+   dwc:day : integer 
+   dwc:habitat : string 
+   eco:protocolDescriptions : string 
+   dwc:sampleSizeValue : number 
+   dwc:sampleSizeUnit : string 
+   dwc:samplingProtocol : string 
+   dwc:samplingEffort : string 
+   dwc:fieldNotes : string 
+   dwc:eventRemarks : string 
+   ods:hasAssertions : array<ods:Assertion> 
+   ods:hasLocation : object 
  }
  class Location { 
-   locationID : string 
-   continent : string 
-   waterBody : string 
-   islandGroup : string 
-   island : string 
-   country : string 
-   countryCode : string 
-   stateProvince : string 
-   county : string 
-   municipality : string 
-   locality : string 
-   verbatimLocality : string 
-   minimumElevationInMeters : number 
-   higherGeographyID : string 
-   higherGeography : string 
-   maximumElevationInMeters : number 
-   verbatimElevation : string 
-   minimumDistanceAboveSurfaceInMeters : number 
-   maximumDistanceAboveSurfaceInMeters : number 
-   minimumDepthInMeters : number 
-   maximumDepthInMeters : number 
-   verbatimDepth : string 
-   verticalDatum : string 
-   locationAccordingTo : string 
-   locationRemarks : string 
- }
- class GeoReference { 
-   verbatimCoordinates : string 
-   decimalLatitude : number 
-   verbatimLatitude : string 
-   decimalLongitude : number 
-   verbatimLongitude : string 
-   verbatimCoordinateSystem : string 
-   geodeticDatum : string 
-   coordinateUncertaintyInMeters : number 
-   coordinatePrecision : number 
-   pointRadiusSpatialFit : number 
-   footprintWKT : string 
-   footprintSRS : string 
-   verbatimSRS : string 
-   footprintSpatialFit : integer 
-   georeferencedBy : string 
-   georeferencedDate : string 
-   georeferenceProtocol : string 
-   georeferenceSources : string 
-   georeferenceRemarks : string 
- }
- class GeologicalContext { 
-   earliestEonOrLowestEonothem : string 
-   latestEonOrHighestEonothem : string 
-   earliestEraOrLowestErathem : string 
-   latestEraOrHighestErathem : string 
-   earliestPeriodOrLowestSystem : string 
-   latestPeriodOrHighestSystem : string 
-   earliestEpochOrLowestSeries : string 
-   latestEpochOrHighestSeries : string 
-   earliestAgeOrLowestStage : string 
-   latestAgeOrHighestStage : string 
-   lowestBiostratigraphicZone : string 
-   highestBiostratigraphicZone : string 
-   lithostratigraphicTerms : string 
-   group : string 
-   formation : string 
-   member : string 
-   bed : string 
+   dwc:locationID : string 
+   dwc:continent : string 
+   dwc:waterBody : string 
+   dwc:islandGroup : string 
+   dwc:island : string 
+   dwc:country : string 
+   dwc:countryCode : string 
+   dwc:stateProvince : string 
+   dwc:county : string 
+   dwc:municipality : string 
+   dwc:locality : string 
+   dwc:verbatimLocality : string 
+   dwc:minimumElevationInMeters : number 
+   dwc:higherGeographyID : string 
+   dwc:higherGeography : string 
+   dwc:maximumElevationInMeters : number 
+   dwc:verbatimElevation : string 
+   dwc:minimumDistanceAboveSurfaceInMeters : number 
+   dwc:maximumDistanceAboveSurfaceInMeters : number 
+   dwc:minimumDepthInMeters : number 
+   dwc:maximumDepthInMeters : number 
+   dwc:verbatimDepth : string 
+   dwc:verticalDatum : string 
+   dwc:locationAccordingTo : string 
+   dwc:locationRemarks : string 
+   ods:hasGeoreference : object 
+   ods:hasGeologicalContext : object 
  }
  class Agent { 
-   name : string 
-   roleName : string 
-   startDate : string 
-   endDate : string 
-   roleOrder : integer 
-   email : string 
-   url : string 
-   hasIdentifier : array<ods:Identifier> 
+   schema:identifier : string 
+   schema:name : string 
+   ods:hasRoles : array<ods:Role> 
+   schema:email : string 
+   schema:url : string 
+   ods:hasIdentifiers : array<ods:Identifier> 
+ }
+ class Role { 
+   schema:roleName : string 
+   schema:startDate : string 
+   schema:endDate : string 
+   schema:position : integer 
  }
  class Assertion { 
-   measurementID : string 
-   parentMeasurementID : string 
-   measurementType : string 
-   measurementType : string 
-   measurementDeterminedDate : string 
-   measurementValue : string 
-   measurementValue : string 
-   measurementAccuracy : string 
-   measurementUnit : string 
-   measurementUnit : string 
-   AssertionByAgent : object 
-   assertionProtocol : string 
-   assertionProtocolID : string 
-   assertionRemarks : string 
+   dwc:measurementID : string 
+   dwc:parentMeasurementID : string 
+   dwc:measurementType : string 
+   dwciri:measurementType : string 
+   dwc:measurementDeterminedDate : string 
+   dwc:measurementValue : string 
+   dwciri:measurementValue : string 
+   dwc:measurementAccuracy : string 
+   dwc:measurementUnit : string 
+   dwciri:measurementUnit : string 
+   dwc:measurementMethod : string 
+   dwciri:measurementMethod : string 
+   dwc:measurementRemarks : string 
+   ods:hasAgents : object 
+   ods:hasCitations : array<ods:Citation> 
  }
  class Citation { 
-   identifier : string 
-   type : string 
-   date : string 
-   title : string 
-   creator : object 
-   citationPageNumber : string 
-   citationRemarks : string 
-   referenceType : string 
-   bibliographicCitation : string 
-   referenceYear : integer 
-   referenceIRI : string 
-   isPeerReviewed : boolean 
+   dcterms:identifier : string 
+   dcterms:type : string 
+   dcterms:date : string 
+   dcterms:title : string 
+   ods:pageNumber : string 
+   dcterms:description : string 
+   dcterms:bibliographicCitation : string 
+   ods:isPeerReviewed : boolean 
+   ods:hasAgents : object 
  }
  class EntityRelationship { 
-   relationshipOfResource : string 
-   relationshipOfResourceID : string 
-   relatedResourceID : string 
-   relatedResourceURI : string 
-   relationshipEstablishedDate : string 
-   entityRelationshipOrder : integer 
-   RelationshipAccordingToAgent : object 
-   relationshipAccordingTo : string 
-   relationshipRemarks : string 
+   dwc:relationshipOfResource : string 
+   dwc:relationshipOfResourceID : string 
+   dwc:relatedResourceID : string 
+   ods:relatedResourceURI : string 
+   dwc:relationshipEstablishedDate : string 
+   dwc:relationshipRemarks : string 
+   ods:hasAgents : object 
  }
  class Identifier { 
-   title : string 
-   localTitle : string 
-   identifier : string 
-   format : string 
-   subject : string 
-   isPartOfLabel : boolean 
-   isBarcodeOrNFC : boolean 
-   isIDPersistent : boolean 
+   dcterms:title : string 
+   dcterms:type : string 
+   dcterms:identifier : string 
+   dcterms:format : array<string> 
+   dcterms:subject : array<string> 
+   ods:isPartOfLabel : boolean 
+   ods:gupriLevel : string 
+   ods:identifierStatus : string 
  }
  class ChronometricAge { 
-   chronometricAgeID : string 
-   verbatimChronometricAge : string 
-   verbatimChronometricAgeProtocol : string 
-   uncalibratedChronometricAge : string 
-   chronometricAgeConversionProtocol : string 
-   earliestChronometricAge : integer 
-   earliestChronometricAgeReferenceSystem : string 
-   latestChronometricAge : integer 
-   latestChronometricAgeReferenceSystem : string 
-   chronometricAgeUncertaintyInYears : integer 
-   chronometricAgeUncertaintyMethod : string 
-   materialDated : string 
-   materialDatedID : string 
-   materialDatedRelationship : string 
-   chronometricAgeDeterminedBy : string 
-   chronometricAgeDeterminedDate : string 
-   chronometricAgeReferences : string 
-   chronometricAgeRemarks : string 
+   chrono:chronometricAgeID : string 
+   chrono:verbatimChronometricAge : string 
+   chrono:uncalibratedChronometricAge : string 
+   chrono:chronometricAgeConversionProtocol : string 
+   chrono:earliestChronometricAge : integer 
+   chrono:earliestChronometricAgeReferenceSystem : string 
+   chrono:latestChronometricAge : integer 
+   chrono:latestChronometricAgeReferenceSystem : string 
+   chrono:chronometricAgeUncertaintyInYears : integer 
+   chrono:chronometricAgeUncertaintyMethod : string 
+   chrono:materialDated : string 
+   chrono:materialDatedID : string 
+   chrono:materialDatedRelationship : string 
+   chrono:chronometricAgeDeterminedDate : string 
+   chrono:chronometricAgeReferences : string 
+   chrono:chronometricAgeRemarks : string 
  }
  class TombstoneMetadata { 
-   tombstoneDate : string 
-   tombstoneText : string 
-   TombstonedByAgent : object 
-   hasRelatedPID : array<object> 
+   ods:tombstoneDate : string 
+   ods:tombstoneText : string 
+   ods:hasAgents : object 
+   ods:hasRelatedPIDs : array<ods:RelatedPID> 
+ }
+ class RelatedPID { 
+   dcterms:identifier : string 
+   schema:identifier : string 
+   ods:relationshipType : string 
+ }
+ class TaxonIdentification { 
+   dwc:taxonID : string 
+   dwc:scientificName : string 
+   dwc:scientificNameID : string 
+   ods:scientificNameHTMLLabel : string 
+   dwc:scientificNameAuthorship : string 
+   dwc:namePublishedInYear : string 
+   dwc:taxonRank : string 
+   dwc:verbatimTaxonRank : string 
+   dwc:taxonRemarks : string 
+   dwc:kingdom : string 
+   dwc:phylum : string 
+   dwc:class : string 
+   dwc:order : string 
+   dwc:family : string 
+   dwc:subfamily : string 
+   dwc:genus : string 
+   dwc:specificEpithet : string 
+   dwc:taxonomicStatus : string 
+   dwc:nomenclaturalCode : string 
+   dwc:vernacularName : string 
+   dwc:subgenus : string 
+   dwc:acceptedNameUsage : string 
+   dwc:acceptedNameUsageID : string 
+   dwc:cultivarEpithet : string 
+   dwc:genericName : string 
+   dwc:infragenericEpithet : string 
+   dwc:infraspecificEpithet : string 
+   dwc:nomenclaturalStatus : string 
+   dwc:originalNameUsage : string 
+   dwc:subtribe : string 
+   dwc:superfamily : string 
+   dwc:tribe : string 
+ }
+ class GeologicalContext { 
+   dwc:earliestEonOrLowestEonothem : string 
+   dwc:latestEonOrHighestEonothem : string 
+   dwc:earliestEraOrLowestErathem : string 
+   dwc:latestEraOrHighestErathem : string 
+   dwc:earliestPeriodOrLowestSystem : string 
+   dwc:latestPeriodOrHighestSystem : string 
+   dwc:earliestEpochOrLowestSeries : string 
+   dwc:latestEpochOrHighestSeries : string 
+   dwc:earliestAgeOrLowestStage : string 
+   dwc:latestAgeOrHighestStage : string 
+   dwc:lowestBiostratigraphicZone : string 
+   dwc:highestBiostratigraphicZone : string 
+   dwc:lithostratigraphicTerms : string 
+   dwc:group : string 
+   dwc:formation : string 
+   dwc:member : string 
+   dwc:bed : string 
+ }
+ class Georeference { 
+   dwc:verbatimCoordinates : string 
+   dwc:decimalLatitude : number 
+   dwc:verbatimLatitude : string 
+   dwc:decimalLongitude : number 
+   dwc:verbatimLongitude : string 
+   dwc:verbatimCoordinateSystem : string 
+   dwc:geodeticDatum : string 
+   dwc:coordinateUncertaintyInMeters : number 
+   dwc:coordinatePrecision : number 
+   dwc:pointRadiusSpatialFit : number 
+   dwc:footprintWKT : string 
+   dwc:footprintSRS : string 
+   dwc:verbatimSRS : string 
+   dwc:footprintSpatialFit : integer 
+   dwc:georeferencedDate : string 
+   dwc:georeferenceProtocol : string 
+   dwc:georeferenceSources : string 
+   dwc:georeferenceRemarks : string 
+   ods:hasAgents : array<ods:Agent> 
  }
 
-    DigitalSpecimen -- MaterialEntity
-    DigitalSpecimen -- Identification
-    DigitalSpecimen -- Event
-    DigitalSpecimen -- Citation
-    DigitalSpecimen -- Identifier
-    DigitalSpecimen -- Assertion
-    DigitalSpecimen -- Agent
-    DigitalSpecimen -- EntityRelationship
-    DigitalSpecimen -- ChronometricAge
-    DigitalSpecimen -- TombstoneMetadata
-    Event -- Location
-    Event -- Assertion
-    Location -- GeoReference
-    Location -- GeologicalContext
-    MaterialEntity -- Event
-    MaterialEntity -- Citation
-    MaterialEntity -- Identifier
-    MaterialEntity -- EntityRelationship
-    MaterialEntity -- Agent
-    MaterialEntity -- Assertion
-    MaterialEntity -- Identification
-    Agent -- Identifier
-    Identification -- Citation
-    Identification -- TaxonIdentification
+DigitalSpecimen -- SpecimenPart
+DigitalSpecimen -- Identification
+DigitalSpecimen -- Event
+DigitalSpecimen -- Citation
+DigitalSpecimen -- Identifier
+DigitalSpecimen -- Assertion
+DigitalSpecimen -- Agent
+DigitalSpecimen -- EntityRelationship
+DigitalSpecimen -- ChronometricAge
+DigitalSpecimen -- TombstoneMetadata
+TombstoneMetadata -- Agent
+TombstoneMetadata -- RelatedPID
+Event -- Location
+Event -- Assertion
+Location -- Georeference
+Location -- GeologicalContext
+Agent -- Identifier
+Agent -- Role
+Identification -- Citation
+Citation -- Agent
+Identification -- Agent
+Identification -- TaxonIdentification
+Assertion -- Agent
+Assertion -- Citation
+Citation -- Agent
+EntityRelationship -- Agent
+Georeference -- Agent
+Agent -- Identifier
+SpecimenPart -- Identification
+SpecimenPart -- Assertion
+SpecimenPart -- Agent
+SpecimenPart -- ChronometricAge
+SpecimenPart -- Identifier
+SpecimenPart -- Event
     

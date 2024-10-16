@@ -4,16 +4,16 @@
 : Digital Specimen List of Terms
 
 **Date version issued**
-: 2024-06-17
+: 2024-10-15
 
 **Date created**
-: 2024-06-17
+: 2024-10-15
 
 **This version**
-: 0.3.0
+: 0.4.0
 
 **Latest version**
-: 0.3.0
+: 0.4.0
 
 **Abstract**
 : The Digital Specimen object is the core object within the DiSSCo infrastructure.
@@ -50,10 +50,12 @@ They can contain classes as nested object in itself.
 In general, class names are capitalized, use the UpperCamelCase naming convention and are singular.
 For example, the class that represents a Digital Specimen is called `DigitalSpecimen`.
 The properties of a class start with a lowercase and use the lowerCamelCase naming convention.
-When a class contains a property which contains a list of another class we use the convention `hasXXX` where XXX is the class name.
-For example, the Digital Specimen can contain a list of Event objects, so it has a property called `hasEvent`.
-When a class is directly nested (not through a list) we use the class name as property name.
-For example, the Location class contains the property `ods:Georeference` which contains the Geo Reference class.  
+When a class contains a property which contains a list of another class we use the convention `hasXXXs` where XXX is the class name.
+The properties name ends with an `s` to indicate that it is plural and contains an array of objects.
+For example, the Digital Specimen can contain a list of Event objects, so it has a property called `hasEvents`.
+When a class is directly nested (not through a list) we use the same `hasXXX` construction.
+This name does not end with an `s` but is singular, indicating that it contains a single nested object.
+For example, the Location class contains the property `hasGeoreference` which contains the Geo Reference class.  
 
 When terms are borrowed from other vocabularies, such as Darwin Core, Annotation Vocabulary, Schema.org or others, we use the same naming convention as in the original vocabulary.
 This could conflict with the openDS vocabulary naming convention.
@@ -69,7 +71,7 @@ Table 1. Vocabularies from which terms have been borrowed (non-normative)
 | [Darwin Core IRI Terms](https://dwc.tdwg.org/terms/)                      | DwC IRI      | `dwciri: = http://rs.tdwg.org/dwc/terms/`                                  
 | [Darwin Core Chronometric Age Vocabulary](https://tdwg.github.io/chrono/) | Chrono       | `chrono: = http://rs.tdwg.org/chrono/terms/`                               
 | [Dublin Core](http://dublincore.org/documents/dcmi-terms/)                | DC           | `dcterms: = http://purl.org/dc/terms/`                                     |
-| [Schema.org](https://schema.org/)                                | Schema       | `schema: =  https://schema.org/version/latest/schemaorg-current-https.rdf` |
+| [Schema.org](https://schema.org/)                                | Schema       | `schema: =  https://schema.org/` |
 | [Humboldt Extension for Ecological Inventories](https://eco.tdwg.org/)                                | ECO          | `eco: =  http://rs.tdwg.org/dwc/doc/eco/`                                  |
 
 ## 3 Namespaces, Prefixes and Term Names <span id="3-namespace-prefixes-term-names"></span>

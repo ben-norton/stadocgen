@@ -1,8 +1,15 @@
 erDiagram
-  DigitalMedia ||--o{ Agent : Has
-  DigitalMedia ||--o{ Assertion : Has
-  DigitalMedia ||--o{ Citation : Has
-  DigitalMedia ||--o{ EntityRelationship : Has
-  DigitalMedia ||--o{ Identifier : Has
-  DigitalMedia ||--o| TombstoneMetadata : Has
-  Agent ||--o{ Identifier : Has
+    DigitalMedia ||--o{ Agent : Has
+    Agent ||--|{ Role : Has
+    Assertion ||--o{ Agent : Has
+    Assertion ||--o{ Citation : Has
+    DigitalMedia ||--o{ Assertion : Has
+    DigitalMedia ||--o{ Citation : Has
+    Citation ||--o{ Agent : Has
+    DigitalMedia ||--|{ EntityRelationship : Has
+    EntityRelationship ||--|{ Agent : Has
+    DigitalMedia ||--|{ Identifier : Has
+    Agent ||--|{ Identifier : Has
+    DigitalMedia ||--o| TombstoneMetadata : Has
+    TombstoneMetadata ||--o{ RelatedPID : Has
+    TombstoneMetadata ||--|{ Agent : Has

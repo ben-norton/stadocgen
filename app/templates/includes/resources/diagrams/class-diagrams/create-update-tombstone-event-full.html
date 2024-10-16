@@ -1,31 +1,46 @@
 classDiagram
  class CreateUpdateTombstoneEvent { 
-   ID : string 
-   type : string 
-   hasProvAgent : array<ods:Agent> 
+   dcterms:identifier : string 
+   ods:hasAgents : array<ods:Agent> 
  }
- class Activity { 
-   wasAssociatedWith : array<ods:Agent> 
-   endedAtTime : string 
-   used : string 
-   comment : string 
-   changeValue : array<object> 
+ class Activity {
+   prov:wasAssociatedWith : array<ods:Agent> 
+   prov:endedAtTime : string 
+   prov:used : string 
+   rdfs:comment : string 
+   ods:changeValue : array<object> 
  }
- class Entity { 
-   value : object 
-   wasRevisionOf : string 
-   wasGeneratedBy : string 
+ class Entity {
+   prov:value : object 
+   prov:wasRevisionOf : string 
+   prov:wasGeneratedBy : string 
  }
  class Agent { 
-   name : string 
-   roleName : string 
-   startDate : string 
-   endDate : string 
-   roleOrder : integer 
-   email : string 
-   url : string 
-   hasIdentifier : array<ods:Identifier> 
+   schema:identifier : string 
+   schema:name : string 
+   ods:hasRoles : array<ods:Role> 
+   schema:email : string 
+   schema:url : string 
+   ods:hasIdentifiers : array<ods:Identifier> 
  }
-CreateUpdateTombstoneEvent -- Activity 
-CreateUpdateTombstoneEvent -- Entity 
-CreateUpdateTombstoneEvent -- Agent 
+ class Role { 
+   schema:roleName : string 
+   schema:startDate : string 
+   schema:endDate : string 
+   schema:position : integer 
+ }
+ class Identifier { 
+   dcterms:title : string 
+   dcterms:type : string 
+   dcterms:identifier : string 
+   dcterms:format : array<string> 
+   dcterms:subject : array<string> 
+   ods:isPartOfLabel : boolean 
+   ods:gupriLevel : string 
+   ods:identifierStatus : string 
+ }
+CreateUpdateTombstoneEvent -- Activity
+CreateUpdateTombstoneEvent -- Entity
+CreateUpdateTombstoneEvent -- Agent
+Agent -- Role
+Agent -- Identifier

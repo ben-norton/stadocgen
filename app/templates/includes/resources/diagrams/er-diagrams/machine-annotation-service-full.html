@@ -1,4 +1,9 @@
 erDiagram
-  MachineAnnotationService ||--o{ Agent : Has
-  MachineAnnotationService ||--o| ContactPoint : Has
-  MachineAnnotationService ||--o| TombstoneMetadata : Has
+    MachineAnnotationService ||--o{ ContactPoint : Has
+    MachineAnnotationService ||--o| TombstoneMetadata : Has
+    TombstoneMetadata ||--o{ RelatedPID : Has
+    MachineAnnotationService ||--|{ Agent : Has
+    Agent ||--|{ Role : Has
+    TombstoneMetadata ||--|{ Agent : Has
+    MachineAnnotationService ||--o{ SecretVariable : Has
+    MachineAnnotationService ||--o{ EnvironmentalVariable : Has
