@@ -424,10 +424,10 @@ def dataMappingResources():
     return render_template('resources.html',
                            headerMarkdown=Markup(marked_text),
                            sssomRefMarkdown=Markup(marked_sssom),
-                           pageTitle='Mapping Resources ',
+                           pageTitle='Data Mapping Resources ',
                            classDiagram=class_diagram,
                            erDiagram=er_diagram,
-                           title='Mapping Resources',
+                           title='Data Mapping Resources',
                            slug='data-mapping-resources'
                            )
 
