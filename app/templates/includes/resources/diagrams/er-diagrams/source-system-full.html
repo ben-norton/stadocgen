@@ -1,3 +1,7 @@
 erDiagram
-  SourceSystem ||--o| TombstoneMetadata : Has
-  SourceSystem ||--o{ Agent : Has
+    SourceSystem ||--o| TombstoneMetadata : Has
+    TombstoneMetadata ||--o{ RelatedPID : Has
+    SourceSystem ||--|{ Agent : Has
+    Agent ||--|{ Role : Has
+    Agent ||--o{ Identifier : Has
+    TombstoneMetadata ||--|{ Agent : Has

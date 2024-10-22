@@ -1,7 +1,10 @@
 erDiagram
-  Annotation ||--|| hasTarget : Has
-  Annotation ||--|| hasBody : Has
-  Annotation ||--|| creator : Has
-  Annotation ||--|| generator : Has
-  Annotation ||--o| AggregateRating : Has
-  Annotation ||--o| TombstoneMetadata : Has
+    Annotation ||--|| hasAggregateRating : Has
+    Annotation ||--o| TombstoneMetadata : Has
+    TombstoneMetadata ||--o{ RelatedPID : Has
+    TombstoneMetadata ||--|{ Agent : Has
+    Annotation ||--o{ Agent : Has
+    Agent ||--|{ Role : Has
+    Agent ||--o{ Identifier : Has
+    Annotation ||--|| AnnotationTarget : Has
+    Annotation ||--|| AnnotationBody : Has

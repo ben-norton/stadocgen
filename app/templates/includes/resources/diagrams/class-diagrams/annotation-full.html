@@ -1,58 +1,81 @@
 classDiagram
  class Annotation { 
-   ID : string 
-   status : None 
-   jobID : string 
-   type : string 
-   version : integer 
-   motivation : None 
-   motivatedBy : string 
-   hasTarget : object 
-   hasBody : object 
-   creator : object 
-   created : string 
-   modified : string 
-   issued : string 
-   generator : object 
-   batchID : string 
-   placeInBatch : integer 
-   mergingDecisionStatus : None 
-   mergingStateChangeDate : string 
-   MergingStateChangedBy : object 
-   TombstoneMetadata : object 
+   dcterms:identifier : string 
+   ods:fdoType : string 
+   ods:status : None 
+   ods:jobID : string 
+   ods:version : integer 
+   oa:motivation : None 
+   oa:motivatedBy : string 
+   oa:hasTarget : object 
+   oa:hasBody : object 
+   dcterms:creator : object 
+   dcterms:created : string 
+   dcterms:modified : string 
+   dcterms:issued : string 
+   as:generator : object 
+   ods:batchID : string 
+   ods:placeInBatch : integer 
+   ods:mergingDecisionStatus : string 
+   ods:mergingStateChangeDate : string 
+   ods:hasMergingStateChangedBy : object 
+   ods:hasTombstoneMetadata : object 
  }
- class AggregateRating { 
-   ratingCount : integer 
-   ratingValue : number 
+ class hasAggregateRating {
+   schema:ratingCount : integer 
+   schema:ratingValue : number 
  }
  class TombstoneMetadata { 
-   tombstoneDate : string 
-   tombstoneText : string 
-   TombstonedByAgent : object 
-   hasRelatedPID : array<object> 
+   ods:tombstoneDate : string 
+   ods:tombstoneText : string 
+   ods:hasAgents : object 
+   ods:hasRelatedPIDs : array<ods:RelatedPID> 
+ }
+ class RelatedPID { 
+   dcterms:identifier : string 
+   schema:identifier : string 
+   ods:relationshipType : string 
  }
  class Agent { 
-   name : string 
-   roleName : string 
-   startDate : string 
-   endDate : string 
-   roleOrder : integer 
-   email : string 
-   url : string 
-   hasIdentifier : array<ods:Identifier> 
+   schema:identifier : string 
+   schema:name : string 
+   ods:hasRoles : array<ods:Role> 
+   schema:email : string 
+   schema:url : string 
+   ods:hasIdentifiers : array<ods:Identifier> 
+ }
+ class Role { 
+   schema:roleName : string 
+   schema:startDate : string 
+   schema:endDate : string 
+   schema:position : integer 
  }
  class AnnotationTarget { 
-   ID : string 
-   type : string 
-   hasSelector : object 
+   dcterms:identifier : string 
+   ods:fdoType : string 
+   oa:hasSelector : object 
  }
  class AnnotationBody { 
-   value : array<string> 
-   references : string 
-   score : number 
+   oa:value : array<string> 
+   dcterms:references : string 
+   ods:score : number 
  }
-Annotation -- AggregateRating 
+ class Identifier { 
+   dcterms:title : string 
+   dcterms:type : string 
+   dcterms:identifier : string 
+   dcterms:format : array<string> 
+   dcterms:subject : array<string> 
+   ods:isPartOfLabel : boolean 
+   ods:gupriLevel : string 
+   ods:identifierStatus : string 
+ }
+Annotation -- hasAggregateRating
 Annotation -- TombstoneMetadata 
-Annotation -- Agent 
-Annotation -- AnnotationTarget 
-Annotation -- AnnotationBody 
+TombstoneMetadata -- RelatedPID
+TombstoneMetadata -- Agent
+Annotation -- Agent
+Agent -- Role
+Agent -- Identifier
+Annotation -- AnnotationTarget
+Annotation -- AnnotationBody

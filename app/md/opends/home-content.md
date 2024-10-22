@@ -13,7 +13,6 @@ Getting started[](#getting-started)
 *   For questions and change requests please create a [Github Issue](https://github.com/DiSSCo/openDS/issues/new/choose)
 
 -------------
-Open Review has been extended until 10th of September.
-Please feel free to provide feedback on [Github Issue](https://github.com/DiSSCo/openDS/issues/new/choose).
-
-*Last Updated: September. 3, 2024*
+A new version has been launched, version 0.4.0 is now available.
+This version is the result of the feedback gathered during the openDS public review.
+We would like to thank all reviewers for their valuable input.

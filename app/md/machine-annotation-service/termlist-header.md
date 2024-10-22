@@ -4,23 +4,23 @@
 : Machine Annotation Service List of Terms
 
 **Date version issued**
-: 2024-06-17
+: 2024-10-15
 
 **Date created**
-: 2024-06-17
+: 2024-10-15
 
 **This version**
-: 0.3.0
+: 0.4.0
 
 **Latest version**
-: 0.3.0
+: 0.4.0
 
 **Abstract**
 : The Machine Annotation Service (MAS) object describe the Machine Agent which generated automated annotations for DiSSCo.
 The object contains fields for describing the service, the container image and the container version.
 The image tag cannot be `latests` as it needs to be clear which version of the container was used to generate the annotations.
 Updating the image tag will also generate a new version of the MAS, providing provenance and traceability.
-The `TargetDigitalObjectFilter` can be used to specifics which Digital Object the MAS should be applied to.
+The `hasTargetDigitalObjectFilter` can be used to specifics which Digital Object the MAS should be applied to.
 It uses json path for the filtering and can be used to filter on any field in the Digital Object.
 At the moment MAS can only be run on Digital Specimen and Digital Media objects.
 

@@ -1,3 +1,7 @@
 erDiagram
-  DataMapping ||--o| TombstoneMetadata : Has
-  DataMapping ||--o{ Agent : Has
+    DataMapping ||--o| TombstoneMetadata : Has
+    TombstoneMetadata ||--o{ RelatedPID : Has
+    DataMapping ||--|{ Agent : Has
+    Agent ||--|{ Role : Has
+    Agent ||--o{ Identifier : Has
+    TombstoneMetadata ||--|{ Agent : Has

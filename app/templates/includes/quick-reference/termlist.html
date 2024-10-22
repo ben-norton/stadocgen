@@ -5,7 +5,7 @@
     <h2 id="{{ v }}">{{  v.class }}</h2>
     <div class="my-4">
          {% for k in v.termlist %}
-            <a class="btn btn-sm btn-outline-primary m-1" href="#{{ k[11] }}">{{  k[0] }}{{ k[1] }}</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#{{ k[11] }}">{{ k[1] }}</a>
         {% endfor %}
     </div>
     {% for k in v.termlist %}
@@ -29,7 +29,7 @@
                 <tbody>
                     <tr>
                         <th scope="row">Qualified Term</th>
-                        <td><a href="{{ k[14] }}">{{ k[0] }}{{ k[1] }}</a></td>
+                        <td><a href="{{ k[14] }}">{{ k[1] }}</a></td>
                     </tr>
                     <tr>
                         <th scope="row">Label</th>
@@ -52,7 +52,7 @@
                     {% endif %}
 
                     {% if k[6] and (k[6] != -1) %}
-                        {% set list1 = k[6].split('`, `') %}
+                        {% set list1 = k[6].split('| ') %}
                         <tr>
                             <th scope="row">Examples</th>
                             <td>

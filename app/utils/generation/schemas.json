@@ -1,0 +1,307 @@
+[
+  {
+    "csv_prefix": "digital-specimen",
+    "objects": [
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/digital-specimen.json",
+        "class_name": "DigitalSpecimen",
+        "class_description": "A digital representation of a physical specimen, following the concept of the FAIR Digital Object (FDO). Each physical specimen that has been administrated as a separate entity will be a Digital Specimen.",
+        "is_required": true
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/specimen-part.json",
+        "class_name": "SpecimenPart",
+        "class_description": "Contains the information about a specific Specimen part of the Digital Specimen. Specimen Parts are only present when the specimen contains one or more parts that need to be described separately but don't have their own physical identifier (for example catalogue number).",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/identification.json",
+        "class_name": "Identification",
+        "class_description": "A generic identification class, containing information about who and when the identification was made, including the status of the identification.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/event.json",
+        "class_name": "Event",
+        "class_description": "A generic event class containing information about a particular activity at a certain place an time. An example is the collecting event.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/location.json",
+        "class_name": "Location",
+        "class_description": "A generic location class containing information about a where a specific event took place.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json",
+        "class_name": "Agent",
+        "class_description": "A generic agent class, containing information about the actor who performed an activity. This could be a person, an organization or a machine.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/assertion.json",
+        "class_name": "Assertion",
+        "class_description": "A generic assertion class, containing information about a statement that is made about a digital object. An example is the measurement of the leaf or the wingspan of a specimen.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/citation.json",
+        "class_name": "Citation",
+        "class_description": "A generic class containing the information about a citation in which the Digital Object is mentioned or which had influence on the Digital Object.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/entity-relationship.json",
+        "class_name": "EntityRelationship",
+        "class_description": "Describes relationships between digital object and any external resources. An example could be a relationship to the Sequence record of the specimen in a DNA database.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/identifier.json",
+        "class_name": "Identifier",
+        "class_description": "A generic Identifier class which can be attached to multiple classes. It captures information about any identifier of the class.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/chronometric-age.json",
+        "class_name": "ChronometricAge",
+        "class_description": "An approximation of a temporal position (in the sense conveyed by https://www.w3.org/TR/owl-time/#time:TemporalPosition) that is supported via evidence.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json",
+        "class_name": "TombstoneMetadata",
+        "class_description": "The tombstone metadata about the tombstoned digital object, including the what, who and when of the tombstoning.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/taxon-identification.json",
+        "class_name": "TaxonIdentification",
+        "class_description": "The full taxonomic identification of a biological specimen",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/geological-context.json",
+        "class_name": "GeologicalContext",
+        "class_description": "Contains the geological context of the specimen, based on the Geological Context terms of Darwin Core",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/georeference.json",
+        "class_name": "Georeference",
+        "class_description": "Contains all the information about the georeference of the specimen, based on the Georeference terms of Darwin Core",
+        "is_required": false
+      }
+    ]
+  },
+  {
+    "csv_prefix": "digital-media",
+    "objects": [
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/digital-media/0.4.0/digital-media.json",
+        "class_name": "DigitalMedia",
+        "class_description": "A digital representation of an media object such as a Image or Sound Recording",
+        "is_required": true
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json",
+        "class_name": "Agent",
+        "class_description": "A generic agent class, containing information about the actor who performed an activity. This could be a person, an organization or a machine.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/assertion.json",
+        "class_name": "Assertion",
+        "class_description": "A generic assertion class, containing information about a statement that is made about a digital object. An example is the measurement of the leaf or the wingspan of a specimen.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/citation.json",
+        "class_name": "Citation",
+        "class_description": "A generic class containing the information about a citation in which the Digital Object is mentioned or which had influence on the Digital Object.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/entity-relationship.json",
+        "class_name": "EntityRelationship",
+        "class_description": "Describes relationships between digital object and any external resources. An example could be a relationship to the Sequence record of the specimen in a DNA database.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/identifier.json",
+        "class_name": "Identifier",
+        "class_description": "A generic Identifier class which can be attached to multiple classes. It captures information about any identifier of the class.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json",
+        "class_name": "TombstoneMetadata",
+        "class_description": "The tombstone metadata about the tombstoned digital object, including the what, who and when of the tombstoning.",
+        "is_required": false
+      }
+    ]
+  },
+  {
+    "csv_prefix": "machine-annotation-service",
+    "objects": [
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/machine-annotation-service/0.4.0/machine-annotation-service.json",
+        "class_name": "MachineAnnotationService",
+        "class_description": "A machine agent which will perform an action on the Digital Object potentially resulting in a new annotation on the object",
+        "is_required": true
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json",
+        "class_name": "TombstoneMetadata",
+        "class_description": "The tombstone metadata about the tombstoned digital object, including the what, who and when of the tombstoning.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json",
+        "class_name": "Agent",
+        "class_description": "A generic agent class, containing information about the actor who performed an activity. This could be a person, an organization or a machine.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/secret-variable.json",
+        "class_name": "SecretVariable",
+        "class_description": "A class containing information about which secret the Machine Annotation Service requires. The secret value will be supplied separately to DiSSCo.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/environmental-variable.json",
+        "class_name": "EnvironmentalVariable",
+        "class_description": "A class containing information about which (non-secret) environmental values the application requires.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/identifier.json",
+        "class_name": "Identifier",
+        "class_description": "A generic Identifier class which can be attached to multiple classes. It captures information about any identifier of the class.",
+        "is_required": false
+      }
+    ]
+  },
+  {
+    "csv_prefix": "annotation",
+    "objects": [
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/annotation/0.4.0/annotation.json",
+        "class_name": "Annotation",
+        "class_description": "A new or additional piece of information about a Digital Object. The Annotation model is based on the W3C Web Annotation Data Model (https://www.w3.org/TR/annotation-model/)",
+        "is_required": true
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json",
+        "class_name": "TombstoneMetadata",
+        "class_description": "The tombstone metadata about the tombstoned digital object, including the what, who and when of the tombstoning.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json",
+        "class_name": "Agent",
+        "class_description": "A generic agent class, containing information about the actor who performed an activity. This could be a person, an organization or a machine.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/annotation/0.4.0/annotation-target.json",
+        "class_name": "AnnotationTarget",
+        "class_description": "The AnnotationTarget describes the Digital Object the annotation is attached to, could contain additional information on which part of the object the annotation is attached to.",
+        "is_required": true
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/annotation/0.4.0/annotation-body.json",
+        "class_name": "AnnotationBody",
+        "class_description": "Describes the body of the annotation. The body is the full content of the annotation, as provided by the agent.",
+        "is_required": true
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/identifier.json",
+        "class_name": "Identifier",
+        "class_description": "A generic Identifier class which can be attached to multiple classes. It captures information about any identifier of the class.",
+        "is_required": false
+      }
+    ]
+  },
+  {
+    "csv_prefix": "create-update-tombstone-event",
+    "objects": [
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/create-update-tombstone-event/0.4.0/create-update-tombstone-event.json",
+        "class_name": "CreateUpdateTombstoneEvent",
+        "class_description": "An provenance event describing any change that has been made to a Digital Object, this could be the creation, modification or tombstoning of an object. Model is based on the W3C PROV Data Model (https://www.w3.org/TR/prov-o/)",
+        "is_required": true
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json",
+        "class_name": "Agent",
+        "class_description": "A generic agent class, containing information about the actor who performed an activity. This could be a person, an organization or a machine.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/identifier.json",
+        "class_name": "Identifier",
+        "class_description": "A generic Identifier class which can be attached to multiple classes. It captures information about any identifier of the class.",
+        "is_required": false
+      }
+    ]
+  },
+  {
+    "csv_prefix": "data-mapping",
+    "objects": [
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/data-mapping/0.4.0/data-mapping.json",
+        "class_name": "DataMapping",
+        "class_description": "This object described the data mapping for used when ingesting the data. It can set default values or contain an explicit mapping between the local term and an openDS term. This object is attached to a source system object.",
+        "is_required": true
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json",
+        "class_name": "TombstoneMetadata",
+        "class_description": "The tombstone metadata about the tombstoned digital object, including the what, who and when of the tombstoning.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json",
+        "class_name": "Agent",
+        "class_description": "A generic agent class, containing information about the actor who performed an activity. This could be a person, an organization or a machine.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/identifier.json",
+        "class_name": "Identifier",
+        "class_description": "A generic Identifier class which can be attached to multiple classes. It captures information about any identifier of the class.",
+        "is_required": false
+      }
+    ]
+  },
+  {
+    "csv_prefix": "source-system",
+    "objects": [
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/source-system/0.4.0/source-system.json",
+        "class_name": "SourceSystem",
+        "class_description": "The Source System describes the system from which the data is ingested. It contains information about the system, the endpoint and the data mapping.",
+        "is_required": true
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json",
+        "class_name": "TombstoneMetadata",
+        "class_description": "The tombstone metadata about the tombstoned digital object, including the what, who and when of the tombstoning.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json",
+        "class_name": "Agent",
+        "class_description": "A generic agent class, containing information about the actor who performed an activity. This could be a person, an organization or a machine.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/identifier.json",
+        "class_name": "Identifier",
+        "class_description": "A generic Identifier class which can be attached to multiple classes. It captures information about any identifier of the class.",
+        "is_required": false
+      }
+    ]
+  }
+]

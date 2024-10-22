@@ -1,65 +1,86 @@
 classDiagram
  class MachineAnnotationService { 
-   ID : string 
-   type : string 
-   status : None 
-   version : integer 
-   name : string 
-   description : string 
-   dateCreated : string 
-   dateModified : string 
-   creator : object 
-   containerImage : string 
-   containerTag : string 
-   TargetDigitalObjectFilter : object 
-   creativeWorkStatus : string 
-   codeRepository : string 
-   programmingLanguage : string 
-   serviceAvailability : string 
-   maintainer : object 
-   license : string 
-   dependency : array<string> 
-   slaDocumentation : string 
-   topicName : string 
-   maxReplicas : integer 
-   batchingPermitted : boolean 
-   timeToLive : integer 
-   TombstoneMetadata : object 
-   hasEnvironmentalVariable : array<ods:EnvironmentalVariable> 
-   hasSecretVariable : array<ods:SecretVariable> 
+   schema:identifier : string 
+   ods:fdoType : string 
+   ods:status : string 
+   schema:version : integer 
+   schema:name : string 
+   schema:description : string 
+   schema:dateCreated : string 
+   schema:dateModified : string 
+   schema:creator : object 
+   ods:containerImage : string 
+   ods:containerTag : string 
+   ods:hasTargetDigitalObjectFilter : object 
+   schema:creativeWorkStatus : string 
+   schema:codeRepository : string 
+   schema:programmingLanguage : string 
+   ods:serviceAvailability : string 
+   schema:maintainer : object 
+   schema:license : string 
+   ods:slaDocumentation : string 
+   ods:topicName : string 
+   ods:maxReplicas : integer 
+   ods:batchingPermitted : boolean 
+   ods:timeToLive : integer 
+   ods:hasTombstoneMetadata : object 
+   ods:hasEnvironmentalVariables : array<ods:EnvironmentalVariable> 
+   ods:hasSecretVariables : array<ods:SecretVariable> 
  }
- class ContactPoint { 
-   description : string 
-   email : string 
-   url : string 
-   telephone : string 
+ class schema:ContactPoint { 
+   schema:description : string 
+   schema:email : string 
+   schema:url : string 
+   schema:telephone : string 
  }
  class TombstoneMetadata { 
-   tombstoneDate : string 
-   tombstoneText : string 
-   TombstonedByAgent : object 
-   hasRelatedPID : array<object> 
+   ods:tombstoneDate : string 
+   ods:tombstoneText : string 
+   ods:hasAgents : object 
+   ods:hasRelatedPIDs : array<ods:RelatedPID> 
+ }
+ class RelatedPID { 
+   dcterms:identifier : string 
+   schema:identifier : string 
+   ods:relationshipType : string 
  }
  class Agent { 
-   name : string 
-   roleName : string 
-   startDate : string 
-   endDate : string 
-   roleOrder : integer 
-   email : string 
-   url : string 
-   hasIdentifier : array<ods:Identifier> 
+   schema:identifier : string 
+   schema:name : string 
+   ods:hasRoles : array<ods:Role> 
+   schema:email : string 
+   schema:url : string 
+   ods:hasIdentifiers : array<ods:Identifier> 
+ }
+ class Role { 
+   schema:roleName : string 
+   schema:startDate : string 
+   schema:endDate : string 
+   schema:position : integer 
  }
  class SecretVariable { 
-   name : string 
-   secretKeyRef : string 
+   schema:name : string 
+   ods:secretKeyRef : string 
  }
  class EnvironmentalVariable { 
-   name : string 
-   value : ['string', 'integer', 'boolean'] 
+   schema:name : string 
+   schema:value : ['string', 'integer', 'boolean'] 
  }
-MachineAnnotationService -- ContactPoint 
-MachineAnnotationService -- TombstoneMetadata 
-MachineAnnotationService -- Agent 
-MachineAnnotationService -- SecretVariable 
-MachineAnnotationService -- EnvironmentalVariable 
+ class Identifier { 
+   dcterms:title : string 
+   dcterms:type : string 
+   dcterms:identifier : string 
+   dcterms:format : array<string> 
+   dcterms:subject : array<string> 
+   ods:isPartOfLabel : boolean 
+   ods:gupriLevel : string 
+   ods:identifierStatus : string 
+ }
+MachineAnnotationService -- ContactPoint
+MachineAnnotationService -- TombstoneMetadata
+TombstoneMetadata -- RelatedPID
+MachineAnnotationService -- Agent
+Agent -- Role
+TombstoneMetadata -- Agent
+MachineAnnotationService -- SecretVariable
+MachineAnnotationService -- EnvironmentalVariable

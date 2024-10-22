@@ -1,102 +1,138 @@
 classDiagram
  class DigitalMedia { 
-   ID : string 
-   version : integer 
-   status : None 
-   modified : string 
-   created : string 
-   type : string 
-   type : None 
-   accessURI : string 
-   sourceSystemID : string 
-   sourceSystemName : string 
-   organisationID : string 
-   organisationName : string 
-   format : string 
-   license : string 
-   description : string 
-   rights : string 
-   accessRights : string 
-   rightsHolder : string 
-   source : string 
-   creator : string 
-   hasAssertion : array<ods:Assertion> 
-   hasCitation : array<ods:Citation> 
-   hasIdentifier : array<ods:Identifier> 
-   hasEntityRelationship : array<ods:EntityRelationship> 
-   hasAgent : array<ods:Agent> 
-   TombstoneMetadata : object 
+   dcterms:identifier : string 
+   ods:fdoType : string 
+   ods:version : integer 
+   ods:status : None 
+   dcterms:modified : string 
+   dcterms:created : string 
+   dcterms:type : string 
+   ac:accessURI : string 
+   ods:sourceSystemID : string 
+   ods:sourceSystemName : string 
+   ods:organisationID : string 
+   ods:organisationName : string 
+   dcterms:format : string 
+   ac:metadataLanguage : string 
+   ac:metadataLanguageLiteral : string 
+   ac:subtype : string 
+   ac:subtypeLiteral : string 
+   dcterms:title : string 
+   dcterms:language : string 
+   dcterms:description : string 
+   dcterms:rights : string 
+   xmpRights:Owner : string 
+   dcterms:available : string 
+   ac:comments : string 
+   dcterms:source : string 
+   Iptc4xmpExt:CVterm : string 
+   ac:subjectCategoryVocabulary : string 
+   ac:variant : string 
+   ac:variantLiteral : string 
+   ac:variantDescription : string 
+   exif:PixelYDimension : integer 
+   exif:PixelXDimension : integer 
+   ac:tag : array<string> 
+   xmp:CreateDate : string 
+   ac:timeOfDay : string 
+   ac:subjectOrientation : string 
+   ac:subjectOrientationLiteral : string 
+   ac:subjectPart : string 
+   ac:subjectPartLiteral : string 
+   ac:captureDevice : string 
+   ac:digitizationDate : string 
+   ac:frameRate : number 
+   ac:resourceCreationTechnique : string 
+   ods:hasAssertions : array<ods:Assertion> 
+   ods:hasCitations : array<ods:Citation> 
+   ods:hasIdentifiers : array<ods:Identifier> 
+   ods:hasEntityRelationships : array<ods:EntityRelationship> 
+   ods:hasAgents : array<ods:Agent> 
+   ods:hasTombstoneMetadata : object 
  }
  class Agent { 
-   name : string 
-   roleName : string 
-   startDate : string 
-   endDate : string 
-   roleOrder : integer 
-   email : string 
-   url : string 
-   hasIdentifier : array<ods:Identifier> 
+   schema:identifier : string 
+   schema:name : string 
+   ods:hasRoles : array<ods:Role> 
+   schema:email : string 
+   schema:url : string 
+   ods:hasIdentifiers : array<ods:Identifier> 
+ }
+ class Role { 
+   schema:roleName : string 
+   schema:startDate : string 
+   schema:endDate : string 
+   schema:position : integer 
  }
  class Assertion { 
-   measurementID : string 
-   parentMeasurementID : string 
-   measurementType : string 
-   measurementType : string 
-   measurementDeterminedDate : string 
-   measurementValue : string 
-   measurementValue : string 
-   measurementAccuracy : string 
-   measurementUnit : string 
-   measurementUnit : string 
-   AssertionByAgent : object 
-   assertionProtocol : string 
-   assertionProtocolID : string 
-   assertionRemarks : string 
+   dwc:measurementID : string 
+   dwc:parentMeasurementID : string 
+   dwc:measurementType : string 
+   dwciri:measurementType : string 
+   dwc:measurementDeterminedDate : string 
+   dwc:measurementValue : string 
+   dwciri:measurementValue : string 
+   dwc:measurementAccuracy : string 
+   dwc:measurementUnit : string 
+   dwciri:measurementUnit : string 
+   dwc:measurementMethod : string 
+   dwciri:measurementMethod : string 
+   dwc:measurementRemarks : string 
+   ods:hasAgents : object 
+   ods:hasCitations : array<ods:Citation> 
  }
  class Citation { 
-   identifier : string 
-   type : string 
-   date : string 
-   title : string 
-   creator : object 
-   citationPageNumber : string 
-   citationRemarks : string 
-   referenceType : string 
-   bibliographicCitation : string 
-   referenceYear : integer 
-   referenceIRI : string 
-   isPeerReviewed : boolean 
+   dcterms:identifier : string 
+   dcterms:type : string 
+   dcterms:date : string 
+   dcterms:title : string 
+   ods:pageNumber : string 
+   dcterms:description : string 
+   dcterms:bibliographicCitation : string 
+   ods:isPeerReviewed : boolean 
+   ods:hasAgents : object 
  }
  class EntityRelationship { 
-   relationshipOfResource : string 
-   relationshipOfResourceID : string 
-   relatedResourceID : string 
-   relatedResourceURI : string 
-   relationshipEstablishedDate : string 
-   entityRelationshipOrder : integer 
-   RelationshipAccordingToAgent : object 
-   relationshipAccordingTo : string 
-   relationshipRemarks : string 
+   dwc:relationshipOfResource : string 
+   dwc:relationshipOfResourceID : string 
+   dwc:relatedResourceID : string 
+   ods:relatedResourceURI : string 
+   dwc:relationshipEstablishedDate : string 
+   dwc:relationshipRemarks : string 
+   ods:hasAgents : object 
  }
  class Identifier { 
-   title : string 
-   localTitle : string 
-   identifier : string 
-   format : string 
-   subject : string 
-   isPartOfLabel : boolean 
-   isBarcodeOrNFC : boolean 
-   isIDPersistent : boolean 
+   dcterms:title : string 
+   dcterms:type : string 
+   dcterms:identifier : string 
+   dcterms:format : array<string> 
+   dcterms:subject : array<string> 
+   ods:isPartOfLabel : boolean 
+   ods:gupriLevel : string 
+   ods:identifierStatus : string 
  }
  class TombstoneMetadata { 
-   tombstoneDate : string 
-   tombstoneText : string 
-   TombstonedByAgent : object 
-   hasRelatedPID : array<object> 
+   ods:tombstoneDate : string 
+   ods:tombstoneText : string 
+   ods:hasAgents : object 
+   ods:hasRelatedPIDs : array<ods:RelatedPID> 
  }
-DigitalMedia -- Agent 
-DigitalMedia -- Assertion 
-DigitalMedia -- Citation 
-DigitalMedia -- EntityRelationship 
-DigitalMedia -- Identifier 
-DigitalMedia -- TombstoneMetadata 
+ class RelatedPID { 
+   dcterms:identifier : string 
+   schema:identifier : string 
+   ods:relationshipType : string 
+ }
+DigitalMedia -- Agent
+Agent -- Role
+Assertion -- Agent
+Assertion -- Citation
+DigitalMedia -- Assertion
+DigitalMedia -- Citation
+Citation -- Agent
+DigitalMedia -- EntityRelationship
+EntityRelationship -- Agent
+DigitalMedia -- Identifier
+Agent -- Identifier
+DigitalMedia -- TombstoneMetadata
+TombstoneMetadata -- RelatedPID
+TombstoneMetadata -- Agent

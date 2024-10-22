@@ -4,19 +4,19 @@
 : Source System List of Terms
 
 **Date version issued**
-: 2024-06-17
+: 2024-10-15
 
 **Date created**
-: 2024-06-17
+: 2024-10-15
 
 **This version**
-: 0.3.0
+: 0.4.0
 
 **Latest version**
-: 0.3.0
+: 0.4.0
 
 **Abstract**
-: The Source System object prodivdes information about the data providing system.
+: The Source System object provides information about the data providing system.
 Most important is the endpoint of the system through which we can retrieve the data and the data standard that is being
 used.
 At the moment the software supports the data standards: Darwin Core Archive and BioCASe endpoints.

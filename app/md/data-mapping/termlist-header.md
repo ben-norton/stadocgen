@@ -4,16 +4,16 @@
 : Data Mapping List of Terms
 
 **Date version issued**
-: 2024-06-17
+: 2024-10-15
 
 **Date created**
-: 2024-06-17
+: 2024-10-15
 
 **This version**
-: 0.3.0
+: 0.4.0
 
 **Latest version**
-: 0.3.0
+: 0.4.0
 
 **Abstract**
 : The Data Mapping Digital Object is created to contain the details necessary for mapping the data from the source system to the openDS data model.

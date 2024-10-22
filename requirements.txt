@@ -1,9 +1,8 @@
 flask
-Frozen-Flask
 markdown2
 markupsafe
 pandas
 pathlib
-pytest-shutil
 tableschema
 waitress
+requests
