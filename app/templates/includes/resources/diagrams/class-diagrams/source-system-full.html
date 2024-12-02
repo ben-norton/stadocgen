@@ -19,7 +19,7 @@ classDiagram
  class TombstoneMetadata { 
    ods:tombstoneDate : string 
    ods:tombstoneText : string 
-   ods:hasAgents : object 
+   ods:hasAgents : array<ods:Agent> 
    ods:hasRelatedPIDs : array<ods:RelatedPID> 
  }
  class RelatedPID { 
@@ -51,7 +51,7 @@ classDiagram
    ods:gupriLevel : string 
    ods:identifierStatus : string 
  }
-SourceSystem -- TombstoneMetadata 
+SourceSystem -- TombstoneMetadata
 TombstoneMetadata -- RelatedPID
 SourceSystem -- Agent
 Agent -- Role

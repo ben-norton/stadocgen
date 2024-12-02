@@ -21,7 +21,8 @@ classDiagram
    dcterms:language : string 
    dcterms:description : string 
    dcterms:rights : string 
-   xmpRights:Owner : string 
+   xmpRights:UsageTerms : string 
+   xmpRights:WebStatement : string 
    dcterms:available : string 
    ac:comments : string 
    dcterms:source : string 
@@ -78,7 +79,7 @@ classDiagram
    dwc:measurementMethod : string 
    dwciri:measurementMethod : string 
    dwc:measurementRemarks : string 
-   ods:hasAgents : object 
+   ods:hasAgents : array<ods:Agent> 
    ods:hasCitations : array<ods:Citation> 
  }
  class Citation { 
@@ -90,7 +91,7 @@ classDiagram
    dcterms:description : string 
    dcterms:bibliographicCitation : string 
    ods:isPeerReviewed : boolean 
-   ods:hasAgents : object 
+   ods:hasAgents : array<ods:Agent> 
  }
  class EntityRelationship { 
    dwc:relationshipOfResource : string 
@@ -99,7 +100,7 @@ classDiagram
    ods:relatedResourceURI : string 
    dwc:relationshipEstablishedDate : string 
    dwc:relationshipRemarks : string 
-   ods:hasAgents : object 
+   ods:hasAgents : array<ods:Agent> 
  }
  class Identifier { 
    dcterms:title : string 
@@ -114,7 +115,7 @@ classDiagram
  class TombstoneMetadata { 
    ods:tombstoneDate : string 
    ods:tombstoneText : string 
-   ods:hasAgents : object 
+   ods:hasAgents : array<ods:Agent> 
    ods:hasRelatedPIDs : array<ods:RelatedPID> 
  }
  class RelatedPID { 

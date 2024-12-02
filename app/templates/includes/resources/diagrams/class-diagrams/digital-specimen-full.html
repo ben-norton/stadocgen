@@ -13,6 +13,7 @@ classDiagram
    ods:isKnownToContainMedia : boolean 
    ods:sourceSystemID : string 
    ods:sourceSystemName : string 
+   ods:livingOrPreserved : string
    ods:metadataLanguages : array<string> 
    dcterms:license : string 
    dwc:basisOfRecord : string 
@@ -42,6 +43,7 @@ classDiagram
    dwc:organismRemarks : string 
    dwc:organismQuantity : string 
    dwc:organismQuantityType : string 
+   dwc:verbatimLabel : string 
    dwc:dynamicProperties : string 
    ods:hasSpecimenParts : array<ods:SpecimenPart> 
    ods:hasAssertions : array<ods:Assertion> 
@@ -51,6 +53,7 @@ classDiagram
    ods:hasCitations : array<ods:Citation> 
    ods:hasAgents : array<ods:Agent> 
    ods:hasEvents : array<ods:Event> 
+   ods:hasChronometricAges : array<ods:ChronometricAge> 
    ods:hasTombstoneMetadata : object 
  }
  class SpecimenPart { 
@@ -91,6 +94,7 @@ classDiagram
  }
  class Event { 
    dwc:behavior : string 
+   dwc:eventType : string 
    dwc:sex : string 
    dwc:lifeStage : string 
    dwc:reproductiveCondition : string 
@@ -101,7 +105,6 @@ classDiagram
    dwc:degreeOfEstablishment : string 
    dwc:georeferenceVerificationStatus : string 
    dwc:fieldNumber : string 
-   dwc:eventType : string 
    dwc:eventDate : string 
    dwc:eventTime : string 
    dwc:endDayOfYear : integer 
@@ -119,6 +122,7 @@ classDiagram
    dwc:fieldNotes : string 
    dwc:eventRemarks : string 
    ods:hasAssertions : array<ods:Assertion> 
+   ods:hasAgents : array<ods:Agent> 
    ods:hasLocation : object 
  }
  class Location { 
@@ -178,7 +182,7 @@ classDiagram
    dwc:measurementMethod : string 
    dwciri:measurementMethod : string 
    dwc:measurementRemarks : string 
-   ods:hasAgents : object 
+   ods:hasAgents : array<ods:Agent> 
    ods:hasCitations : array<ods:Citation> 
  }
  class Citation { 
@@ -190,7 +194,7 @@ classDiagram
    dcterms:description : string 
    dcterms:bibliographicCitation : string 
    ods:isPeerReviewed : boolean 
-   ods:hasAgents : object 
+   ods:hasAgents : array<ods:Agent> 
  }
  class EntityRelationship { 
    dwc:relationshipOfResource : string 
@@ -199,7 +203,7 @@ classDiagram
    ods:relatedResourceURI : string 
    dwc:relationshipEstablishedDate : string 
    dwc:relationshipRemarks : string 
-   ods:hasAgents : object 
+   ods:hasAgents : array<ods:Agent> 
  }
  class Identifier { 
    dcterms:title : string 
@@ -220,6 +224,7 @@ classDiagram
    chrono:earliestChronometricAgeReferenceSystem : string 
    chrono:latestChronometricAge : integer 
    chrono:latestChronometricAgeReferenceSystem : string 
+   chrono:chronometricAgeProtocol : string 
    chrono:chronometricAgeUncertaintyInYears : integer 
    chrono:chronometricAgeUncertaintyMethod : string 
    chrono:materialDated : string 
@@ -228,11 +233,12 @@ classDiagram
    chrono:chronometricAgeDeterminedDate : string 
    chrono:chronometricAgeReferences : string 
    chrono:chronometricAgeRemarks : string 
+   ods:hasAgents : array<ods:Agent> 
  }
  class TombstoneMetadata { 
    ods:tombstoneDate : string 
    ods:tombstoneText : string 
-   ods:hasAgents : object 
+   ods:hasAgents : array<ods:Agent> 
    ods:hasRelatedPIDs : array<ods:RelatedPID> 
  }
  class RelatedPID { 
@@ -245,6 +251,7 @@ classDiagram
    dwc:scientificName : string 
    dwc:scientificNameID : string 
    ods:scientificNameHTMLLabel : string 
+   ods:genusHTMLLabel : string 
    dwc:scientificNameAuthorship : string 
    dwc:namePublishedInYear : string 
    dwc:taxonRank : string 
@@ -314,7 +321,6 @@ classDiagram
    dwc:georeferenceRemarks : string 
    ods:hasAgents : array<ods:Agent> 
  }
-
 DigitalSpecimen -- SpecimenPart
 DigitalSpecimen -- Identification
 DigitalSpecimen -- Event
@@ -349,4 +355,3 @@ SpecimenPart -- Agent
 SpecimenPart -- ChronometricAge
 SpecimenPart -- Identifier
 SpecimenPart -- Event
-    
