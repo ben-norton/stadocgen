@@ -13,6 +13,6 @@ Getting started[](#getting-started)
 *   For questions and change requests please create a [Github Issue](https://github.com/DiSSCo/openDS/issues/new/choose)
 
 -------------
-A new version has been launched, version 0.4.0 is now available.
-This version is the result of the feedback gathered during the openDS public review.
-We would like to thank all reviewers for their valuable input.
+Version 0.4.0 is live and DiSSCo is moving to a first production version.  
+We are therefore moving from [dev.terms.dissco.tech](dev.terms.dissco.tech) to [terms.dissco.tech](terms.dissco.tech).  
+Please update your bookmarks and links.

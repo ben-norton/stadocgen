@@ -27,7 +27,7 @@ classDiagram
    ods:hasEnvironmentalVariables : array<ods:EnvironmentalVariable> 
    ods:hasSecretVariables : array<ods:SecretVariable> 
  }
- class ContactPoint {
+ class schema:ContactPoint { 
    schema:description : string 
    schema:email : string 
    schema:url : string 
@@ -36,7 +36,7 @@ classDiagram
  class TombstoneMetadata { 
    ods:tombstoneDate : string 
    ods:tombstoneText : string 
-   ods:hasAgents : object 
+   ods:hasAgents : array<ods:Agent> 
    ods:hasRelatedPIDs : array<ods:RelatedPID> 
  }
  class RelatedPID { 

@@ -28,7 +28,7 @@ classDiagram
  class TombstoneMetadata { 
    ods:tombstoneDate : string 
    ods:tombstoneText : string 
-   ods:hasAgents : object 
+   ods:hasAgents : array<ods:Agent> 
    ods:hasRelatedPIDs : array<ods:RelatedPID> 
  }
  class RelatedPID { 
@@ -71,7 +71,7 @@ classDiagram
    ods:identifierStatus : string 
  }
 Annotation -- hasAggregateRating
-Annotation -- TombstoneMetadata 
+Annotation -- TombstoneMetadata
 TombstoneMetadata -- RelatedPID
 TombstoneMetadata -- Agent
 Annotation -- Agent
