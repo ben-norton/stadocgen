@@ -170,7 +170,8 @@ def determine_type(term_value, term_key):
                  'ods:hasDefaultMapping': 'ods:DefaultMapping', 'ods:hasTermMapping': 'ods:TermMapping',
                  'ods:hasProvAgent': 'ods:Agent', 'ods:hasEnvironmentalVariables': 'ods:EnvironmentalVariable',
                  'ods:hasSecretVariables': 'ods:SecretVariable', 'ods:hasRelatedPIDs': 'ods:RelatedPID',
-                 'ods:metadataLanguages': 'string', 'dcterms:format': 'string', 'dcterms:subject': 'string', 'ac:tag': 'string'}
+                 'ods:metadataLanguages': 'string', 'dcterms:format': 'string', 'dcterms:subject': 'string', 'ac:tag': 'string',
+                 'ods:filters': 'string'}
     if term_type != 'array':
         return term_type
     else:
