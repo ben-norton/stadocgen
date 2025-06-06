@@ -1,35 +1,38 @@
-# Source System List of Terms 
+# Virtual Collection List of Terms 
 
 **Title**
-: Source System List of Terms
+: Virtual Collection List of Terms
 
 **Date version issued**
-: 2024-10-15
+: 2025-06-06
 
 **Date created**
-: 2024-10-15
+: 2025-06-06
 
 **This version**
-: 0.4.0
+: 0.1.0
 
 **Latest version**
-: 0.4.0
+: 0.1.0
 
 **Abstract**
-: The Source System object provides information about the data providing system.
-Most important is the endpoint of the system through which we can retrieve the data and the data standard that is being
-used.
-At the moment the software supports the data standards: Darwin Core Archive and BioCASe endpoints.
-The Source System object points to the Mapping object which it uses to map the data correctly.
+: The Virtual Collection object provides information about a collection of digital objects that are grouped together for a specific purpose, such as research, education, or public engagement. 
+It includes metadata about the collection, such as its title, description, and a filter indicates which digital objects it contains.
+This object is designed to be flexible and extensible, allowing for the inclusion of additional metadata as needed.
+The object uses the TargetDigitalObjectFilter which is a class based on GBIF's Predicate API, as described at [https://techdocs.gbif.org/en/data-use/api-downloads#predicates](https://techdocs.gbif.org/en/data-use/api-downloads#predicates).
+With the filters a user can indicate a group of digital objects based on any criteria in the data.
+When new objects are added to DiSSCo that meet the criteria, they will automatically be included in the Virtual Collection.
+A user is also able to add a list of Digital Object Identifiers (DOIs) to the Virtual Collection, which will be used to identify the digital objects that are part of the collection.
+When specific DOIs are used, no new objects will be added as no other object meets the criteria.
 
 **Main contributors**
-: [Sam Leeflang](https://orcid.org/0000-0002-5669-2769), [Soulaine Theocharides](https://orcid.org/0000-0001-7573-4330), [Tom Dijkema](https://orcid.org/0000-0001-9790-9277)
+: [Sam Leeflang](https://orcid.org/0000-0002-5669-2769), [Soulaine Theocharides](https://orcid.org/0000-0001-7573-4330), [Wouter Addink](https://orcid.org/0000-0002-3090-1761), [Sharif Islam](https://orcid.org/0000-0001-8050-0299)
 
 **Creator**
 : Distributed Infrastructure for Scientific Collections (DiSSCo)
 
 **Bibliographic citation**
-: Distributed Infrastructure for Scientific Collections. 2025. Source System List of Terms.
+: Distributed Infrastructure for Scientific Collections. 2025. Virtual Collection List of Terms.
 
 ## 1 Introduction <span id="1-introduction"></span>
 
@@ -55,8 +58,7 @@ Table 1. Vocabularies from which terms have been borrowed (non-normative)
 | Vocabulary                                  | Abbreviation | Namespaces and abbreviations                                               |
 |---------------------------------------------|--------------|----------------------------------------------------------------------------| 
 | [Latimer Core](https://ltc.tdwg.org/terms/) | LtC          | `lct: = 	http://rs.tdwg.org/ltc/terms/`                                    |
-| [Schema.org](https://schema.org/)           | Schema       | `schema: =  https://schema.org/version/latest/schemaorg-current-https.rdf` | 
-| [Activity Streams](https://www.w3.org/TR/activitystreams-vocabulary/) | AS         | `as: = https://www.w3.org/ns/activitystreams#`                             |
+| [Schema.org](https://schema.org/)           | Schema       | `schema: =  https://schema.org/version/latest/schemaorg-current-https.rdf` |
 
 ## 3 Namespaces, Prefixes and Term Names <span id="3-namespace-prefixes-term-names"></span>
 

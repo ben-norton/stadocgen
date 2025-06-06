@@ -162,6 +162,24 @@ def sourceSystemTerms():
                            slug='source-system-term-list'
                            )
 
+@app.route('/virtual-collection-terms')
+def virtualCollectionTerms():
+    header_mdfile = 'app/md/virtual-collection/termlist-header.md'
+    term_file = 'app/data/opends/virtual-collection-termlist.csv'
+
+    marked_text, opends_classes, sssom_df, terms, terms_by_class = generate_terms(header_mdfile, term_file)
+
+    return render_template('termlist.html',
+                           headerMarkdown=Markup(marked_text),
+                           ltcCls=opends_classes,
+                           terms=terms,
+                           sssom=sssom_df,
+                           termsByClass=terms_by_class,
+                           pageTitle='Virtual Collection Term',
+                           title='Virtual Collection Term List',
+                           slug='virtual-collection-term-list'
+                           )
+
 
 @app.route('/digital-specimen-guide')
 def digitalSpecimenGuide():
@@ -277,6 +295,22 @@ def sourceSystemGuide():
                            pageTitle='Source System Quick Reference Guide ',
                            title='Source System Quick Reference',
                            slug='source-system-event-guide',
+                           requiredTerms=required_df,
+                           requiredClasses=required_classes_df
+                           )
+
+@app.route('/virtual-collection-guide')
+def virtualCollectionGuide():
+    header_mdfile = 'app/md/virtual-collection/quick-reference-header.md'
+    term_file = 'app/data/opends/virtual-collection-termlist.csv'
+    grplists, marked_text, required_classes_df, required_df = generate_guide(header_mdfile, term_file)
+
+    return render_template('quick-reference.html',
+                           headerMarkdown=Markup(marked_text),
+                           grplists=grplists,
+                           pageTitle='Virtual Collection Quick Reference Guide ',
+                           title='Virtual Collection Quick Reference',
+                           slug='virtual-collection-event-guide',
                            requiredTerms=required_df,
                            requiredClasses=required_classes_df
                            )
@@ -454,6 +488,30 @@ def sourceSystemResources():
                            erDiagram=er_diagram,
                            title='Source System Resources',
                            slug='source-system-resources'
+                           )
+
+@app.route('/virtual-collection-resources')
+def virtualCollectionResources():
+    file_prefix = 'virtual-collection'
+    header_mdfile = 'app/md/virtual-collection/resources-header.md'
+    with open(header_mdfile, encoding="utf8") as f:
+        marked_text = markdown2.markdown(f.read(), extras=["tables", "fenced-code-blocks"])
+
+    sssom_mdfile = 'app/md/opends/sssom-reference.md'
+    with open(sssom_mdfile, encoding="utf8") as f:
+        marked_sssom = markdown2.markdown(f.read(), extras=["tables", "fenced-code-blocks"])
+
+    class_diagram = retrieve_diagram('class-diagrams', file_prefix)
+    er_diagram = retrieve_diagram('er-diagrams', file_prefix)
+
+    return render_template('resources.html',
+                           headerMarkdown=Markup(marked_text),
+                           sssomRefMarkdown=Markup(marked_sssom),
+                           pageTitle='Virtual Collection Resources ',
+                           classDiagram=class_diagram,
+                           erDiagram=er_diagram,
+                           title='Virtual Collection Resources',
+                           slug='virtual-collection-resources'
                            )
 
 

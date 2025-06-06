@@ -31,14 +31,12 @@ At the moment MAS can only be run on Digital Specimen and Digital Media objects.
 : Distributed Infrastructure for Scientific Collections (DiSSCo)
 
 **Bibliographic citation**
-: Distributed Infrastructure for Scientific Collections. 2024. Machine Annotation Service List of Terms List of Terms.
+: Distributed Infrastructure for Scientific Collections. 2025. Machine Annotation Service List of Terms List of Terms.
 
 ## 1 Introduction <span id="1-introduction"></span>
 ### 1.1 Status of the content of this document <span id="11-status-of-the-content-of-this-document"></span>
 The openDS data specification is in active development.
 This document is work in progres and might change until version 1.0.0 is released.
-Its main function at the moment is to inform the community about the current state of the data model and to gather feedback.
-We hope to include the feedback from the community and reach a first major version of the data model by the end of 2024.
 
 ### 1.2 RFC 2119 key words <span id="12-rfc-2119-key-words"></span>
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 RFC 2119 and RFC 8174 when, and only when, they appear in all capitals, as shown here.
