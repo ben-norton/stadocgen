@@ -52,3 +52,10 @@ classDiagram
    ods:predicateValue : ['string', 'number', 'boolean'] 
    ods:predicateValues : array<string|number|boolean> 
  }
+VirtualCollection -- TombstoneMetadata
+TombstoneMetadata -- RelatedPID
+VirtualCollection -- Agent
+Agent -- Role
+Agent -- Identifier
+TombstoneMetadata -- Agent
+VirtualCollection -- Predicate
