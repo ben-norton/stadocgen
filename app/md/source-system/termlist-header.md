@@ -29,7 +29,7 @@ The Source System object points to the Mapping object which it uses to map the d
 : Distributed Infrastructure for Scientific Collections (DiSSCo)
 
 **Bibliographic citation**
-: Distributed Infrastructure for Scientific Collections. 2025. Source System List of Terms.
+: Distributed Infrastructure for Scientific Collections. 2024. Source System List of Terms.
 
 ## 1 Introduction <span id="1-introduction"></span>
 

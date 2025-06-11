@@ -30,7 +30,7 @@ The basis for the structure of the Digital Specimen object has been made in the 
 : Distributed Infrastructure for Scientific Collections (DiSSCo)
 
 **Bibliographic citation**
-: Distributed Infrastructure for Scientific Collections. 2025. Digital Specimen List of Terms.
+: Distributed Infrastructure for Scientific Collections. 2024. Digital Specimen List of Terms.
 
 ## 1 Introduction <span id="1-introduction"></span>
 ### 1.1 Status of the content of this document <span id="11-status-of-the-content-of-this-document"></span>

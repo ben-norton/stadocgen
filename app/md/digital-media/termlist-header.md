@@ -29,7 +29,7 @@ The basis for the structure of the Digital Media object has been made in the [GB
 : Distributed Infrastructure for Scientific Collections (DiSSCo)
 
 **Bibliographic citation**
-: Distributed Infrastructure for Scientific Collections. 2025. Digital Media List of Terms.
+: Distributed Infrastructure for Scientific Collections. 2024. Digital Media List of Terms.
 
 ## 1 Introduction <span id="1-introduction"></span>
 

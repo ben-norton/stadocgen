@@ -31,7 +31,7 @@ At the moment MAS can only be run on Digital Specimen and Digital Media objects.
 : Distributed Infrastructure for Scientific Collections (DiSSCo)
 
 **Bibliographic citation**
-: Distributed Infrastructure for Scientific Collections. 2025. Machine Annotation Service List of Terms List of Terms.
+: Distributed Infrastructure for Scientific Collections. 2024. Machine Annotation Service List of Terms List of Terms.
 
 ## 1 Introduction <span id="1-introduction"></span>
 ### 1.1 Status of the content of this document <span id="11-status-of-the-content-of-this-document"></span>

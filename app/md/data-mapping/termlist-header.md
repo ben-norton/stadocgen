@@ -36,7 +36,7 @@ All Source Systems can then use the same Data Mapping object.
 : Distributed Infrastructure for Scientific Collections (DiSSCo)
 
 **Bibliographic citation**
-: Distributed Infrastructure for Scientific Collections. 2025. Data Mapping List of Terms.
+: Distributed Infrastructure for Scientific Collections. 2024. Data Mapping List of Terms.
 
 ## 1 Introduction <span id="1-introduction"></span>
 ### 1.1 Status of the content of this document <span id="11-status-of-the-content-of-this-document"></span>

@@ -181,19 +181,39 @@ def iterate_over_object(json_data, term_array, class_name):
 
 def determine_type(term_value, term_key):
     term_type = term_value.get('type')
-    type_dict = {'ods:hasCitations': 'ods:Citation', 'ods:hasEntityRelationships': 'ods:EntityRelationship',
-                 'ods:hasEvents': 'ods:Event',
-                 'ods:hasLocation': 'ods:Location', 'ods:hasAgents': 'ods:Agent', 'ods:hasRoles': 'ods:Role', 'ods:hasAssertions': 'ods:Assertion',
-                 'ods:hasIdentifiers': 'ods:Identifier', 'ods:hasChronometricAges': 'ods:ChronometricAge',
-                 'ods:hasTombstoneMetadata': 'ods:TombstoneMetadata',
-                 'ods:hasTaxonIdentifications': 'ods:TaxonIdentification',
-                 'ods:hasSpecimenParts': 'ods:SpecimenPart', 'prov:wasAssociatedWith': 'ods:Agent', 'ods:hasIdentifications': 'ods:Identification',
-                 'ods:dependency': 'string', 'oa:value': 'string', 'ods:changeValue': 'object',
-                 'ods:hasDefaultMapping': 'ods:DefaultMapping', 'ods:hasTermMapping': 'ods:TermMapping',
-                 'ods:hasProvAgent': 'ods:Agent', 'ods:hasEnvironmentalVariables': 'ods:EnvironmentalVariable',
-                 'ods:hasSecretVariables': 'ods:SecretVariable', 'ods:hasRelatedPIDs': 'ods:RelatedPID',
-                 'ods:metadataLanguages': 'string', 'dcterms:format': 'string', 'dcterms:subject': 'string', 'ac:tag': 'string', 'ods:filters': 'string',
-                 'ods:hasTargetDigitalObjectFilter': 'ods:TargetDigitalObjectFilter', 'ods:predicateValues': 'string|number|boolean', 'ods:hasPredicates': 'ods:Predicate'}
+    type_dict = {
+        "ods:hasCitations": "ods:Citation",
+        "ods:hasEntityRelationships": "ods:EntityRelationship",
+        "ods:hasEvents": "ods:Event",
+        "ods:hasLocation": "ods:Location",
+        "ods:hasAgents": "ods:Agent",
+        "ods:hasRoles": "ods:Role",
+        "ods:hasAssertions": "ods:Assertion",
+        "ods:hasIdentifiers": "ods:Identifier",
+        "ods:hasChronometricAges": "ods:ChronometricAge",
+        "ods:hasTombstoneMetadata": "ods:TombstoneMetadata",
+        "ods:hasTaxonIdentifications": "ods:TaxonIdentification",
+        "ods:hasSpecimenParts": "ods:SpecimenPart",
+        "prov:wasAssociatedWith": "ods:Agent",
+        "ods:hasIdentifications": "ods:Identification",
+        "ods:dependency": "string",
+        "oa:value": "string",
+        "ods:changeValue": "object",
+        "ods:hasDefaultMapping": "ods:DefaultMapping",
+        "ods:hasTermMapping": "ods:TermMapping",
+        "ods:hasProvAgent": "ods:Agent",
+        "ods:hasEnvironmentalVariables": "ods:EnvironmentalVariable",
+        "ods:hasSecretVariables": "ods:SecretVariable",
+        "ods:hasRelatedPIDs": "ods:RelatedPID",
+        "ods:metadataLanguages": "string",
+        "dcterms:format": "string",
+        "dcterms:subject": "string",
+        "ac:tag": "string",
+        "ods:filters": "string",
+        "ods:hasTargetDigitalObjectFilter": "ods:TargetDigitalObjectFilter",
+        "ods:predicateValues": "string|number|boolean",
+        "ods:hasPredicates": "ods:Predicate",
+    }
     if term_type != 'array':
         return term_type
     else:

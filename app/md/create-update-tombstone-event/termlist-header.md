@@ -32,7 +32,7 @@ Each object refers to the other objects through a set of properties, following t
 : Distributed Infrastructure for Scientific Collections (DiSSCo)
 
 **Bibliographic citation**
-: Distributed Infrastructure for Scientific Collections. 2025. Create Update Tombstone Event List of Terms.
+: Distributed Infrastructure for Scientific Collections. 2024. Create Update Tombstone Event List of Terms.
 
 ## 1 Introduction <span id="1-introduction"></span>
 ### 1.1 Status of the content of this document <span id="11-status-of-the-content-of-this-document"></span>
