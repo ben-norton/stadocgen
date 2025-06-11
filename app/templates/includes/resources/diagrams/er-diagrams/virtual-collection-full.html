@@ -1,0 +1,8 @@
+erDiagram
+    VirtualCollection ||--o| TombstoneMetadata : Has
+    TombstoneMetadata ||--o{ RelatedPID : Has
+    TombstoneMetadata ||--|{ Agent : Has
+    Agent ||--|{ Role : Has
+    Agent ||--o{ Identifier : Has
+    VirtualCollection ||--|{ Agent : Has
+    VirtualCollection ||--o{ Predicate : Has

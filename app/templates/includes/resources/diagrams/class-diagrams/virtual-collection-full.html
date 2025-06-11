@@ -1,0 +1,54 @@
+classDiagram
+ class VirtualCollection { 
+   dcterms:identifier : string 
+   ods:fdoType : string 
+   ods:status : string 
+   schema:version : integer 
+   ltc:collectionName : string 
+   ltc:description : string 
+   ltc:basisOfScheme : string 
+   schema:dateCreated : string 
+   schema:dateModified : string 
+   schema:contentURL : string 
+   schema:creator : object 
+   ods:hasTargetDigitalObjectFilter : object 
+   ods:hasTombstoneMetadata : object 
+ }
+ class TombstoneMetadata { 
+   ods:tombstoneDate : string 
+   ods:tombstoneText : string 
+   ods:hasAgents : array<ods:Agent> 
+   ods:hasRelatedPIDs : array<ods:RelatedPID> 
+ }
+ class RelatedPID { 
+   dcterms:identifier : string 
+   schema:identifier : string 
+   ods:relationshipType : string 
+ }
+ class Agent { 
+   schema:identifier : string 
+   schema:name : string 
+   ods:hasRoles : array<ods:Role> 
+   schema:email : string 
+   schema:url : string 
+   ods:hasIdentifiers : array<ods:Identifier> 
+ }
+ class Role { 
+   schema:roleName : string 
+   schema:startDate : string 
+   schema:endDate : string 
+   schema:position : integer 
+ }
+ class Identifier { 
+   ods:predicateType : None 
+   ods:predicateKey : string 
+   ods:predicateValue : ['string', 'number', 'boolean'] 
+   ods:predicateValues : array<string|number|boolean> 
+   ods:hasPredicates : array<ods:Predicate> 
+ }
+ class Predicate { 
+   ods:predicateType : string 
+   ods:predicateKey : string 
+   ods:predicateValue : ['string', 'number', 'boolean'] 
+   ods:predicateValues : array<string|number|boolean> 
+ }

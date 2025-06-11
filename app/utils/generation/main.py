@@ -154,24 +154,66 @@ def iterate_over_object(json_data, term_array, class_name):
             iterate_over_object(term_value.get('items'), term_array, class_name)
             set_required(term_value, term_array)
             class_name = 'Agent'
+        if term_key == 'ods:hasPredicates':
+            class_name = 'Predicate'
+            term_array.append({
+                'namespace': 'ods:',
+                'term_local_name': class_name,
+                'label': camel_case_to_title(class_name),
+                'definition': 'Descripes a predicate that can be used to filter the target Digital Objects this object applies to.',
+                'usage': '',
+                'notes': '',
+                'examples': '',
+                'rdf_type': 'http://www.w3.org/2000/01/rdf-schema#Class',
+                'class_name': 'ods:' + class_name if 'ods:' not in class_name else class_name,
+                'is_required': False,
+                'is_repeatable': True,
+                'compound_name': class_name,
+                'namespace_iri': 'http://rs.dissco.eu/opends/terms/',
+                'term_iri': 'http://rs.dissco.eu/opends/terms/' + class_name,
+                'term_ns_name': 'ods:' + class_name,
+                'datatype': ''
+            })
+            iterate_over_object(term_value.get('items'), term_array, class_name)
+            set_required(term_value, term_array)
 
 
 
 def determine_type(term_value, term_key):
     term_type = term_value.get('type')
-    type_dict = {'ods:hasCitations': 'ods:Citation', 'ods:hasEntityRelationships': 'ods:EntityRelationship',
-                 'ods:hasEvents': 'ods:Event',
-                 'ods:hasLocation': 'ods:Location', 'ods:hasAgents': 'ods:Agent', 'ods:hasRoles': 'ods:Role', 'ods:hasAssertions': 'ods:Assertion',
-                 'ods:hasIdentifiers': 'ods:Identifier', 'ods:hasChronometricAges': 'ods:ChronometricAge',
-                 'ods:hasTombstoneMetadata': 'ods:TombstoneMetadata',
-                 'ods:hasTaxonIdentifications': 'ods:TaxonIdentification',
-                 'ods:hasSpecimenParts': 'ods:SpecimenPart', 'prov:wasAssociatedWith': 'ods:Agent', 'ods:hasIdentifications': 'ods:Identification',
-                 'ods:dependency': 'string', 'oa:value': 'string', 'ods:changeValue': 'object',
-                 'ods:hasDefaultMapping': 'ods:DefaultMapping', 'ods:hasTermMapping': 'ods:TermMapping',
-                 'ods:hasProvAgent': 'ods:Agent', 'ods:hasEnvironmentalVariables': 'ods:EnvironmentalVariable',
-                 'ods:hasSecretVariables': 'ods:SecretVariable', 'ods:hasRelatedPIDs': 'ods:RelatedPID',
-                 'ods:metadataLanguages': 'string', 'dcterms:format': 'string', 'dcterms:subject': 'string', 'ac:tag': 'string',
-                 'ods:filters': 'string'}
+    type_dict = {
+        "ods:hasCitations": "ods:Citation",
+        "ods:hasEntityRelationships": "ods:EntityRelationship",
+        "ods:hasEvents": "ods:Event",
+        "ods:hasLocation": "ods:Location",
+        "ods:hasAgents": "ods:Agent",
+        "ods:hasRoles": "ods:Role",
+        "ods:hasAssertions": "ods:Assertion",
+        "ods:hasIdentifiers": "ods:Identifier",
+        "ods:hasChronometricAges": "ods:ChronometricAge",
+        "ods:hasTombstoneMetadata": "ods:TombstoneMetadata",
+        "ods:hasTaxonIdentifications": "ods:TaxonIdentification",
+        "ods:hasSpecimenParts": "ods:SpecimenPart",
+        "prov:wasAssociatedWith": "ods:Agent",
+        "ods:hasIdentifications": "ods:Identification",
+        "ods:dependency": "string",
+        "oa:value": "string",
+        "ods:changeValue": "object",
+        "ods:hasDefaultMapping": "ods:DefaultMapping",
+        "ods:hasTermMapping": "ods:TermMapping",
+        "ods:hasProvAgent": "ods:Agent",
+        "ods:hasEnvironmentalVariables": "ods:EnvironmentalVariable",
+        "ods:hasSecretVariables": "ods:SecretVariable",
+        "ods:hasRelatedPIDs": "ods:RelatedPID",
+        "ods:metadataLanguages": "string",
+        "dcterms:format": "string",
+        "dcterms:subject": "string",
+        "ac:tag": "string",
+        "ods:filters": "string",
+        "ods:hasTargetDigitalObjectFilter": "ods:TargetDigitalObjectFilter",
+        "ods:predicateValues": "string|number|boolean",
+        "ods:hasPredicates": "ods:Predicate",
+    }
     if term_type != 'array':
         return term_type
     else:
@@ -204,7 +246,6 @@ def camel_case_to_title(camel_case_str):
 def generate_class_diagram(df, schema_object):
     class_df = df.query('rdf_type == "http://www.w3.org/2000/01/rdf-schema#Class"')
     class_mermaid_string = 'classDiagram\n'
-    top_class_name = class_df.iloc[0]['term_local_name']
     for index, row in class_df.iterrows():
         class_mermaid_string += f' class {row["term_local_name"]} {{ \n'
         class_name = 'ods:' + row["term_local_name"]
@@ -244,7 +285,7 @@ def main():
             logging.exception(f"An error occurred: {e}")
         df = pd.DataFrame(term_array)
         df.to_csv(csv_file_path, index=False)
-        # generate_class_diagram(df, schema_object)
+        generate_class_diagram(df, schema_object)
 
 
 if __name__ == "__main__":

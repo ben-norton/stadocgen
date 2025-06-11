@@ -303,5 +303,34 @@
         "is_required": false
       }
     ]
+  },
+    {
+    "csv_prefix": "virtual-collection",
+    "objects": [
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/virtual-collection/0.1.0/virtual-collection.json",
+        "class_name": "VirtualCollection",
+        "class_description": "The Virtual Collection class represents a collection of digital objects that are grouped together based on a common theme or purpose.",
+        "is_required": true
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json",
+        "class_name": "TombstoneMetadata",
+        "class_description": "The tombstone metadata about the tombstoned digital object, including the what, who and when of the tombstoning.",
+        "is_required": false
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json",
+        "class_name": "Agent",
+        "class_description": "A generic agent class, containing information about the actor who performed an activity. This could be a person, an organization or a machine.",
+        "is_required": true
+      },
+      {
+        "endpoint": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/target-digital-object-filter.json",
+        "class_name": "Identifier",
+        "class_description": "A generic class indicating to which cross-section of the Digital Objects this object applies to.",
+        "is_required": true
+      }
+    ]
   }
 ]

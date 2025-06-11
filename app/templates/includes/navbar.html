@@ -46,6 +46,10 @@
                             <a class="dropdown-item {{ 'nav-link-active' if slug == 'source-system-terms' }}"
                                href="{{ url_for('sourceSystemTerms') }}">Source System</a>
                         </li>
+                        <li>
+                            <a class="dropdown-item {{ 'nav-link-active' if slug == 'virtual-collection-terms' }}"
+                               href="{{ url_for('virtualCollectionTerms') }}">Virtual Collection</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -81,6 +85,10 @@
                             <a class="dropdown-item {{ 'nav-link-active' if slug == 'source-system-guide' }}"
                                href="{{ url_for('sourceSystemGuide') }}">Source System</a>
                         </li>
+                        <li>
+                            <a class="dropdown-item {{ 'nav-link-active' if slug == 'virtual-collection-guide' }}"
+                               href="{{ url_for('virtualCollectionGuide') }}">Virtual Collection</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -109,6 +117,9 @@
                         </li>
                         <li><a class="dropdown-item {{ 'nav-link-active' if slug == 'source-system-resource' }}"
                                href="{{ url_for('sourceSystemResources') }}">Source System</a>
+                        </li>
+                        <li><a class="dropdown-item {{ 'nav-link-active' if slug == 'virtual-collection-resource' }}"
+                               href="{{ url_for('virtualCollectionResources') }}">Virtual Collection</a>
                         </li>
                     </ul>
                 </div>

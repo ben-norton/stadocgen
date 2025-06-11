@@ -37,9 +37,6 @@ The basis for the structure of the Digital Media object has been made in the [GB
 
 The openDS data specification is in active development.
 This document is work in progres and might change until version 1.0.0 is released.
-Its main function at the moment is to inform the community about the current state of the data model and to gather
-feedback.
-We hope to include the feedback from the community and reach a first major version of the data model by the end of 2024.
 
 ### 1.2 RFC 2119 key words <span id="12-rfc-2119-key-words"></span>
 
