@@ -213,6 +213,8 @@ def determine_type(term_value, term_key):
         "ods:hasTargetDigitalObjectFilter": "ods:TargetDigitalObjectFilter",
         "ods:predicateValues": "string|number|boolean",
         "ods:hasPredicates": "ods:Predicate",
+        "ods:specimenMachineAnnotationServices": "string",
+        "ods:mediaMachineAnnotationServices": "string"
     }
     if term_type != 'array':
         return term_type

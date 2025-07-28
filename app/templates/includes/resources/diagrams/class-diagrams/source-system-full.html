@@ -10,12 +10,14 @@ classDiagram
    schema:dateModified : string 
    schema:creator : object 
    schema:url : string 
+   ods:filters : array<string> 
    ltc:collectionManagementSystem : string 
    ods:translatorType : string 
    ods:maximumRecords : integer 
    ods:dataMappingID : string 
-   ods:hasTombstoneMetadata : object
-   ods:filters: array<string>
+   ods:specimenMachineAnnotationServices : array<string> 
+   ods:mediaMachineAnnotationServices : array<string> 
+   ods:hasTombstoneMetadata : object 
  }
  class TombstoneMetadata { 
    ods:tombstoneDate : string 
