@@ -113,9 +113,11 @@ def mappings():
         sssom_marked_text = markdown2.markdown(f.read(), extras=["tables", "fenced-code-blocks"])
 
     mappings_tsv = str(relpath) + 'data/output/mappings.tsv'
-    mappings_df = pd.read_csv(mappings_tsv, sep='\t', lineterminator='\r', encoding='utf-8', skipinitialspace=True)
+    mappings_df_csv = pd.read_csv(mappings_tsv, sep='\t', lineterminator='\r', encoding='utf-8', skipinitialspace=True)
 
-    mappings_df = mappings_df.fillna('')
+    mappings_df_csv = mappings_df_csv.fillna('')
+    mappings_df = mappings_df_csv.sort_values(by=['sssom_subject_category','sssom_subject_id','sssom_object_category','sssom_object_id'])
+
 
     return render_template('mappings.html',
                            headerMarkdown=Markup(marked_text),

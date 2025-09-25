@@ -7,13 +7,9 @@ mids:MIDS1	mids:License	License
 mids:MIDS1	mids:Modified	Modified
 mids:MIDS2	mids:QualitativeLocation	QualitativeLocation
 mids:MIDS2	mids:QuantitativeLocation	QuantitativeLocation
-mids:MIDS2	mids:CollectingAgent	CollectingAgent
-mids:MIDS2	mids:DateCollected	DateCollected
-mids:MIDS2	mids:CollectingNumber	CollectingNumber
-mids:MIDS2	mids:Media	Media
+mids:MIDS2	mids:GeologicalContext	GeologicalContext
 mids:MIDS3	mids:GeographicalLocalityID	GeographicalLocalityID
 mids:MIDS3	mids:InstitutionID	InstitutionID
-mids:MIDS3	mids:CollectorID	CollectorID
-mids:MIDS3	mids:ScientificNameID	ScientificNameID
+mids:MIDS3	mids:IdentifiedAsID	IdentifiedAsID
 mids:MIDS3	mids:IdentifiedByID	IdentifiedByID
 mids:MIDS3	mids:MediaID	MediaID

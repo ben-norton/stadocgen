@@ -45,20 +45,14 @@ df.rename(columns={'MIDSLevel_localName': 'class_name',
                     'informationElement_localName': 'term_local_name',
                     'term_added': 'term_created'
                    }, inplace=True)
-
 # RDF Type
 df['rdf_type'] = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
 
 # Qualified Term
 df['term_ns_name'] = 'mids:' + df['term_local_name']
-
 df["term_created"] = pd.to_datetime(df["term_created"], format='%d/%m/%Y')
 df["term_modified"] = pd.to_datetime(df["term_modified"], format='%d/%m/%Y')
-
 df['class_pref_label'] = df['class_name'].str.replace('MIDS','MIDS Level ')
-
-# Resave
-
 
 # Process Examples ------------------------------------------- */
 df_examples = pd.read_csv(examples_target, encoding="utf8",sep='\t')
@@ -72,11 +66,7 @@ df2 = examples_df.groupby('term_local_name')['example'].apply(list).reset_index(
 df2 = df2[df2['examples_list'].notna()]
 df_final = pd.merge(df, df2, how="left", on=["term_local_name"])
 
-
-
 #examplesPivotTarget = str(target_path) + '/examples_pivot.tsv'
 #examples_pivot_df.to_csv(examplesPivotTarget, encoding="utf8",sep='\t',index=False)
-
-
 
 df_final.to_csv(target_file, encoding="utf8",sep='\t',index=False)

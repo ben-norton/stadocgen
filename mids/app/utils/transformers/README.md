@@ -1,7 +1,8 @@
 # Transformers README
 This directory contains the data transformation scripts run prior to generating the documentation webpages.
+Last Modifed: 20250925
 
-: Source Files: [stadocgen root]/mids/app/data/source/mids-source
+: Source Files: [stadocgen root]/mids/app/data/source/mids-repo
 : Target Directory: [stadocgen root]/mids/app/data/output
 
 ## Contents
@@ -23,7 +24,7 @@ Sequence: process_source_mappings.py > levels_transformations.py > information_e
 
 **levels_transformations.py** and **information_elements_transformations.py**
 - Transforms source MIDS Levels and Information Elements CSV files
-- Output stored in timestamped directory (data/output/yyyymmdd) and copied to parent output folder. Once verified, the timestamped folder can be removed.
+- Output from transformations is copied to the data/output folder
 
 **merge_source_files.py**
 - Merges the transformed MIDS levels and Information Elements CSV files into a single MIDS Termlist CSV
