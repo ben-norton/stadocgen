@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify, Response
 from flask_frozen import Freezer
 from markupsafe import Markup
 import sys
@@ -167,6 +167,38 @@ def about():
         landingPage=meta['links']['landing_page'],
         githubRepo=meta['links']['github_repository'],
         slug='about')
+
+
+#API Requests for Table Filters
+@app.route('/api/data')
+def get_data():
+    """Return all data as JSON"""
+    mappings_tsv = str(relpath) + 'data/output/mappings.tsv'
+    mappings_df = pd.read_csv(mappings_tsv, sep='\t', lineterminator='\r', encoding='utf-8', skipinitialspace=True, index_col=0)
+    df_cleaned = mappings_df.dropna(how='all')
+    json_string = df_cleaned.to_json(orient="records")
+    return Response(json_string, mimetype='application/json')
+
+@app.route('/api/filters')
+def get_filters():
+    """Return unique values for each filterable column"""
+    mappings_tsv = str(relpath) + 'data/output/mappings.tsv'
+    mappings_df = pd.read_csv(mappings_tsv, sep='\t', lineterminator='\r', encoding='utf-8', skipinitialspace=True, index_col=0)
+    mappings_df = mappings_df.fillna('')
+    df_cleaned = mappings_df.dropna(how='all')
+    unique_levels = df_cleaned['sssom_subject_category'].unique()
+    unique_infoElements = df_cleaned['sssom_subject_id'].unique()
+    levels = unique_levels.tolist()
+    infoElements = unique_infoElements.tolist()
+
+    return jsonify({
+        'levels': levels,
+        'infoElements': infoElements
+    })
+
+
+
+
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
