@@ -170,7 +170,7 @@ def about():
 
 
 #API Requests for Table Filters
-@app.route('/api/data')
+@app.route('/api/data.json')
 def get_data():
     """Return all data as JSON"""
     mappings_tsv = str(relpath) + 'data/output/mappings.tsv'
@@ -179,7 +179,7 @@ def get_data():
     json_string = df_cleaned.to_json(orient="records")
     return Response(json_string, mimetype='application/json')
 
-@app.route('/api/filters')
+@app.route('/api/filters.json')
 def get_filters():
     """Return unique values for each filterable column"""
     mappings_tsv = str(relpath) + 'data/output/mappings.tsv'
