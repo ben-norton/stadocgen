@@ -97,10 +97,22 @@
                                 </td>
                             </tr>
                         {% endif %}
+                            <tr>
+                                <th scope="row">Mapppings</th>
+                                <td>
+                                    <a href="{{ url_for('mappings') }}#dwc-mappings-anchor" class="anchor-link text-block">Darwin Core Mappings</a>
+                                    <a href="{{ url_for('mappings') }}#abcd-mappings-anchor" class="anchor-link text-block">ABCD Mappings</a>
+                                </td>
+                            </tr>
                     </tbody>
                 </table>
                 {% include 'includes/information-elements/mappings-table.html' %}
             </div>
         </div>
+        <style>
+        .text-block {
+            display: block;
+        }
+        </style>
     {% endif %}
 {% endfor %}

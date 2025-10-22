@@ -5,6 +5,7 @@ import sys
 import markdown2
 import pandas as pd
 import yaml
+from datetime import date
 app = Flask(__name__, template_folder='templates')
 freezer = Freezer(app)
 
@@ -31,6 +32,8 @@ def internal_error(error):
 
 @app.route('/')
 def home():
+    today = date.today()
+    lastModified = today.strftime("%Y-%m-%d")
     home_mdfile = str(relpath) + 'md/home-content.md'
     with open(home_mdfile, encoding="utf8") as f:
         marked_text = markdown2.markdown(f.read(), extras=["tables", "fenced-code-blocks"])
@@ -41,7 +44,8 @@ def home():
                            acronym=meta['acronym'],
                            landingPage=meta['links']['landing_page'],
                            githubRepo=meta['links']['github_repository'],
-                           slug='home'
+                           slug='home',
+                           lastModified=lastModified
                            )
 
 @app.route('/information-elements/')
@@ -53,9 +57,11 @@ def information_elements():
     # Read Information Elements from Master List (see transformation scripts)
     information_elements_tsv = str(relpath) + 'data/output/master-list.tsv'
     information_elements_df = pd.read_csv(information_elements_tsv, sep='\t', lineterminator='\n', encoding='utf-8')
+    information_elements_df = information_elements_df.replace(r'\n', ' ', regex=True)
+    information_elements_df['anchor_name'] = information_elements_df['term_local_name'].str.lower()
     information_elements_df = information_elements_df.sort_values(by=['class_name', 'term_local_name'])
 
-    # Read MIDS Levels (rdfs:Class)
+    # Read MIDS Levels
     levels_tsv = str(relpath) + 'data/output/levels.tsv'
     levels_df = pd.read_csv(levels_tsv, sep='\t', lineterminator='\n', encoding='utf-8')
     levels = levels_df.sort_values(by=['term_local_name'])
@@ -64,6 +70,7 @@ def information_elements():
     # Read SSSOM Mappings
     mappings_tsv = str(relpath) + 'data/output/mappings.tsv'
     mappings_df = pd.read_csv(mappings_tsv, sep='\t', lineterminator='\r', encoding='utf-8', skipinitialspace=True)
+
 
     # Read Examples convert rows to comma-separated string from list
     examples_tsv = str(relpath) + 'data/output/examples.tsv'
@@ -77,10 +84,17 @@ def information_elements():
                          how="left")
     merged_df.rename(columns={'examples_list_y': 'examples_list'}, inplace=True)
 
+    # Add Mapping Number to Information Elements to enable anchor links to Mapping Page
+    merged_mapping_number_df = pd.merge(merged_df, mappings_df[['sssom_subject_id','mapping_number']],
+                                        left_on="term_ns_name",
+                                        right_on="sssom_subject_id",
+                                        how="inner")
+
     # Group Information Elements by Level
     grpdict2 = information_elements_df.groupby('class_pref_label')[
         ['term_ns_name', 'term_local_name', 'namespace', 'compound_name', 'term_version_iri', 'term_modified']].apply(
         lambda g: list(map(tuple, g.values.tolist()))).to_dict()
+
     information_elements_by_level = []
     for i in grpdict2:
         information_elements_by_level.append({
@@ -97,7 +111,7 @@ def information_elements():
                            githubRepo=meta['links']['github_repository'],
                            slug='information-elements',
                            levels=levels,
-                           informationElements=merged_df,
+                           informationElements=merged_mapping_number_df,
                            mappings=mappings_df,
                            informationElementsByLevel=information_elements_by_level,
                            examples=examples_df
@@ -116,6 +130,7 @@ def mappings():
     mappings_df_csv = pd.read_csv(mappings_tsv, sep='\t', lineterminator='\r', encoding='utf-8', skipinitialspace=True)
 
     mappings_df_csv = mappings_df_csv.fillna('')
+    mappings_df_csv['anchor_name'] = mappings_df_csv['term_local_name'].str.lower()
     mappings_df = mappings_df_csv.sort_values(by=['sssom_subject_category','sssom_subject_id','sssom_object_category','sssom_object_id'])
 
 

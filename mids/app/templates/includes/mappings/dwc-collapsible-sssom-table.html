@@ -1,25 +1,23 @@
-<h3 id="4-dwc-mappings-table">2.2 Darwin Core Mapping Table</h3>
+<h3 id="2-1-dwc-mappings-table">2.1 Darwin Core Mapping Table</h3>
 <p>The table below provides Darwin Core to MIDS mappings with comprehensive metadata.</p>
-
 <div class="table-outer-wrapper">
     <div class="term-table-wrapper">
         <div class="table-responsive print-avoid">
-            <table class="table table-condensed table-sssom table-child striped-rows">
+            <table class="table table-condensed table-sssom table-child striped-rows mappings-table">
                 <thead>
-                <tr>
-                    <th>sssom:subject_category</th>
-                    <th>sssom:subject_id</th>
-                    <th>sssom:object_category</th>
-                    <th colspan="2">sssom:object_id</th>
-
-                </tr>
+                    <tr>
+                        <th>sssom:subject_category</th>
+                        <th>sssom:subject_id</th>
+                        <th>sssom:object_category</th>
+                        <th colspan="2">sssom:object_id</th>
+                    </tr>
                 </thead>
                 <tbody id="accordian-tbody">
                     {% for idx, v in mappings.iterrows() %}
                         {% if v['object_namespace'] == 'dwc' %}
                         <tr class="accordion-toggle collapsed alt-rows"
                             id="mapping-{{ (v['mapping_number']|round(2)|string).rstrip('.0')  }}"
-                            href="#collapse-{{ (v['mapping_number']|round(2)|string).rstrip('.0')  }}""
+                            href="#collapse-{{ (v['mapping_number']|round(2)|string).rstrip('.0')  }}"
                             data-bs-toggle="collapse"
                             data-bs-target="#collapse-{{ (v['mapping_number']|round(2)|string).rstrip('.0')  }}"
                             aria-expanded="false"
