@@ -4,7 +4,6 @@ from datetime import date
 from pathlib import Path
 import csv
 import os
-from config import get_project_root
 
 today = date.today()
 ts = today.strftime("%Y%m%d")
@@ -26,17 +25,18 @@ if not os.path.isdir(termsFile):
         writer = csv.DictWriter(f, fieldnames = fields, delimiter='\t')
         writer.writeheader()
 
+# Read Source FIles
 df_levels = pd.read_csv(levelsFile, encoding='utf8',sep='\t')
 df_infoElements = pd.read_csv(infoElFile, encoding='utf8',sep='\t')
 df_terms = pd.read_csv(termsFile, encoding='utf8',sep='\t')
 
+# Merge Dataframes
 mergeFrames = [df_levels, df_infoElements]
-
 df_terms = pd.concat([df_terms,df_levels])
 df_final = pd.concat([df_terms,df_infoElements])
 df_final['term_uri'] = 'https://mids.tdwg.org/information-elements/index.html#' + df_final['term_local_name']
 
-## Save
+## Save Merged File
 df_final.to_csv(termsFile, index=False, encoding='utf8',sep='\t')
 
 ### Merge Mappings
