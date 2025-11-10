@@ -67,11 +67,6 @@ def information_elements():
     levels = levels_df.sort_values(by=['term_local_name'])
     levels_df['level'] = levels_df['term_local_name'].map(lambda x: x.lstrip('+-').rstrip('MIDS'))
 
-    # Read SSSOM Mappings
-    mappings_tsv = str(relpath) + 'data/output/mappings.tsv'
-    mappings_df = pd.read_csv(mappings_tsv, sep='\t', lineterminator='\r', encoding='utf-8', skipinitialspace=True)
-
-
     # Read Examples convert rows to comma-separated string from list
     examples_tsv = str(relpath) + 'data/output/examples.tsv'
     examples_df = pd.read_csv(examples_tsv, sep='\t', lineterminator='\r', encoding='utf-8')
@@ -83,12 +78,6 @@ def information_elements():
     merged_df = pd.merge(information_elements_df, df2[['term_local_name', 'examples_list']], on="term_local_name",
                          how="left")
     merged_df.rename(columns={'examples_list_y': 'examples_list'}, inplace=True)
-
-    # Add Mapping Number to Information Elements to enable anchor links to Mapping Page
-    merged_mapping_number_df = pd.merge(merged_df, mappings_df[['sssom_subject_id','mapping_number']],
-                                        left_on="term_ns_name",
-                                        right_on="sssom_subject_id",
-                                        how="inner")
 
     # Group Information Elements by Level
     grpdict2 = information_elements_df.groupby('class_pref_label')[
@@ -111,8 +100,7 @@ def information_elements():
                            githubRepo=meta['links']['github_repository'],
                            slug='information-elements',
                            levels=levels,
-                           informationElements=merged_mapping_number_df,
-                           mappings=mappings_df,
+                           informationElements=merged_df,
                            informationElementsByLevel=information_elements_by_level,
                            examples=examples_df
                            )
