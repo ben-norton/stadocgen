@@ -71,24 +71,24 @@
     <h6>On this page</h6>
     <ul>
         
-            <li><a href="#MineralName">MineralName</a></li>
         
+            <li><a href="#chrono:ChronometricAge">chrono:ChronometricAge</a></li>
         
-            <li><a href="#Chemistry">Chemistry</a></li>
+            <li><a href="#dwc:GeologicContext">dwc:GeologicContext</a></li>
         
-            <li><a href="#ChronometricAge">ChronometricAge</a></li>
+            <li><a href="#dwc:Location">dwc:Location</a></li>
         
-            <li><a href="#Conservation">Conservation</a></li>
+            <li><a href="#dwc:MaterialAssertion">dwc:MaterialAssertion</a></li>
         
-            <li><a href="#ConstituentPart">ConstituentPart</a></li>
+            <li><a href="#geoext:Chemistry">geoext:Chemistry</a></li>
         
-            <li><a href="#GeologicContext">GeologicContext</a></li>
+            <li><a href="#geoext:Conservation">geoext:Conservation</a></li>
         
-            <li><a href="#Hazard">Hazard</a></li>
+            <li><a href="#geoext:ConstituentPart">geoext:ConstituentPart</a></li>
         
-            <li><a href="#Location">Location</a></li>
+            <li><a href="#geoext:Hazard">geoext:Hazard</a></li>
         
-            <li><a href="#MaterialAssertion">MaterialAssertion</a></li>
+            <li><a href="#geoext:Name">geoext:Name</a></li>
         
         <li></li>
         <li><a href="#top"><em>Return to Top</em></a></li>
@@ -99,8 +99,6 @@
                 <div class="col-lg-9 order-lg-first mx-auto">
                     <div class="content-header-wrapper">
                         
-                            <h2><span style="color:red">DRAFT</span></h2>
-                        
                         <p>This document is intended to be an easy-to-read reference the currently recommended terms of the Mineralogy Extension. 
 This document is not part of the standard. It draws on the term names and definitions from the normative part of the 
 standard and combines them with comments and examples that are not normative, but that are meant to help people to use 
@@ -108,10 +106,7 @@ the terms consistently. Comprehensive metadata for current and obsolete terms in
 form are found in a list of terms document. <em>List of files and types</em> can be found in the Mineralogy Extension repository.</p>
 
                     </div>
-                    <h3>Requirements</h3>
-
-<p>The tables below provides a summary of the required classes and terms in the Mineralogy Extension.</p>
-
+                    
 <div class="table-outer-wrapper">
     <h5 class="table-header">Required Classes</h5>
     <div class="term-table-wrapper">
@@ -127,8 +122,8 @@ form are found in a list of terms document. <em>List of files and types</em> can
                 <tbody>
                 
                     <tr>
-                        <td><a href="#ConstituentPart.ConstituentPart">minext::ConstituentPart</a></td>
-                        <td>Mineral</td>
+                        <td><a href="#geoext:ConstituentPart_ConstituentPart">geoext:ConstituentPart</a></td>
+                        <td>Constituent Part</td>
                         <td>True</td>
                     </tr>
                 
@@ -150,37 +145,44 @@ form are found in a list of terms document. <em>List of files and types</em> can
                 <tbody>
                     
                         <tr>
-                            <td><a href="#ConstituentPart.constituentPartType">minext::constituentPartType</a></td>
+                            <td><a href="#geoext:ConstituentPart_materialEntityID">geoext:materialEntityID</a></td>
+                            <td>Material Entity ID</td>
+                            <td>geoext:ConstituentPart</td>
+                            <td>True</td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="#geoext:ConstituentPart_constituentPartID">geoext:constituentPartID</a></td>
+                            <td>Constituent Part ID</td>
+                            <td>geoext:ConstituentPart</td>
+                            <td>True</td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="#geoext:ConstituentPart_constituentPartType">geoext:constituentPartType</a></td>
                             <td>Constituent Part Type</td>
-                            <td>ConstituentPart</td>
+                            <td>geoext:ConstituentPart</td>
                             <td>True</td>
                         </tr>
                     
                         <tr>
-                            <td><a href="#ConstituentPart.materialEntityIdentifier">minext::materialEntityIdentifier</a></td>
-                            <td>Material Identifier</td>
-                            <td>ConstituentPart</td>
-                            <td>True</td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="#ConstituentPart.constituentPartIdentifier">minext::constituentPartIdentifier</a></td>
-                            <td>Constituent Part Identifier</td>
-                            <td>ConstituentPart</td>
-                            <td>True</td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="#MineralName.name">minext::name</a></td>
+                            <td><a href="#geoext:Name_name">geoext:name</a></td>
                             <td>Name</td>
-                            <td>MineralName</td>
+                            <td>geoext:Name</td>
                             <td>True</td>
                         </tr>
                     
                         <tr>
-                            <td><a href="#MineralName.nameIdentifier">minext::nameIdentifier</a></td>
+                            <td><a href="#geoext:Name_specimenName">geoext:specimenName</a></td>
+                            <td>Specimen Name</td>
+                            <td>geoext:Name</td>
+                            <td>True</td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="#geoext:Name_nameIdentifier">geoext:nameIdentifier</a></td>
                             <td>Name Identifier</td>
-                            <td>MineralName</td>
+                            <td>geoext:Name</td>
                             <td>True</td>
                         </tr>
                     
@@ -193,259 +195,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
 <a id="minext"></a>
 
 
-    <h2 id="Chemistry">Chemistry</h2>
-    <div class="my-4">
-         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#Chemistry">minext:Chemistry</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#measuredChemistry">minext:measuredChemistry</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#chemistryRemarks">minext:chemistryRemarks</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#measuredFormulaSource">minext:measuredFormulaSource</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#mineralogicalAnalysisProtocol">minext:mineralogicalAnalysisProtocol</a>
-        
-    </div>
-    
-        <div class="table-responsive" id="Chemistry">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Chemistry</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>Properties that describe the chemical composition of a mineral</td>
-                    </tr>
-                   
-                    
-                    
-
-                    
-                    
-                </tbody>
-            </table>
-        </div>
-    
-        <div class="table-responsive" id="measuredChemistry">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                        <th class="property" colspan="2">
-                            <span class="title">minext:measuredChemistry</span>
-                            <span class="badge badge-property float-end">Property</span>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Measured Formula</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>A concise expression of the chemical composition of a mineral that shows the number of atoms of each element in a molecule, their spatial arrangement, and their linkage to each other.</td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
-                    </tr>
-                    
-                    
-                    
-
-                    
-                        
-                        <tr>
-                            <th scope="row">Examples</th>
-                            <td>
-                                <ul class="td-list">
-									
-										<li><span>SiO2 (65.76), TiO2 (32.120), Al2O3 (2.21)</span></li>
-									
-										<li><span>(Mg0.77Fe0.23)2SiO4</span></li>
-									
-										<li><span>An6.4 Ab73.6 Or20</span></li>
-									
-								</ul>
-                            </td>
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-    
-        <div class="table-responsive" id="chemistryRemarks">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                        <th class="property" colspan="2">
-                            <span class="title">minext:chemistryRemarks</span>
-                            <span class="badge badge-property float-end">Property</span>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Chemistry Remarks</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>General remarks about the chemical and isotopic composition of a mineral</td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
-                    </tr>
-                    
-                    
-                    
-
-                    
-                    
-                </tbody>
-            </table>
-        </div>
-    
-        <div class="table-responsive" id="measuredFormulaSource">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                        <th class="property" colspan="2">
-                            <span class="title">minext:measuredFormulaSource</span>
-                            <span class="badge badge-property float-end">Property</span>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Measured Formula Source</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>A list (concatenated and separated) of resources associated with the reported measured chemistry described specifically enough to allow anyone in the future to use the same resources.</td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
-                    </tr>
-                    
-                    
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Recommended best practice is to use full bibliographic citations, global unique identifiers, or resolvable and persistent URIs. See the broader concept http://rs.tdwg.org/dwc/terms/associatedReferences
-                            
-                        </td>
-                    </tr>
-                    
-
-                    
-                        
-                        <tr>
-                            <th scope="row">Examples</th>
-                            <td>
-                                <ul class="td-list">
-									
-										<li><span>Novak, G. A., &amp; Gibbs, G. V. (1971). The crystal chemistry of the silicate garnets. American Mineralogist: Journal of Earth and Planetary Materials, 56(5-6), 791-825.</span></li>
-									
-								</ul>
-                            </td>
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-    
-        <div class="table-responsive" id="mineralogicalAnalysisProtocol">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                        <th class="property" colspan="2">
-                            <span class="title">minext:mineralogicalAnalysisProtocol</span>
-                            <span class="badge badge-property float-end">Property</span>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Mineralogical Analysis Protocol</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>The technique utilized to determine the chemical composition or crystallography of a mineral</td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
-                    </tr>
-                    
-                    
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Acronyms should be avoided even for widely recognized annotations. Recommended best practice is to use a controlled vocabulary such as https://vocabs.ardc.edu.au/viewById/650
-                            
-                        </td>
-                    </tr>
-                    
-
-                    
-                        
-                        <tr>
-                            <th scope="row">Examples</th>
-                            <td>
-                                <ul class="td-list">
-									
-										<li><span>Wet Chemistry</span></li>
-									
-										<li><span>X-ray fluorescence</span></li>
-									
-										<li><span>Electron probe microanalysis</span></li>
-									
-										<li><span>Scanning electron microscopy with energy-dispersive X-ray spectroscopy</span></li>
-									
-										<li><span>X=ray diffraction </span></li>
-									
-								</ul>
-                            </td>
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-    
-
-    <h2 id="ChronometricAge">ChronometricAge</h2>
+    <h2 id="chrono:ChronometricAge">chrono:ChronometricAge</h2>
     <div class="my-4">
          
             <a class="btn btn-sm btn-outline-primary m-1" href="#ChronometricAge">chrono:ChronometricAge</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#chronometricAgeEvent">chrono:chronometricAgeEvent</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#chronometricAgentGeologicProcess">chrono:chronometricAgentGeologicProcess</a>
         
     </div>
     
@@ -475,13 +230,13 @@ form are found in a list of terms document. <em>List of files and types</em> can
             </table>
         </div>
     
-        <div class="table-responsive" id="chronometricAgeEvent">
+        <div class="table-responsive" id="chronometricAgentGeologicProcess">
             <table class="table table-compact">
                 <thead>
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">chrono:chronometricAgeEvent</span>
+                            <span class="title">chrono:chronometricAgentGeologicProcess</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -490,16 +245,16 @@ form are found in a list of terms document. <em>List of files and types</em> can
                 <tbody>
                     <tr>
                         <th scope="row">Label</th>
-                        <td>Chronometric Age Event</td>
+                        <td>Chronometric Age Geologic Process</td>
                     </tr>
 					<tr>
                         <th scope="row">Definition</th>
-                        <td>Geologic event or process the chronometric age of a mineral is attributed too</td>
+                        <td>The name of the geologic process a chronometric age of a geologic material is attributed too</td>
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
@@ -512,640 +267,32 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             <td>
                                 <ul class="td-list">
 									
-										<li><span>Maximum Depositional Age</span></li>
-									
-										<li><span>Igneous Crystallization</span></li>
+										<li><span>Igneous Crystallization, magmatic cooling</span></li>
 									
 								</ul>
                             </td>
                         </tr>
                     
-                </tbody>
-            </table>
-        </div>
-    
-
-    <h2 id="Conservation">Conservation</h2>
-    <div class="my-4">
-         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#Conservation">minext:Conservation</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#treatments">minext:treatments</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#handlingRequirements">minext:handlingRequirements</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#damageRemarks">minext:damageRemarks</a>
-        
-    </div>
-    
-        <div class="table-responsive" id="Conservation">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Conservation</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>Processes, protocols, and techniques established for the purpose of the protection and preservation of a mineral or specimen</td>
-                    </tr>
-                   
-                    
-                    
-
-                    
-                    
-                </tbody>
-            </table>
-        </div>
-    
-        <div class="table-responsive" id="treatments">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                        <th class="property" colspan="2">
-                            <span class="title">minext:treatments</span>
-                            <span class="badge badge-property float-end">Property</span>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Treatments</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>Description of any actions taken to alter the specimen for a particular purpose</td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Specimen</td>
-                    </tr>
-                    
-                    
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Includes both proactive and reactive actions
-                            
-                        </td>
-                    </tr>
-                    
-
-                    
-                        
-                        <tr>
-                            <th scope="row">Examples</th>
-                            <td>
-                                <ul class="td-list">
-									
-										<li><span>Mineral heated to enhance color</span></li>
-									
-										<li><span>Pieces glued together for reconstruction</span></li>
-									
-										<li><span>Polished surface to improvement that visibility of fabrics and mineralogy</span></li>
-									
-								</ul>
-                            </td>
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-    
-        <div class="table-responsive" id="handlingRequirements">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                        <th class="property" colspan="2">
-                            <span class="title">minext:handlingRequirements</span>
-                            <span class="badge badge-property float-end">Property</span>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Handling Requirements</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>A summary of the procedural requirements employed to preserve and protect the specimen during physical interaction</td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Specimen</td>
-                    </tr>
-                    
-                    
-                    
-
-                    
-                        
-                        <tr>
-                            <th scope="row">Examples</th>
-                            <td>
-                                <ul class="td-list">
-									
-										<li><span>Handle with gloves</span></li>
-									
-										<li><span>Not to be taken out of storage medium</span></li>
-									
-										<li><span>delicate</span></li>
-									
-										<li><span>avoid contact with direct sunlight</span></li>
-									
-								</ul>
-                            </td>
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-    
-        <div class="table-responsive" id="damageRemarks">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                        <th class="property" colspan="2">
-                            <span class="title">minext:damageRemarks</span>
-                            <span class="badge badge-property float-end">Property</span>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Damage Remarks</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>A general description of any material changes to a mineral which is perceived to have negatively affected an item’s value-defining aspects.</td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Specimen</td>
-                    </tr>
-                    
-                    
-                    
-
-                    
-                        
-                        <tr>
-                            <th scope="row">Examples</th>
-                            <td>
-                                <ul class="td-list">
-									
-										<li><span>Due to oxidation and hydration of the pyrite in the coal, the sample has largely decayed to a coal powder with some larger coal pieces</span></li>
-									
-										<li><span>Some terminations broken off</span></li>
-									
-										<li><span>Attached label not legible (or torn, or covered) </span></li>
-									
-								</ul>
-                            </td>
-                        </tr>
                     
                 </tbody>
             </table>
         </div>
     
 
-    <h2 id="ConstituentPart">ConstituentPart</h2>
-    <div class="my-4">
-         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#ConstituentPart">minext:ConstituentPart</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#materialEntityIdentifier">minext:materialEntityIdentifier</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#constituentPartIdentifier">minext:constituentPartIdentifier</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#constituentPartType">minext:constituentPartType</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#constituentPartProportion">minext:constituentPartProportion</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#constituentPartRole">minext:constituentPartRole</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#predicatedName">minext:predicatedName</a>
-        
-    </div>
-    
-        <div class="table-responsive" id="ConstituentPart">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Mineral</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>A physically discernible part of a compound specimen that has a distinct proportion and role relative to the parent object and a discrete determination based on physical and chemical characteristics. All parts of a compound specimen are unified through physical attachment or other unifying criteria. </td>
-                    </tr>
-                   
-                    
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Each Constituent Part belongs to one and only one Constituent Part Type (Rock, Fossil, Mineral, etc). The shared characteristic among all records that utilize the Mineralogy Extension is they must belong to the Constituent Part Type, Mineral defined as an element or a chemical compound that is normally crystalline and that has been formed as a result of geological processes (Nickel 1995).
-                            
-                        </td>
-                    </tr>
-                    
-
-                    
-                    
-                </tbody>
-            </table>
-        </div>
-    
-        <div class="table-responsive" id="materialEntityIdentifier">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                        <th class="property" colspan="2">
-                            <span class="title">minext:materialEntityIdentifier</span>
-                            <span class="badge badge-property float-end">Property</span>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Material Identifier</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>An identifier for a Material (Compound Specimen).</td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Specimen</td>
-                    </tr>
-                    
-                    
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Required to establish a relationship between a parent material record (specimen-level) with zero to many child constituent part records (mineral-level)
-                            
-                        </td>
-                    </tr>
-                    
-
-                    
-                        
-                        <tr>
-                            <th scope="row">Examples</th>
-                            <td>
-                                <ul class="td-list">
-									
-										<li><span>8fa58e08-08de-4ac1-b69c-1235340b7111</span></li>
-									
-								</ul>
-                            </td>
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-    
-        <div class="table-responsive" id="constituentPartIdentifier">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                        <th class="property" colspan="2">
-                            <span class="title">minext:constituentPartIdentifier</span>
-                            <span class="badge badge-property float-end">Property</span>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Constituent Part Identifier</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>A unique identifier for an instance of a ConstituentPart.</td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
-                    </tr>
-                    
-                    
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the dwc:constituentPartID globally unique. Recommended best practice is to use a persistent, globally unique identifier. Constituent Part ID is used to construct the relationship between a specimen (compound object) and mineral (constituent part).
-                            
-                        </td>
-                    </tr>
-                    
-
-                    
-                        
-                        <tr>
-                            <th scope="row">Examples</th>
-                            <td>
-                                <ul class="td-list">
-									
-										<li><span>8fa58e08-08de-4ac1-b69c-1235340b7111</span></li>
-									
-								</ul>
-                            </td>
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-    
-        <div class="table-responsive" id="constituentPartType">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                        <th class="property" colspan="2">
-                            <span class="title">minext:constituentPartType</span>
-                            <span class="badge badge-property float-end">Property</span>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Constituent Part Type</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>Term belonging to an upper-level, generalized Classification Scheme of Constituent Parts (https://docs.google.com/spreadsheets/d/1YiLQaW8-bauA-cdO6v5Gv4keb8gja_zcIH6B8bsGqIw/edit?gid=909692701#gid=909692701)</td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
-                    </tr>
-                    
-                    
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Recommended best practice is to use a shared controlled vocabulary. A Constituent Part belongs to only one Constituent Part Type.
-                            
-                        </td>
-                    </tr>
-                    
-
-                    
-                        
-                        <tr>
-                            <th scope="row">Examples</th>
-                            <td>
-                                <ul class="td-list">
-									
-										<li><span>Mineral</span></li>
-									
-										<li><span>Fossil</span></li>
-									
-										<li><span>Rock</span></li>
-									
-								</ul>
-                            </td>
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-    
-        <div class="table-responsive" id="constituentPartProportion">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                        <th class="property" colspan="2">
-                            <span class="title">minext:constituentPartProportion</span>
-                            <span class="badge badge-property float-end">Property</span>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Proportion</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>The qualitative or quantitative fraction the geologic specimen is composed of the constituent part</td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
-                    </tr>
-                    
-                    
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Recommended best practice is to use a controlled vocabulary such as https://cgi.vocabs.ga.gov.au/object?uri=http%3A//resource.geosciml.org/classifier/cgi/proportionterm
-                            
-                        </td>
-                    </tr>
-                    
-
-                    
-                        
-                        <tr>
-                            <th scope="row">Examples</th>
-                            <td>
-                                <ul class="td-list">
-									
-										<li><span>20%</span></li>
-									
-										<li><span>minor</span></li>
-									
-										<li><span>dominant</span></li>
-									
-								</ul>
-                            </td>
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-    
-        <div class="table-responsive" id="constituentPartRole">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                        <th class="property" colspan="2">
-                            <span class="title">minext:constituentPartRole</span>
-                            <span class="badge badge-property float-end">Property</span>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Role</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>Specifies the relationship between a constituent part and its parent geologic specimen</td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
-                    </tr>
-                    
-                    
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Recommended best practice is to use a controlled vocabulary such as https://cgi.vocabs.ga.gov.au/object?uri=http://resource.geosciml.org/classifier/cgi/compoundmaterialconstituentpartrole
-                            
-                        </td>
-                    </tr>
-                    
-
-                    
-                        
-                        <tr>
-                            <th scope="row">Examples</th>
-                            <td>
-                                <ul class="td-list">
-									
-										<li><span>matrix</span></li>
-									
-										<li><span>groundmass</span></li>
-									
-										<li><span>phenocryst</span></li>
-									
-										<li><span>xenolith</span></li>
-									
-										<li><span>vein</span></li>
-									
-								</ul>
-                            </td>
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-    
-        <div class="table-responsive" id="predicatedName">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                        <th class="property" colspan="2">
-                            <span class="title">minext:predicatedName</span>
-                            <span class="badge badge-property float-end">Property</span>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Predicated Name</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>A compound name of a specimen that includes two parts: 1) Mineral names and 2) One or more term separators (predicates) that define the relationship between the minerals in a specimen.</td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Specimen</td>
-                    </tr>
-                    
-                    
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Always contains at least three parts: 2 mineral names and the predicated phrase that defines the relationship between them. A predicated name may contain more than two mineral names.
-                            
-                        </td>
-                    </tr>
-                    
-
-                    
-                        
-                        <tr>
-                            <th scope="row">Examples</th>
-                            <td>
-                                <ul class="td-list">
-									
-										<li><span>Azurite after Malachite</span></li>
-									
-										<li><span>Rutile in Quartz</span></li>
-									
-								</ul>
-                            </td>
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-    
-
-    <h2 id="GeologicContext">GeologicContext</h2>
+    <h2 id="dwc:GeologicContext">dwc:GeologicContext</h2>
     <div class="my-4">
          
             <a class="btn btn-sm btn-outline-primary m-1" href="#GeologicContext">dwc:GeologicContext</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#geologicProvince">minext:geologicProvince</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#geologicProvince">geoext:geologicProvince</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#complex">minext:complex</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#lithodemicUnit">geoext:lithodemicUnit</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#suite">minext:suite</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#geologicEvent">geoext:geologicEvent</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#modeOfOccurrence">minext:modeOfOccurrence</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#mineralSequence">geoext:mineralSequence</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#geologicEvent">minext:geologicEvent</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#mineralSequence">minext:mineralSequence</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#tectonicUnits">geoext:tectonicUnits</a>
         
     </div>
     
@@ -1181,7 +328,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:geologicProvince</span>
+                            <span class="title">geoext:geologicProvince</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -1198,7 +345,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
+                        <th scope="row">Material Scope</th>
                         <td>Specimen</td>
                     </tr>
                     
@@ -1228,17 +375,18 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
                 </tbody>
             </table>
         </div>
     
-        <div class="table-responsive" id="complex">
+        <div class="table-responsive" id="lithodemicUnit">
             <table class="table table-compact">
                 <thead>
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:complex</span>
+                            <span class="title">geoext:lithodemicUnit</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -1247,24 +395,24 @@ form are found in a list of terms document. <em>List of files and types</em> can
                 <tbody>
                     <tr>
                         <th scope="row">Label</th>
-                        <td>Complex</td>
+                        <td>Lithodemic Unit</td>
                     </tr>
 					<tr>
                         <th scope="row">Definition</th>
-                        <td>A lithostratigraphic unit composed of diverse types of any class or classes or rocks, characterized by irregularly mixed lithology or highly complicated structural relations, and does not follow the law of superposition</td>
+                        <td>Lithostratigraphic unit that lacks stratification,d primarily comprised of intrusive, deformed, and (or) metamorphosed rock, and characterized by irregularly mixed lithology or highly complicated structural relations.</td>
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
+                        <th scope="row">Material Scope</th>
                         <td>Specimen</td>
                     </tr>
                     
                     
                     <tr>
-                        <th scope="row">Usage Notes</th>
+                        <th scope="row">Usage Note</th>
                         <td>
                             
-                                Due to the unstructured nature of complexes, both named units and lithological descriptive terms are acceptable values.
+                                Complexes are characterized by irregularly mixed lithology or by highly complicated structural relations to the extent that the original sequence of the component rocks may be obscured and the individual rocks or rock sequences cannot be readily mapped. Source Term extended to include general descriptive terms for geologic units
                             
                         </td>
                     </tr>
@@ -1289,121 +437,6 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
-                </tbody>
-            </table>
-        </div>
-    
-        <div class="table-responsive" id="suite">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                        <th class="property" colspan="2">
-                            <span class="title">minext:suite</span>
-                            <span class="badge badge-property float-end">Property</span>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Suite</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>A body of or one or more intrusive, pervasively deformed, or highly metamorphosed rock, generally non-tabular and lacking primary depositional structures, and characterized by lithic homogeneity</td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Specimen</td>
-                    </tr>
-                    
-                    
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Suite is comparable to the lithostratigraphic ranks, group or formation. Encompasses the geologic unit types, lithodeme and suite, as defined in the North American Stratigraphic Code
-                            
-                        </td>
-                    </tr>
-                    
-
-                    
-                        
-                        <tr>
-                            <th scope="row">Examples</th>
-                            <td>
-                                <ul class="td-list">
-									
-										<li><span>Ashe Metamorphic Suite</span></li>
-									
-								</ul>
-                            </td>
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-    
-        <div class="table-responsive" id="modeOfOccurrence">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                        <th class="property" colspan="2">
-                            <span class="title">minext:modeOfOccurrence</span>
-                            <span class="badge badge-property float-end">Property</span>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Mode of Occurrence</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>A short description of the physical manifestation of a geologic process or geologic environment where a mineral naturally occurs</td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Specimen</td>
-                    </tr>
-                    
-                    
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Recommended best practice is to use a controlled vocabulary such as https://vocabs.ga.gov.au/object?uri=https%3A//pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence
-                            
-                        </td>
-                    </tr>
-                    
-
-                    
-                        
-                        <tr>
-                            <th scope="row">Examples</th>
-                            <td>
-                                <ul class="td-list">
-									
-										<li><span>Hydrothermal vents</span></li>
-									
-										<li><span>veins</span></li>
-									
-										<li><span>lightning impact</span></li>
-									
-										<li><span>plutonic intrusive</span></li>
-									
-								</ul>
-                            </td>
-                        </tr>
                     
                 </tbody>
             </table>
@@ -1415,7 +448,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:geologicEvent</span>
+                            <span class="title">geoext:geologicEvent</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -1432,7 +465,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
+                        <th scope="row">Material Scope</th>
                         <td>Specimen</td>
                     </tr>
                     
@@ -1462,6 +495,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
                 </tbody>
             </table>
         </div>
@@ -1472,7 +506,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:mineralSequence</span>
+                            <span class="title">geoext:mineralSequence</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -1489,19 +523,11 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
+                        <th scope="row">Material Scope</th>
                         <td>Specimen</td>
                     </tr>
                     
                     
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                The list should only contain minerals that belong to a readily identifiable sequence of formation. Therefore, a list may contain a subset of the minerals in a specimen. Minerals that formed in-situ with one another are separated by a plus. Minerals that formed in the sequence are separated by a greater than symbol.
-                            
-                        </td>
-                    </tr>
                     
 
                     
@@ -1519,55 +545,18 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
-                </tbody>
-            </table>
-        </div>
-    
-
-    <h2 id="Hazard">Hazard</h2>
-    <div class="my-4">
-         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#Hazard">minext:Hazard</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#hazardType">minext:hazardType</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#hazardDescription">minext:hazardDescription</a>
-        
-    </div>
-    
-        <div class="table-responsive" id="Hazard">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Hazard</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>Properties that describe sources of of potential damage, harm, or adverse health effects on something or someone.</td>
-                    </tr>
-                   
-                    
-                    
-
-                    
                     
                 </tbody>
             </table>
         </div>
     
-        <div class="table-responsive" id="hazardType">
+        <div class="table-responsive" id="tectonicUnits">
             <table class="table table-compact">
                 <thead>
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:hazardType</span>
+                            <span class="title">geoext:tectonicUnits</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -1576,76 +565,15 @@ form are found in a list of terms document. <em>List of files and types</em> can
                 <tbody>
                     <tr>
                         <th scope="row">Label</th>
-                        <td>Hazard Type</td>
+                        <td>Tectonic Units</td>
                     </tr>
 					<tr>
                         <th scope="row">Definition</th>
-                        <td>Term that belongs to a hazard classification scheme based on a set of unique characteristics and negative health outcomes.</td>
+                        <td>The combination of all tectonic unit names for the rock from which the dwc:MaterialEntity was collected.</td>
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Specimen</td>
-                    </tr>
-                    
-                    
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Recommended best practice is to use a controlled vocabulary
-                            
-                        </td>
-                    </tr>
-                    
-
-                    
-                        
-                        <tr>
-                            <th scope="row">Examples</th>
-                            <td>
-                                <ul class="td-list">
-									
-										<li><span>Carcinogen</span></li>
-									
-										<li><span>skin irritant</span></li>
-									
-										<li><span>radioactive</span></li>
-									
-										<li><span>toxic</span></li>
-									
-								</ul>
-                            </td>
-                        </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-    
-        <div class="table-responsive" id="hazardDescription">
-            <table class="table table-compact">
-                <thead>
-                    <tr>
-                        
-                        <th class="property" colspan="2">
-                            <span class="title">minext:hazardDescription</span>
-                            <span class="badge badge-property float-end">Property</span>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Label</th>
-                        <td>Hazard Description</td>
-                    </tr>
-					<tr>
-                        <th scope="row">Definition</th>
-                        <td>General remarks regarding the hazard type within the scope of the specific collection object</td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row">Term Scope</th>
+                        <th scope="row">Material Scope</th>
                         <td>Specimen</td>
                     </tr>
                     
@@ -1659,29 +587,28 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             <td>
                                 <ul class="td-list">
 									
-										<li><span>asbestos</span></li>
-									
-										<li><span>slightly radioactive</span></li>
+										<li><span>Upper Helvetic, Wildhorn Nappe Complex, Sublage Nappe</span></li>
 									
 								</ul>
                             </td>
                         </tr>
+                    
                     
                 </tbody>
             </table>
         </div>
     
 
-    <h2 id="Location">Location</h2>
+    <h2 id="dwc:Location">dwc:Location</h2>
     <div class="my-4">
          
             <a class="btn btn-sm btn-outline-primary m-1" href="#Location">dwc:Location</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#sampledFeature">minext:sampledFeature</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#sampledFeature">geoext:sampledFeature</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#namedPlace">minext:namedPlace</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#namedPlace">geoext:namedPlace</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#isTypeLocality">minext:isTypeLocality</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#isTypeLocality">geoext:isTypeLocality</a>
         
     </div>
     
@@ -1717,7 +644,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:sampledFeature</span>
+                            <span class="title">geoext:sampledFeature</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -1730,20 +657,20 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
 					<tr>
                         <th scope="row">Definition</th>
-                        <td>The type of physical feature, both naturally-occurring and anthropogenic in origin, sampled during a sampling event (dwc:Event) at a dwc:Location</td>
+                        <td>The type of physical feature, both naturally-occuring and anthropogenic in origin, sampled during a sampling event (dwc:Event) at a dwc:Location</td>
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
+                        <th scope="row">Material Scope</th>
                         <td>Specimen</td>
                     </tr>
                     
                     
                     <tr>
-                        <th scope="row">Usage Notes</th>
+                        <th scope="row">Usage Note</th>
                         <td>
                             
-                                A sampled feature has a type and optional name that distinguishes the feature from similar entities. Sampled features can be anthropogenic (roadcut, borehole) or naturally occurring (outcrop).
+                                A sampled feature has a type and optional name that distinuishes the feature from similar entities. Sampled features can be anthropogenic (roadcut, borehole) or naturally occurring (outcrop).
                             
                         </td>
                     </tr>
@@ -1770,6 +697,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
                 </tbody>
             </table>
         </div>
@@ -1780,7 +708,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:namedPlace</span>
+                            <span class="title">geoext:namedPlace</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -1797,19 +725,11 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
+                        <th scope="row">Material Scope</th>
                         <td>Specimen</td>
                     </tr>
                     
                     
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Only the names of locations anthropogenic in origin should use the namedPlace property. For naturally-occurring locations, please use terms in dwc:GeologicContext (e.g., geologicProvince) class. For named places represented as URIs or global unique identifiers, please use dwc:locationID.
-                            
-                        </td>
-                    </tr>
                     
 
                     
@@ -1829,6 +749,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
                 </tbody>
             </table>
         </div>
@@ -1839,7 +760,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:isTypeLocality</span>
+                            <span class="title">geoext:isTypeLocality</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -1856,8 +777,8 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
@@ -1872,59 +793,60 @@ form are found in a list of terms document. <em>List of files and types</em> can
 									
 										<li><span>True</span></li>
 									
-										<li><span>False</span></li>
+										<li><span>FALSE</span></li>
 									
 								</ul>
                             </td>
                         </tr>
+                    
                     
                 </tbody>
             </table>
         </div>
     
 
-    <h2 id="MaterialAssertion">MaterialAssertion</h2>
+    <h2 id="dwc:MaterialAssertion">dwc:MaterialAssertion</h2>
     <div class="my-4">
          
-            <a class="btn btn-sm btn-outline-primary m-1" href="#MaterialAssertion">dwc:MaterialAssertion</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#MaterialAssertion">geoext:MaterialAssertion</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#specimenDescription">minext:specimenDescription</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#specimenDescription">geoext:specimenDescription</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#verbatimSize">minext:verbatimSize</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#verbatimSize">geoext:verbatimSize</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#maxSpecimenDimensionInMillimeters">minext:maxSpecimenDimensionInMillimeters</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#maxSpecimenDimensionInMillimeters">geoext:maxSpecimenDimensionInMillimeters</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#verbatimMass">minext:verbatimMass</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#verbatimMass">geoext:verbatimMass</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#measuredMassInGrams">minext:measuredMassInGrams</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#measuredMassInGrams">geoext:measuredMassInGrams</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#mineralDescription">minext:mineralDescription</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#mineralDescription">geoext:mineralDescription</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#maxCrystalDimensionInMillimeters">minext:maxCrystalDimensionInMillimeters</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#maxCrystalDimensionInMillimeters">geoext:maxCrystalDimensionInMillimeters</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#associatedMinerals">minext:associatedMinerals</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#associatedMinerals">geoext:associatedMinerals</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#aggregateForm">minext:aggregateForm</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#aggregateForm">geoext:aggregateForm</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#crystalHabit">minext:crystalHabit</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#crystalHabit">geoext:crystalHabit</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#crystalForm">minext:crystalForm</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#crystalForm">geoext:crystalForm</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#twinningLaw">minext:twinningLaw</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#twinningLaw">geoext:twinningLaw</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#color">minext:color</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#color">geoext:color</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#exsolutionTexture">minext:exsolutionTexture</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#exsolutionTexture">geoext:exsolutionTexture</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#cleavage">minext:cleavage</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#cleavage">geoext:cleavage</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#luster">minext:luster</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#luster">geoext:luster</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#inclusions">minext:inclusions</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#inclusions">geoext:inclusions</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#luminescence">minext:luminescence</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#luminescence">geoext:luminescence</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#alterationDescription">minext:alterationDescription</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#alterationDescription">geoext:alterationDescription</a>
         
     </div>
     
@@ -1960,7 +882,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:specimenDescription</span>
+                            <span class="title">geoext:specimenDescription</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -1977,19 +899,11 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
+                        <th scope="row">Material Scope</th>
                         <td>Specimen</td>
                     </tr>
                     
                     
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                See broader concept http://rs.tdwg.org/dwc/terms/occurrenceRemarks for additional usage notes
-                            
-                        </td>
-                    </tr>
                     
 
                     
@@ -2011,6 +925,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/specimenDescription</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2021,7 +941,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:verbatimSize</span>
+                            <span class="title">geoext:verbatimSize</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2038,7 +958,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
+                        <th scope="row">Material Scope</th>
                         <td>Specimen</td>
                     </tr>
                     
@@ -2062,6 +982,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/verbatimSize</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2072,7 +998,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:maxSpecimenDimensionInMillimeters</span>
+                            <span class="title">geoext:maxSpecimenDimensionInMillimeters</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2089,7 +1015,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
+                        <th scope="row">Material Scope</th>
                         <td>Specimen</td>
                     </tr>
                     
@@ -2109,6 +1035,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/maxSpecimenDimensionInMillimeters</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2119,7 +1051,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:verbatimMass</span>
+                            <span class="title">geoext:verbatimMass</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2136,7 +1068,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
+                        <th scope="row">Material Scope</th>
                         <td>Specimen</td>
                     </tr>
                     
@@ -2160,6 +1092,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/verbatimMass</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2170,7 +1108,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:measuredMassInGrams</span>
+                            <span class="title">geoext:measuredMassInGrams</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2187,7 +1125,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
+                        <th scope="row">Material Scope</th>
                         <td>Specimen</td>
                     </tr>
                     
@@ -2207,6 +1145,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/measuredMassInGrams</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2217,7 +1161,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:mineralDescription</span>
+                            <span class="title">geoext:mineralDescription</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2234,19 +1178,11 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                The scope of this term is strictly to a mineral within the context of the specimen. Specimen level descriptions belong in the related term, specimenDescription. Sibling concept to http://rs.tdwg.org/dwc/terms/occurrenceRemarks
-                            
-                        </td>
-                    </tr>
                     
 
                     
@@ -2268,6 +1204,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/mineralDescription</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2278,7 +1220,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:maxCrystalDimensionInMillimeters</span>
+                            <span class="title">geoext:maxCrystalDimensionInMillimeters</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2295,8 +1237,8 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
@@ -2315,6 +1257,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/maxCrystalDimensionInMillimeters</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2325,7 +1273,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:associatedMinerals</span>
+                            <span class="title">geoext:associatedMinerals</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2342,8 +1290,8 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
@@ -2366,6 +1314,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/associatedMinerals</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2376,7 +1330,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:aggregateForm</span>
+                            <span class="title">geoext:aggregateForm</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2393,19 +1347,11 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
+                        <th scope="row">Material Scope</th>
                         <td>Specimen</td>
                     </tr>
                     
                     
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Recommended best practice is to use a controlled vocabulary
-                            
-                        </td>
-                    </tr>
                     
 
                     
@@ -2425,6 +1371,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/aggregateForm</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2435,7 +1387,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:crystalHabit</span>
+                            <span class="title">geoext:crystalHabit</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2452,19 +1404,11 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Recommended best practice is to use a controlled vocabulary. For a given type of crystal, the habit may vary from locality to locality depending on environment of growth.
-                            
-                        </td>
-                    </tr>
                     
 
                     
@@ -2488,6 +1432,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/crystalHabit</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2498,7 +1448,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:crystalForm</span>
+                            <span class="title">geoext:crystalForm</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2515,16 +1465,16 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
                     <tr>
-                        <th scope="row">Usage Notes</th>
+                        <th scope="row">Usage Note</th>
                         <td>
                             
-                                Recommended best practice is to use a controlled vocabulary
+                                Alternate definition: A crystal form is a set of crystal faces that are related to each other by symmetry.
                             
                         </td>
                     </tr>
@@ -2547,6 +1497,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/crystalForm</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2557,7 +1513,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:twinningLaw</span>
+                            <span class="title">geoext:twinningLaw</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2574,8 +1530,8 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
@@ -2598,6 +1554,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/twinningLaw</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2608,7 +1570,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:color</span>
+                            <span class="title">geoext:color</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2625,16 +1587,16 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
                     <tr>
-                        <th scope="row">Usage Notes</th>
+                        <th scope="row">Usage Note</th>
                         <td>
                             
-                                Here, color is caused by the absorption, or lack of absorption of different wavelengths of natural light by a particular mineral
+                                Color under natural light conditions
                             
                         </td>
                     </tr>
@@ -2659,6 +1621,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/color</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2669,7 +1637,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:exsolutionTexture</span>
+                            <span class="title">geoext:exsolutionTexture</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2686,8 +1654,8 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
@@ -2710,6 +1678,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/exsolutionTexture</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2720,7 +1694,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:cleavage</span>
+                            <span class="title">geoext:cleavage</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2737,8 +1711,8 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
@@ -2757,6 +1731,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/cleavage</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2767,7 +1747,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:luster</span>
+                            <span class="title">geoext:luster</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2784,19 +1764,11 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Recommended best practice is to use a controlled vocabulary
-                            
-                        </td>
-                    </tr>
                     
 
                     
@@ -2816,6 +1788,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/luster</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2826,7 +1804,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:inclusions</span>
+                            <span class="title">geoext:inclusions</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2843,11 +1821,19 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
+                    <tr>
+                        <th scope="row">Usage Note</th>
+                        <td>
+                            
+                                Inclusions are defined as small foreign bodies (solid, liquid, or gas) within the physical bounds of a material commonly trapped during formation
+                            
+                        </td>
+                    </tr>
                     
 
                     
@@ -2867,6 +1853,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/inclusions</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2877,7 +1869,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:luminescence</span>
+                            <span class="title">geoext:luminescence</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2894,19 +1886,11 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Includes all types of luminescence including fluorescence (all wavelengths) and phosphorescence. Recommended best practice is to use nomenclature in part based on the source of energy, or the trigger for the luminescence.
-                            
-                        </td>
-                    </tr>
                     
 
                     
@@ -2924,6 +1908,12 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/luminescence</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -2934,7 +1924,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:alterationDescription</span>
+                            <span class="title">geoext:alterationDescription</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2951,8 +1941,8 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
@@ -2975,33 +1965,33 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/alterationDescription</td>
+                        </tr>
+                    
                 </tbody>
             </table>
         </div>
     
 
-    <h2 id="MineralName">MineralName</h2>
+    <h2 id="geoext:Chemistry">geoext:Chemistry</h2>
     <div class="my-4">
          
-            <a class="btn btn-sm btn-outline-primary m-1" href="#MineralName">minext:MineralName</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#Chemistry">geoext:Chemistry</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#name">minext:name</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#measuredChemistry">geoext:measuredChemistry</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#nameIdentifier">minext:nameIdentifier</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#chemistryRemarks">geoext:chemistryRemarks</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#dcterms:language">minext:dcterms:language</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#measuredFormulaSource">geoext:measuredFormulaSource</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#mineralNamePublishedIn">minext:mineralNamePublishedIn</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#classificationCode">minext:classificationCode</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#nameType">minext:nameType</a>
-        
-            <a class="btn btn-sm btn-outline-primary m-1" href="#nameRemarks">minext:nameRemarks</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#mineralogicalAnalysisProtocol">geoext:mineralogicalAnalysisProtocol</a>
         
     </div>
     
-        <div class="table-responsive" id="MineralName">
+        <div class="table-responsive" id="Chemistry">
             <table class="table table-compact">
                 <thead>
                     <tr>
@@ -3011,7 +2001,899 @@ form are found in a list of terms document. <em>List of files and types</em> can
                 <tbody>
                     <tr>
                         <th scope="row">Label</th>
-                        <td>Mineral Name</td>
+                        <td>Chemistry</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>Properties that describe the chemical composition of a mineral</td>
+                    </tr>
+                   
+                    
+                    
+
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="measuredChemistry">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:measuredChemistry</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Measured Formula</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>A concise expression of the chemical composition of a mineral that shows the number of atoms of each element in a molecule, their spatial arrangement, and their linkage to each other.</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
+                    </tr>
+                    
+                    
+                    
+
+                    
+                        
+                        <tr>
+                            <th scope="row">Examples</th>
+                            <td>
+                                <ul class="td-list">
+									
+										<li><span>SiO2 (65.76), TiO2 (32.120), Al2O3 (2.21)</span></li>
+									
+										<li><span>(Mg0.77Fe0.23)2SiO4</span></li>
+									
+										<li><span>An6.4 Ab73.6 Or20</span></li>
+									
+								</ul>
+                            </td>
+                        </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="chemistryRemarks">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:chemistryRemarks</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Chemistry Remarks</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>General remarks about the chemical and isotopic composition of a mineral</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
+                    </tr>
+                    
+                    
+                    
+
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="measuredFormulaSource">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:measuredFormulaSource</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Measured Formula Source</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>A list (concatenated and separated) of resources associated with the reported measured chemistry described specifically enough to allow anyone in the future to use the same resources.</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
+                    </tr>
+                    
+                    
+                    
+
+                    
+                        
+                        <tr>
+                            <th scope="row">Examples</th>
+                            <td>
+                                <ul class="td-list">
+									
+										<li><span>Novak, G. A., &amp; Gibbs, G. V. (1971). The crystal chemistry of the silicate garnets. American Mineralogist: Journal of Earth and Planetary Materials, 56(5-6), 791-825.</span></li>
+									
+								</ul>
+                            </td>
+                        </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="mineralogicalAnalysisProtocol">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:mineralogicalAnalysisProtocol</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Mineralogical Analysis Protocol</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>The technique utilized to determine the chemical composition or crystallography of a mineral</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
+                    </tr>
+                    
+                    
+                    
+
+                    
+                        
+                        <tr>
+                            <th scope="row">Examples</th>
+                            <td>
+                                <ul class="td-list">
+									
+										<li><span>Wet Chemistry</span></li>
+									
+										<li><span>X-ray fluorescence</span></li>
+									
+										<li><span>Electron probe microanalysis</span></li>
+									
+										<li><span>Scanning electron microscopy with energy-dispersive X-ray spectroscopy</span></li>
+									
+										<li><span>X=ray diffraction </span></li>
+									
+								</ul>
+                            </td>
+                        </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+
+    <h2 id="geoext:Conservation">geoext:Conservation</h2>
+    <div class="my-4">
+         
+            <a class="btn btn-sm btn-outline-primary m-1" href="#Conservation">geoext:Conservation</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#treatments">geoext:treatments</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#handlingRequirements">geoext:handlingRequirements</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#damageRemarks">geoext:damageRemarks</a>
+        
+    </div>
+    
+        <div class="table-responsive" id="Conservation">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Conservation</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>Processes, protocols, and techniques established for the purpose of the protection and preservation of a mineral or specimen</td>
+                    </tr>
+                   
+                    
+                    
+
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="treatments">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:treatments</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Treatments</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>Description of any processes or curatorial actions taken specifically to mitigate damage</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Specimen</td>
+                    </tr>
+                    
+                    
+                    
+
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="handlingRequirements">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:handlingRequirements</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Handling Requirements</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>A summary of the procedural requirements employed to preserve and protect the specimen during physical interaction</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Specimen</td>
+                    </tr>
+                    
+                    
+                    
+
+                    
+                        
+                        <tr>
+                            <th scope="row">Examples</th>
+                            <td>
+                                <ul class="td-list">
+									
+										<li><span>Handle with gloves</span></li>
+									
+										<li><span>Not to be taken ourt of storage medium</span></li>
+									
+										<li><span>delicate</span></li>
+									
+										<li><span>avoid contact with direct sunlight</span></li>
+									
+								</ul>
+                            </td>
+                        </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="damageRemarks">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:damageRemarks</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Damage Remarks</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>A general description of any material changes to a mineral which is perceived to have negatively affected an item’s value-defining aspects.</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Specimen</td>
+                    </tr>
+                    
+                    
+                    
+
+                    
+                        
+                        <tr>
+                            <th scope="row">Examples</th>
+                            <td>
+                                <ul class="td-list">
+									
+										<li><span>Due to oxidation and hydration of the pyrite in the coal, the sample has largley decayed to a coal powder with some larger coal pieces</span></li>
+									
+										<li><span>Some terminations broken off</span></li>
+									
+										<li><span>Attached label not legible (or torn, or covered) </span></li>
+									
+								</ul>
+                            </td>
+                        </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+
+    <h2 id="geoext:ConstituentPart">geoext:ConstituentPart</h2>
+    <div class="my-4">
+         
+            <a class="btn btn-sm btn-outline-primary m-1" href="#ConstituentPart">geoext:ConstituentPart</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#materialEntityID">geoext:materialEntityID</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#constituentPartID">geoext:constituentPartID</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#constituentPartType">geoext:constituentPartType</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#constituentPartProportion">geoext:constituentPartProportion</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#constituentPartRole">geoext:constituentPartRole</a>
+        
+    </div>
+    
+        <div class="table-responsive" id="ConstituentPart">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Constituent Part</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>A physically discernable part of a compound specimen that has a distinct proportion and role relative to the parent object and a discrete determination based on physical and chemical characteristics. All parts of a compound specimen are unified through physical attachment or other unifying criteria. </td>
+                    </tr>
+                   
+                    
+                    <tr>
+                        <th scope="row">Usage Note</th>
+                        <td>
+                            
+                                Specimens comprised of and defined by Constituent Parts unified through physical attachment or other unifying criteria are referred to as Compound Specimens
+                            
+                        </td>
+                    </tr>
+                    
+
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="materialEntityID">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:materialEntityID</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Material Entity ID</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>Globally unique identifier of the parent dwc:MaterialEntity. Establishes a relationship with an Material Entity record</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Specimen</td>
+                    </tr>
+                    
+                    
+                    
+
+                    
+                        
+                        <tr>
+                            <th scope="row">Examples</th>
+                            <td>
+                                <ul class="td-list">
+									
+										<li><span>8fa58e08-08de-4ac1-b69c-1235340b7111</span></li>
+									
+								</ul>
+                            </td>
+                        </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="constituentPartID">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:constituentPartID</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Constituent Part ID</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>A unique identifier for an instance of a ConstituentPart. </td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
+                    </tr>
+                    
+                    
+                    
+
+                    
+                        
+                        <tr>
+                            <th scope="row">Examples</th>
+                            <td>
+                                <ul class="td-list">
+									
+										<li><span>8fa58e08-08de-4ac1-b69c-1235340b7111</span></li>
+									
+								</ul>
+                            </td>
+                        </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="constituentPartType">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:constituentPartType</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Constituent Part Type</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>Term belonging to an upper-level, generalized Classification Scheme of Constituent Parts (https://docs.google.com/spreadsheets/d/1YiLQaW8-bauA-cdO6v5Gv4keb8gja_zcIH6B8bsGqIw/edit?gid=909692701#gid=909692701)</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <th scope="row">Usage Note</th>
+                        <td>
+                            
+                                The formal name assigned to a geoscience collection is traditionally based on the predominant Constituent Part Type of specimens in the collection or the field of science associated with the respective part type (e.g., Mineral Collection or Mineralogy Collection).
+                            
+                        </td>
+                    </tr>
+                    
+
+                    
+                        
+                        <tr>
+                            <th scope="row">Examples</th>
+                            <td>
+                                <ul class="td-list">
+									
+										<li><span>Mineral</span></li>
+									
+										<li><span>Fossil</span></li>
+									
+										<li><span>Rock</span></li>
+									
+								</ul>
+                            </td>
+                        </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="constituentPartProportion">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:constituentPartProportion</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Proportion</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>The qualitative or quantitative fraction the geologic specimen is composed of the constituent part</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
+                    </tr>
+                    
+                    
+                    
+
+                    
+                        
+                        <tr>
+                            <th scope="row">Examples</th>
+                            <td>
+                                <ul class="td-list">
+									
+										<li><span>20%</span></li>
+									
+										<li><span>minor</span></li>
+									
+										<li><span>dominant</span></li>
+									
+								</ul>
+                            </td>
+                        </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="constituentPartRole">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:constituentPartRole</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Role</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>Specifies the relationship between a constituent part and its parent geologic specimen</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <th scope="row">Usage Note</th>
+                        <td>
+                            
+                                The role defines the relationship between a constituent part and its parent compound object.
+                            
+                        </td>
+                    </tr>
+                    
+
+                    
+                        
+                        <tr>
+                            <th scope="row">Examples</th>
+                            <td>
+                                <ul class="td-list">
+									
+										<li><span>matrix</span></li>
+									
+										<li><span>groundmass</span></li>
+									
+										<li><span>phenocryst</span></li>
+									
+										<li><span>xenolith</span></li>
+									
+										<li><span>vein</span></li>
+									
+								</ul>
+                            </td>
+                        </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+
+    <h2 id="geoext:Hazard">geoext:Hazard</h2>
+    <div class="my-4">
+         
+            <a class="btn btn-sm btn-outline-primary m-1" href="#Hazard">geoext:Hazard</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#hazardType">geoext:hazardType</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#hazardRemarks">geoext:hazardRemarks</a>
+        
+    </div>
+    
+        <div class="table-responsive" id="Hazard">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Hazard</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>Properties that describe sources of of potential damage, harm, or adverse health effects on something or someone.</td>
+                    </tr>
+                   
+                    
+                    
+
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="hazardType">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:hazardType</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Hazard Type</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>Term that belongs to a hazard classification scheme based on a set of unique characteristics and negative health outcomes.</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Specimen</td>
+                    </tr>
+                    
+                    
+                    
+
+                    
+                        
+                        <tr>
+                            <th scope="row">Examples</th>
+                            <td>
+                                <ul class="td-list">
+									
+										<li><span>Carcinogen</span></li>
+									
+										<li><span>skin irritant</span></li>
+									
+										<li><span>radioactive</span></li>
+									
+										<li><span>toxic</span></li>
+									
+								</ul>
+                            </td>
+                        </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="hazardRemarks">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:hazardRemarks</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Hazard Remarks</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>General remarks regarding the hazard type within the scope of the specific collection object</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Specimen</td>
+                    </tr>
+                    
+                    
+                    
+
+                    
+                        
+                        <tr>
+                            <th scope="row">Examples</th>
+                            <td>
+                                <ul class="td-list">
+									
+										<li><span>asbestos</span></li>
+									
+										<li><span>slightly radioactive</span></li>
+									
+								</ul>
+                            </td>
+                        </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+
+    <h2 id="geoext:Name">geoext:Name</h2>
+    <div class="my-4">
+         
+            <a class="btn btn-sm btn-outline-primary m-1" href="#Name">geoext:Name</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#specimenName">geoext:specimenName</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#name">geoext:name</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#nameIdentifier">geoext:nameIdentifier</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#language">dcterms:language</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#mineralNamePublishedIn">geoext:mineralNamePublishedIn</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#classificationCode">geoext:classificationCode</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#nameType">geoext:nameType</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#nameConfirmationTechnique">geoext:nameConfirmationTechnique</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#nameRemarks">geoext:nameRemarks</a>
+        
+    </div>
+    
+        <div class="table-responsive" id="Name">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Name</td>
                     </tr>
 					<tr>
                         <th scope="row">Definition</th>
@@ -3027,13 +2909,71 @@ form are found in a list of terms document. <em>List of files and types</em> can
             </table>
         </div>
     
+        <div class="table-responsive" id="specimenName">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:specimenName</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Specimen Name</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>A human-readable lexical label assigned to a specimen for a particular purpose</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Specimen</td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <th scope="row">Usage Note</th>
+                        <td>
+                            
+                                Specimen names are also referred to as a the cataloged name and predicated name
+                            
+                        </td>
+                    </tr>
+                    
+
+                    
+                        
+                        <tr>
+                            <th scope="row">Examples</th>
+                            <td>
+                                <ul class="td-list">
+									
+										<li><span>Quartz (var. Amethyst)</span></li>
+									
+										<li><span>Calcite on Quatz</span></li>
+									
+								</ul>
+                            </td>
+                        </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
         <div class="table-responsive" id="name">
             <table class="table table-compact">
                 <thead>
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:name</span>
+                            <span class="title">geoext:name</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -3050,16 +2990,16 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
                     <tr>
-                        <th scope="row">Usage Notes</th>
+                        <th scope="row">Usage Note</th>
                         <td>
                             
-                                The name defined in the first object is considered the preferred name
+                                For linked data and semantic purposes, the classification name is the skos:prefLabel and all other informal names are skos:altLabel
                             
                         </td>
                     </tr>
@@ -3084,6 +3024,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
                 </tbody>
             </table>
         </div>
@@ -3094,7 +3035,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:nameIdentifier</span>
+                            <span class="title">geoext:nameIdentifier</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -3111,19 +3052,11 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Recommended best practice is to use a persistent, globally unique identifier. Name ID is used to establish the one to many relationship between dwc:Mineral and dwc:MineralName that allows the assignment of multiple names to a single mineral in a specimen
-                            
-                        </td>
-                    </tr>
                     
 
                     
@@ -3141,17 +3074,18 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
                 </tbody>
             </table>
         </div>
     
-        <div class="table-responsive" id="dcterms:language">
+        <div class="table-responsive" id="language">
             <table class="table table-compact">
                 <thead>
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:dcterms:language</span>
+                            <span class="title">dcterms:language</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -3168,19 +3102,11 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
-                    <tr>
-                        <th scope="row">Usage Notes</th>
-                        <td>
-                            
-                                Recommended practice is to use either a non-literal value representing a language from a controlled vocabulary such as ISO 639-2 or ISO 639-3, or a literal value consisting of an IETF Best Current Practice 47 language tag.
-                            
-                        </td>
-                    </tr>
                     
 
                     
@@ -3196,6 +3122,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
                 </tbody>
             </table>
         </div>
@@ -3206,7 +3133,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:mineralNamePublishedIn</span>
+                            <span class="title">geoext:mineralNamePublishedIn</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -3223,16 +3150,16 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
                     <tr>
-                        <th scope="row">Usage Notes</th>
+                        <th scope="row">Usage Note</th>
                         <td>
                             
-                                Narrower scope than dwc:namePublishedIn
+                                The term &#39;mineral&#39; is prepended to term in order to distinguish them from similarly named terms in Darwin Core
                             
                         </td>
                     </tr>
@@ -3283,6 +3210,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
                 </tbody>
             </table>
         </div>
@@ -3293,7 +3221,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:classificationCode</span>
+                            <span class="title">geoext:classificationCode</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -3310,16 +3238,16 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
                     <tr>
-                        <th scope="row">Usage Notes</th>
+                        <th scope="row">Usage Note</th>
                         <td>
                             
-                                Classification codes are specific to a classification system and conform to a xkos:notationPattern
+                                Classification codes conform to a specific pattern specific to the scheme. See xkos:notationPattern
                             
                         </td>
                     </tr>
@@ -3340,6 +3268,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
                 </tbody>
             </table>
         </div>
@@ -3350,7 +3279,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:nameType</span>
+                            <span class="title">geoext:nameType</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -3367,16 +3296,16 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     
                     <tr>
-                        <th scope="row">Usage Notes</th>
+                        <th scope="row">Usage Note</th>
                         <td>
                             
-                                Ideally, terms in this field are derived from a enumerated domain. See Gavryliv (2023) for a detailed breakdown of informal, alternate names.
+                                Best suited for enumerated domains, but careful quantification is challenging with very specific definitions.
                             
                         </td>
                     </tr>
@@ -3403,6 +3332,57 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             </td>
                         </tr>
                     
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="nameConfirmationTechnique">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:nameConfirmationTechnique</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Name Confirmation Technique</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>Analytical technique utlized to confirm the identity of a mineral</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
+                    </tr>
+                    
+                    
+                    
+
+                    
+                        
+                        <tr>
+                            <th scope="row">Examples</th>
+                            <td>
+                                <ul class="td-list">
+									
+										<li><span>X-ray Diffraction</span></li>
+									
+										<li><span>Raman Spectroscopy</span></li>
+									
+								</ul>
+                            </td>
+                        </tr>
+                    
+                    
                 </tbody>
             </table>
         </div>
@@ -3413,7 +3393,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">minext:nameRemarks</span>
+                            <span class="title">geoext:nameRemarks</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -3430,8 +3410,8 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                    
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>Mineral</td>
+                        <th scope="row">Material Scope</th>
+                        <td>Constituent Part</td>
                     </tr>
                     
                     

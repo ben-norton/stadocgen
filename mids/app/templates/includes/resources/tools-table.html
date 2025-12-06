@@ -32,6 +32,12 @@
                                 <td>{{ meta.github_repo|urlize }}</td>
                             </tr>
                         {% endif %}
+                        {% if meta.status %}
+                            <tr>
+                                <th>Status:</th>
+                                <td class="status-{{ meta.status }}">{{ meta.status }}</td>
+                            </tr>
+                        {% endif %}
                         {% if meta.last_updated %}
                             <tr>
                                 <th>Last Updated:</th>

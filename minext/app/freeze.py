@@ -66,13 +66,17 @@ def terms():
     terms_csv = 'data/output/minext-termlist.csv'
     terms_df = pd.read_csv(terms_csv, encoding='utf-8')
 
-    terms = terms_df.sort_values(by=['class_name','term_local_name'])
+    terms = terms_df.sort_values(by=['class_name', 'term_local_name'])
 
     # Unique Class Names
     termsCls = terms_df['class_name'].dropna().unique()
 
     # Terms by Class
-    grpdict2 = terms_df.fillna(-1).groupby('class_name')[['term_ns_name', 'term_local_name', 'namespace', 'compound_name']].apply(
+    #    grpdict2 = terms_df.sort_values(['class_name','term_local_name'],ascending=False).groupby('class_name')[['term_ns_name', 'term_local_name', 'namespace', 'compound_name', 'rdf_type']].apply(
+    #        lambda g: list(map(tuple, g.values.tolist()))).to_dict()
+
+    grpdict2 = terms_df.fillna(-1).groupby('class_name')[
+        ['term_ns_name', 'term_local_name', 'namespace', 'compound_name', 'rdf_type']].apply(
         lambda g: list(map(tuple, g.values.tolist()))).to_dict()
     termsByClass = []
 
@@ -96,27 +100,26 @@ def terms():
                            githubRepo=meta['github-repo'],
                            slug='terms',
                            languageCode=language_code,
-                           languageLabel=language_label,
+                           languageLabel=language_label
                            )
 
 @app.route('/quick-reference/')
 def quickReference():
     header_mdfile = 'md/quick-reference-header.md'
-    with open(header_mdfile, encoding="utf8") as f:
+    marked_text = ''
+    with open(header_mdfile, encoding="utf-8") as f:
         marked_text = markdown2.markdown(f.read())
 
-    req_mdfile = 'md/requirements-header.md'
-    with open(req_mdfile, encoding="utf8") as rf:
-        req_marked_text = markdown2.markdown(rf.read())
-
     # Quick Reference Main
-    df = pd.read_csv('data/output/minext-termlist.csv', encoding='utf8')
+    df = pd.read_csv('data/output/minext-termlist.csv', encoding='utf-8')
 
     # Group by Class
-    grpdict = df.fillna(-1).groupby('class_name')[['namespace','term_local_name','label','definition',
-                                                   'term_scope','examples','usage_note','rdf_type','notes',
-                                                   'datatype','is_required','compound_name','namespace_iri',
-                                                   'term_iri','term_ns_name','term_modified']].apply(
+    grpdict = df.fillna(-1).groupby('class_name')[['namespace', 'term_local_name', 'label',
+                                                   'definition', 'usage_note', 'notes',
+                                                   'examples', 'rdf_type', 'class_name',
+                                                   'is_required', 'compound_name', 'datatype',
+                                                   'term_ns_name', 'term_iri', 'material_scope',
+                                                   'assertion_type_iri']].apply(
         lambda g: list(map(tuple, g.values.tolist()))).to_dict()
     grplists = []
     for i in grpdict:
@@ -126,21 +129,18 @@ def quickReference():
         })
 
     # Required values
-    terms_df = df[['namespace', 'term_local_name',
-                   'label', 'class_name',
-                   'is_required', 'rdf_type',
-                   'compound_name']].sort_values(by=['class_name'])
+    terms_df = df[['namespace', 'term_local_name', 'label', 'class_name',
+                   'is_required', 'rdf_type', 'compound_name']].sort_values(by=['class_name'])
 
     required_df = terms_df.loc[(terms_df['is_required'] == True) &
                                (terms_df['rdf_type'] == 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property')]
 
     required_classes_df = terms_df.loc[(terms_df['is_required'] == True) &
-                           (terms_df['rdf_type'] == 'http://www.w3.org/2000/01/rdf-schema#Class')]
-
+                                       (terms_df['rdf_type'] == 'http://www.w3.org/2000/01/rdf-schema#Class')]
+    print(required_classes_df.head())
 
     return render_template('quick-reference.html',
                            headerMarkdown=Markup(marked_text),
-                           requirementsMarkdown=Markup(req_marked_text),
                            grplists=grplists,
                            requiredTerms=required_df,
                            requiredClasses=required_classes_df,
@@ -149,13 +149,12 @@ def quickReference():
                            acronym=meta['acronym'],
                            landingPage=meta['documentation-landing-page'],
                            githubRepo=meta['github-repo'],
-                           slug='quick-reference',
-                           status=meta['status']
-    )
+                           slug='quick-reference'
+                           )
 
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         freezer.freeze()
     else:
-        app.run(port=8000)
+        app.run(port=7000)

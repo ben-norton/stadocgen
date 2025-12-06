@@ -22,6 +22,7 @@
                     {% endif %}
 	                {{ headerMarkdown }}
                 </div>
+            {% include 'includes/term-list/termlist-metadata-terms.html' %}
                 {% if languageCode is not none %}
                     {% if languageCode == 'en' %}
                         {% include 'includes/term-list/termlist-index.html' %}

@@ -5,7 +5,7 @@
     <h2 id="{{ v.class }}">{{  v.class }}</h2>
     <div class="my-4">
          {% for k in v.termlist %}
-            <a class="btn btn-sm btn-outline-primary m-1" href="#{{ k[1] }}">{{  k[0] }}{{ k[1] }}</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#{{ k[1] }}">{{  k[0] }}:{{ k[1] }}</a>
         {% endfor %}
     </div>
     {% for k in v.termlist %}
@@ -15,7 +15,7 @@
                     <tr>
                         {%  if(k[7] == 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property') %}
                         <th class="property" colspan="2">
-                            <span class="title">{{ k[14] }}</span>
+                            <span class="title">{{ k[12] }}</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         {%  elif(k[8] == 'http://www.w3.org/2000/01/rdf-schema#Class') %}
@@ -37,24 +37,24 @@
                     </tr>
                    {%  if(k[7] == 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property') %}
                     <tr>
-                        <th scope="row">Term Scope</th>
-                        <td>{{ k[4] }}</td>
+                        <th scope="row">Material Scope</th>
+                        <td>{{ k[14] }}</td>
                     </tr>
                     {%  endif  %}
-                    {% if k[6] and (k[6] != -1) %}
+                    {% if k[5] and (k[5] != -1) %}
                     <tr>
-                        <th scope="row">Usage Notes</th>
+                        <th scope="row">Usage Note</th>
                         <td>
-                            {% if(k[6] != -1) %}
-                                {{ k[6] }}
+                            {% if(k[5] != -1) %}
+                                {{ k[5] }}
                             {%  endif %}
                         </td>
                     </tr>
                     {% else %}
                     {% endif %}
 
-                    {% if k[5] and (k[5] != -1) %}
-                        {% set list1 = k[5].split(' | ') %}
+                    {% if k[6] and (k[6] != -1) %}
+                        {% set list1 = k[6].split(' | ') %}
                         <tr>
                             <th scope="row">Examples</th>
                             <td>
@@ -65,8 +65,13 @@
 								</ul>
                             </td>
                         </tr>
-                    {% else %}
                     {% endif %}
+                    {% if k[8] == 'dwc:MaterialAssertion' and k[7] == 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property' %}
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>{{ k[15] }}</td>
+                        </tr>
+                    {%  endif  %}
                 </tbody>
             </table>
         </div>

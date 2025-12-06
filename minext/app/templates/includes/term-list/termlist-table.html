@@ -21,19 +21,20 @@
                         <th scope="row">Term IRI</th>
                         <td>{{ v['term_iri']|urlize }}</td>
                     </tr>
+                    <!--
                     <tr>
                         <th scope="row">Modified</th>
                         <td>{{ v['term_modified'] }}</td>
                     </tr>
-
+<!--
                     <tr>
                         <th scope="row">Term Version IRI</th>
                           <td>
                               <em>Pending</em>
-                              <!-- {{ v['term_version_iri']|urlize }} -->
+
                           </td>
                     </tr>
-
+-->
                     <tr>
                         <th scope="row">Label</th>
                         <td>{{ v['label'] }}</td>
@@ -46,7 +47,7 @@
                     {% if(v['rdf_type'] == 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property') %}
                         <tr>
                             <th scope="row">Scope</th>
-                            <td>{{ v['term_scope'] }}</td>
+                            <td>{{ v['material_scope'] }}</td>
                         </tr>
                     {% endif %}
 
@@ -104,11 +105,15 @@
                         </tr>
                     {%  endif %}
 
-                    {%  if( v['is_required'] ) %}
+                    {%  if( v['is_required'] == 'TRUE') %}
                         {% if( v['rdf_type'] == 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property') %}
                         <tr>
                             <th scope="row">Required</th>
-                            <td>{{ v['is_required'] }}</td>
+                            <td>
+                                 {%  if( v['is_required'] == 'TRUE' ) %}
+                                    True
+                                 {% endif %}
+                            </td>
                         </tr>
                             {% endif %}
                     {%  endif %}

@@ -248,3 +248,4 @@ deprecated
 app/test.py
 .idea/stadocgen.iml
 /app/utils/analysis/output
+/minext/app/utils/schemas/tableschemas

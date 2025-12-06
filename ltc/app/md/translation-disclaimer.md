@@ -10,5 +10,5 @@ Thanks!
 Latimer Core Translation **Point of Contact**: Elie Saliba <elie.saliba@mnhn.fr>  
     
 **Latimer Core Translation Attributions**  
-* French Translation: Elie Saliba [mailto:elie.saliba@mnhn.fr](elie.saliba@mnhn.fr)
+French Translation: Elie Saliba [mailto:elie.saliba@mnhn.fr](elie.saliba@mnhn.fr)
 
