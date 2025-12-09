@@ -132,10 +132,10 @@ def quickReference():
     terms_df = df[['namespace', 'term_local_name', 'label', 'class_name',
                    'is_required', 'rdf_type', 'compound_name']].sort_values(by=['class_name'])
 
-    required_df = terms_df.loc[(terms_df['is_required'] == True) &
+    required_df = terms_df.loc[(terms_df['is_required'] == 'TRUE') &
                                (terms_df['rdf_type'] == 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property')]
 
-    required_classes_df = terms_df.loc[(terms_df['is_required'] == True) &
+    required_classes_df = terms_df.loc[(terms_df['is_required'] == 'TRUE') &
                                        (terms_df['rdf_type'] == 'http://www.w3.org/2000/01/rdf-schema#Class')]
     print(required_classes_df.head())
 

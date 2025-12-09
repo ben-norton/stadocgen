@@ -74,7 +74,7 @@ minext_df['definition'] = minext_df['definition'].str.replace(r'"', '')
 minext_df['usage_note'] = minext_df['usage_note'].str.replace(r'"', '')
 minext_df['notes'] = minext_df['notes'].str.replace('"', '')
 minext_df['notes'] = minext_df['notes'].str.replace(r'"', '')
-minext_df['is_required'] = minext_df['is_required'].replace('',np.nan).fillna('False')
+minext_df['is_required'] = minext_df['is_required'].replace('',np.nan).fillna('FALSE')
 minext_df['usage_note'] = minext_df['usage_note'].replace('',np.nan).fillna('')
 
 # Resave terms file

@@ -124,7 +124,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     <tr>
                         <td><a href="#geoext:ConstituentPart_ConstituentPart">geoext:ConstituentPart</a></td>
                         <td>Constituent Part</td>
-                        <td>True</td>
+                        <td>TRUE</td>
                     </tr>
                 
                 </tbody>
@@ -148,42 +148,35 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             <td><a href="#geoext:ConstituentPart_materialEntityID">geoext:materialEntityID</a></td>
                             <td>Material Entity ID</td>
                             <td>geoext:ConstituentPart</td>
-                            <td>True</td>
+                            <td>TRUE</td>
                         </tr>
                     
                         <tr>
                             <td><a href="#geoext:ConstituentPart_constituentPartID">geoext:constituentPartID</a></td>
                             <td>Constituent Part ID</td>
                             <td>geoext:ConstituentPart</td>
-                            <td>True</td>
+                            <td>TRUE</td>
                         </tr>
                     
                         <tr>
                             <td><a href="#geoext:ConstituentPart_constituentPartType">geoext:constituentPartType</a></td>
                             <td>Constituent Part Type</td>
                             <td>geoext:ConstituentPart</td>
-                            <td>True</td>
+                            <td>TRUE</td>
                         </tr>
                     
                         <tr>
                             <td><a href="#geoext:Name_name">geoext:name</a></td>
                             <td>Name</td>
                             <td>geoext:Name</td>
-                            <td>True</td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="#geoext:Name_specimenName">geoext:specimenName</a></td>
-                            <td>Specimen Name</td>
-                            <td>geoext:Name</td>
-                            <td>True</td>
+                            <td>TRUE</td>
                         </tr>
                     
                         <tr>
                             <td><a href="#geoext:Name_nameIdentifier">geoext:nameIdentifier</a></td>
                             <td>Name Identifier</td>
                             <td>geoext:Name</td>
-                            <td>True</td>
+                            <td>TRUE</td>
                         </tr>
                     
                 </tbody>
@@ -249,7 +242,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
 					<tr>
                         <th scope="row">Definition</th>
-                        <td>The name of the geologic process a chronometric age of a geologic material is attributed too</td>
+                        <td>The name of the geologic process associated with the chronometric age</td>
                     </tr>
                    
                     <tr>
@@ -267,7 +260,9 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             <td>
                                 <ul class="td-list">
 									
-										<li><span>Igneous Crystallization, magmatic cooling</span></li>
+										<li><span>Igneous Crystallization</span></li>
+									
+										<li><span>magmatic cooling</span></li>
 									
 								</ul>
                             </td>
@@ -399,7 +394,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
 					<tr>
                         <th scope="row">Definition</th>
-                        <td>Lithostratigraphic unit that lacks stratification,d primarily comprised of intrusive, deformed, and (or) metamorphosed rock, and characterized by irregularly mixed lithology or highly complicated structural relations.</td>
+                        <td>Geologic unit that lacks stratification, primarily comprised of intrusive, deformed, and (or) metamorphosed rock, and characterized by irregularly mixed lithology or highly complicated structural relations.</td>
                     </tr>
                    
                     <tr>
@@ -408,14 +403,6 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                     
                     
-                    <tr>
-                        <th scope="row">Usage Note</th>
-                        <td>
-                            
-                                Complexes are characterized by irregularly mixed lithology or by highly complicated structural relations to the extent that the original sequence of the component rocks may be obscured and the individual rocks or rock sequences cannot be readily mapped. Source Term extended to include general descriptive terms for geologic units
-                            
-                        </td>
-                    </tr>
                     
 
                     
@@ -773,7 +760,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
 					<tr>
                         <th scope="row">Definition</th>
-                        <td>Whether or not the dwc:Locaiton is the same locality where the original material came from for the formal definition of the mineral species.</td>
+                        <td>Whether or not the dwc:Location is the same locality where the original material came from for the formal definition of the mineral species.</td>
                     </tr>
                    
                     <tr>
@@ -793,7 +780,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
 									
 										<li><span>True</span></li>
 									
-										<li><span>FALSE</span></li>
+										<li><span>False</span></li>
 									
 								</ul>
                             </td>
@@ -814,7 +801,11 @@ form are found in a list of terms document. <em>List of files and types</em> can
         
             <a class="btn btn-sm btn-outline-primary m-1" href="#verbatimSize">geoext:verbatimSize</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#maxSpecimenDimensionInMillimeters">geoext:maxSpecimenDimensionInMillimeters</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#measuredWidthInMillimeters">geoext:measuredWidthInMillimeters</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#measuredHeightInMillimeters">geoext:measuredHeightInMillimeters</a>
+        
+            <a class="btn btn-sm btn-outline-primary m-1" href="#measuredDepthInMillimeters">geoext:measuredDepthInMillimeters</a>
         
             <a class="btn btn-sm btn-outline-primary m-1" href="#verbatimMass">geoext:verbatimMass</a>
         
@@ -992,13 +983,13 @@ form are found in a list of terms document. <em>List of files and types</em> can
             </table>
         </div>
     
-        <div class="table-responsive" id="maxSpecimenDimensionInMillimeters">
+        <div class="table-responsive" id="measuredWidthInMillimeters">
             <table class="table table-compact">
                 <thead>
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">geoext:maxSpecimenDimensionInMillimeters</span>
+                            <span class="title">geoext:measuredWidthInMillimeters</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -1007,11 +998,11 @@ form are found in a list of terms document. <em>List of files and types</em> can
                 <tbody>
                     <tr>
                         <th scope="row">Label</th>
-                        <td>Maximum Axial Dimension</td>
+                        <td>Measured Width in Millimeters</td>
                     </tr>
 					<tr>
                         <th scope="row">Definition</th>
-                        <td>Maximum axial dimension of specimen measured in millimeters</td>
+                        <td>Measured width of specimen reported numerically in millimeters</td>
                     </tr>
                    
                     <tr>
@@ -1029,7 +1020,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                             <td>
                                 <ul class="td-list">
 									
-										<li><span>100</span></li>
+										<li><span>10</span></li>
 									
 								</ul>
                             </td>
@@ -1038,7 +1029,113 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     
                         <tr>
                             <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
-                            <td>http://rs.tdwg.org/geoext/assertion-types/maxSpecimenDimensionInMillimeters</td>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/measuredWidthInMillimeters</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="measuredHeightInMillimeters">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:measuredHeightInMillimeters</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Measured Height in Millimeters</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>Measured height of specimen reported numerically in millimeters</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Specimen</td>
+                    </tr>
+                    
+                    
+                    
+
+                    
+                        
+                        <tr>
+                            <th scope="row">Examples</th>
+                            <td>
+                                <ul class="td-list">
+									
+										<li><span>5</span></li>
+									
+								</ul>
+                            </td>
+                        </tr>
+                    
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/measuredHeightInMillimeters</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="table-responsive" id="measuredDepthInMillimeters">
+            <table class="table table-compact">
+                <thead>
+                    <tr>
+                        
+                        <th class="property" colspan="2">
+                            <span class="title">geoext:measuredDepthInMillimeters</span>
+                            <span class="badge badge-property float-end">Property</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Label</th>
+                        <td>Measured Depth in Millimeters</td>
+                    </tr>
+					<tr>
+                        <th scope="row">Definition</th>
+                        <td>Measured depth of specimen reported numerically in millimeters</td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row">Material Scope</th>
+                        <td>Specimen</td>
+                    </tr>
+                    
+                    
+                    
+
+                    
+                        
+                        <tr>
+                            <th scope="row">Examples</th>
+                            <td>
+                                <ul class="td-list">
+									
+										<li><span>2</span></li>
+									
+								</ul>
+                            </td>
+                        </tr>
+                    
+                    
+                        <tr>
+                            <th scope="row"><a href="https://gbif.github.io/dwc-dp/qrg/#Material%20Assertion__assertionTypeIRI">Assertion Type IRI</a></th>
+                            <td>http://rs.tdwg.org/geoext/assertion-types/measuredDepthInMillimeters</td>
                         </tr>
                     
                 </tbody>
@@ -2863,7 +2960,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
          
             <a class="btn btn-sm btn-outline-primary m-1" href="#Name">geoext:Name</a>
         
-            <a class="btn btn-sm btn-outline-primary m-1" href="#specimenName">geoext:specimenName</a>
+            <a class="btn btn-sm btn-outline-primary m-1" href="#catalogedName">geoext:catalogedName</a>
         
             <a class="btn btn-sm btn-outline-primary m-1" href="#name">geoext:name</a>
         
@@ -2909,13 +3006,13 @@ form are found in a list of terms document. <em>List of files and types</em> can
             </table>
         </div>
     
-        <div class="table-responsive" id="specimenName">
+        <div class="table-responsive" id="catalogedName">
             <table class="table table-compact">
                 <thead>
                     <tr>
                         
                         <th class="property" colspan="2">
-                            <span class="title">geoext:specimenName</span>
+                            <span class="title">geoext:catalogedName</span>
                             <span class="badge badge-property float-end">Property</span>
                         </th>
                         
@@ -2924,11 +3021,11 @@ form are found in a list of terms document. <em>List of files and types</em> can
                 <tbody>
                     <tr>
                         <th scope="row">Label</th>
-                        <td>Specimen Name</td>
+                        <td>Cataloged Name</td>
                     </tr>
 					<tr>
                         <th scope="row">Definition</th>
-                        <td>A human-readable lexical label assigned to a specimen for a particular purpose</td>
+                        <td>A human-readable lexical label assigned at the specimen level for cataloging and other administrative purpose</td>
                     </tr>
                    
                     <tr>
@@ -2937,14 +3034,6 @@ form are found in a list of terms document. <em>List of files and types</em> can
                     </tr>
                     
                     
-                    <tr>
-                        <th scope="row">Usage Note</th>
-                        <td>
-                            
-                                Specimen names are also referred to as a the cataloged name and predicated name
-                            
-                        </td>
-                    </tr>
                     
 
                     
@@ -3305,7 +3394,7 @@ form are found in a list of terms document. <em>List of files and types</em> can
                         <th scope="row">Usage Note</th>
                         <td>
                             
-                                Best suited for enumerated domains, but careful quantification is challenging with very specific definitions.
+                                Best suited for enumerated domains, but careful quantification is challenging with very specific definitions. 
                             
                         </td>
                     </tr>
