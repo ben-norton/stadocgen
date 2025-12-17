@@ -1,6 +1,5 @@
-<h3 id="3-mineral-scope-terms">Mineral Terms</h3>
-<p>The tables below provides a tabulated quick reference of terms scoped to the mineral (constituent part) level, including names.</p>
-
+<h3 id="3-mineral-scope-terms">Constituent Part Terms</h3>
+<p>The tables below provides a tabulated quick reference of mineralogy extension terms applicable to material category ***Constituent Part***.</p>
 <div class="table-outer-wrapper">
     <div class="term-table-wrapper">
         <div class="table-responsive print-avoid">
@@ -13,12 +12,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for k, v in terms.iterrows() %}
-                        {%  if v['term_scope'] == 'Mineral' %}
+                    {% for k, v in constituentPartTerms.iterrows() %}
+                         {%  if(v['rdf_type'] == 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property') %}
                             <tr>
                                 <td><span href="#{{ v['compound_name'] }}"></span>{{ v['term_local_name'] }}</td>
                                 <td>{{ v['class_name'] }}</td>
-                                <td><a href="{{ v['term_uri'] }}">{{ v['term_uri'] }}</a></td>
+                                <td>{{  v['definition'] }}</td>
                             </tr>
                         {%  endif %}
                     {% endfor %}

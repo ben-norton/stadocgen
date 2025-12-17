@@ -1,0 +1,33 @@
+<pre class="mermaid" id="core-er-diagram">
+erDiagram
+    MATERIAL {
+        string materialEntityID
+        string isPartOfMaterialEntityID
+        string materialCategory
+        string materialEntityType
+    }
+    "COMPOUND SPECIMEN" {
+        string materialEntityID PK
+        string materialCategory "Compound Specimen"
+        string isVersionOf "dwc:MATERIAL"
+    }
+    "CONSTITUENT PART" {
+        string constituentPartID PK "instanceOf dwc:materialEntityID"
+        string isPartOfMaterialEntityID FK
+        string materialCategory "Constituent Part"
+        string isVersionOf "dwc:MATERIAL"
+    }
+    MATERIAL ||--o{ MATERIAL : isPartOfMaterialEntityID
+    "COMPOUND SPECIMEN" ||--o{ "CONSTITUENT PART" : hasPart
+</pre>
+<div class="resources-block">
+    <h4>Compound Model Resources</h4>
+    <ul class="resources-list">
+        <li><span class="title">Darwin Core DP Quick Reference Guide</span> <a href="https://gbif.github.io/dwc-dp/qrg/">https://gbif.github.io/dwc-dp/qrg/</a></li>
+        <li><span class="title">Compound Specimen Model. Living Data 2025 Abstract 7001210</span><br>
+                <a href="https://www.livingdata2025.com/program.html?abstract=7001210">Abstract</a><br>
+                <a href="https://drive.google.com/file/d/1SQdqF92BmbKrFZNSLHLnIcURwZH1W5js/view?usp=drive_link">Video Recording</a><br>
+                <a href="https://docs.google.com/presentation/d/1xk_nLOncE4LeKUFUs84ZQeNa6cAkn0YyL8tpNhLyufQ/edit?usp=sharing">Google Slides</a>
+        </li>
+    </ul>
+</div>

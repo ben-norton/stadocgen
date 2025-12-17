@@ -59,22 +59,21 @@ def terms():
         marked_text = markdown2.markdown(f.read(), extras=["tables", "fenced-code-blocks"])
 
     # Metadata Terms
-    meta_csv = 'data/output/metadata-terms.csv'
+    meta_csv = 'data/output/metadata-termlist.csv'
     meta_df = pd.read_csv(meta_csv, encoding='utf-8')
+    published_metadata_df = meta_df[meta_df['is_published']==True]
+
+    print(published_metadata_df)
 
     # Terms
     terms_csv = 'data/output/minext-termlist.csv'
     terms_df = pd.read_csv(terms_csv, encoding='utf-8')
-
     terms = terms_df.sort_values(by=['class_name', 'term_local_name'])
 
     # Unique Class Names
-    termsCls = terms_df['class_name'].dropna().unique()
+    termsCls = terms_df[['class_ns_name','class_name']].drop_duplicates()
 
-    # Terms by Class
-    #    grpdict2 = terms_df.sort_values(['class_name','term_local_name'],ascending=False).groupby('class_name')[['term_ns_name', 'term_local_name', 'namespace', 'compound_name', 'rdf_type']].apply(
-    #        lambda g: list(map(tuple, g.values.tolist()))).to_dict()
-
+    # Group terms by class for index and table organization
     grpdict2 = terms_df.fillna(-1).groupby('class_name')[
         ['term_ns_name', 'term_local_name', 'namespace', 'compound_name', 'rdf_type']].apply(
         lambda g: list(map(tuple, g.values.tolist()))).to_dict()
@@ -87,7 +86,7 @@ def terms():
         })
     return render_template('term-list.html',
                            headerMarkdown=Markup(marked_text),
-                           metadataTerms=meta_df,
+                           metadataTerms=published_metadata_df,
                            termsCls=termsCls,
                            terms=terms,
                            termsByClass=termsByClass,
@@ -105,6 +104,8 @@ def terms():
 
 @app.route('/quick-reference/')
 def quickReference():
+    language_code = 'en'
+    language_label = ''
     header_mdfile = 'md/quick-reference-header.md'
     marked_text = ''
     with open(header_mdfile, encoding="utf-8") as f:
@@ -115,10 +116,10 @@ def quickReference():
 
     # Group by Class
     grpdict = df.fillna(-1).groupby('class_name')[['namespace', 'term_local_name', 'label',
-                                                   'definition', 'usage_note', 'notes',
+                                                   'definition', 'usage_note', 'note',
                                                    'examples', 'rdf_type', 'class_name',
                                                    'is_required', 'compound_name', 'datatype',
-                                                   'term_ns_name', 'term_iri', 'material_scope',
+                                                   'term_ns_name', 'term_iri', 'material_category',
                                                    'assertion_type_iri']].apply(
         lambda g: list(map(tuple, g.values.tolist()))).to_dict()
     grplists = []
@@ -132,10 +133,10 @@ def quickReference():
     terms_df = df[['namespace', 'term_local_name', 'label', 'class_name',
                    'is_required', 'rdf_type', 'compound_name']].sort_values(by=['class_name'])
 
-    required_df = terms_df.loc[(terms_df['is_required'] == 'TRUE') &
+    required_df = terms_df.loc[(terms_df['is_required']==True) &
                                (terms_df['rdf_type'] == 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property')]
 
-    required_classes_df = terms_df.loc[(terms_df['is_required'] == 'TRUE') &
+    required_classes_df = terms_df.loc[(terms_df['is_required']==True) &
                                        (terms_df['rdf_type'] == 'http://www.w3.org/2000/01/rdf-schema#Class')]
     print(required_classes_df.head())
 
@@ -151,6 +152,55 @@ def quickReference():
                            githubRepo=meta['github-repo'],
                            slug='quick-reference'
                            )
+
+'''
+@app.route('/material-categories/')
+def materialCategories():
+    language_code = 'en'
+    language_label = ''
+    header_mdfile = 'md/material-categories-header.md'
+    marked_text = ''
+    with open(header_mdfile, encoding="utf-8") as f:
+        marked_text = markdown2.markdown(f.read())
+
+    # Quick Reference Main
+    df = pd.read_csv('data/output/minext-termlist.csv', encoding='utf-8')
+
+    specimen_df = df[df['material_category'] == 'Specimen']
+    constituent_part_df = df[df['material_category'] == 'Constituent Part']
+
+    # Group by Material Category
+    grpdict = df.fillna(-1).groupby('material_category')[['namespace', 'term_local_name', 'label',
+                                                       'definition', 'usage_note', 'note',
+                                                       'examples', 'rdf_type', 'class_name',
+                                                       'is_required', 'compound_name', 'datatype',
+                                                       'term_ns_name', 'term_iri', 'material_category']].apply(
+        lambda g: list(map(tuple, g.values.tolist()))).to_dict()
+    grplists = []
+    for i in grpdict:
+        grplists.append({
+            'category': i,
+            'termlist': grpdict[i]
+        })
+
+    # Required values
+
+    return render_template('material-categories.html',
+                           headerMarkdown=Markup(marked_text),
+                           grplists=grplists,
+                           specimenTerms=specimen_df,
+                           constituentPartTerms=constituent_part_df,
+                           pageTitle='Material Categories',
+                           title=meta['title'],
+                           acronym=meta['acronym'],
+                           landingPage=meta['documentation-landing-page'],
+                           githubRepo=meta['github-repo'],
+                           slug='material-categories',
+                           languageCode=language_code,
+                           languageLabel=language_label
+                           )
+
+'''
 
 
 if __name__ == "__main__":

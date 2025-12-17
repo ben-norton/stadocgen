@@ -6,7 +6,6 @@
                 <thead>
                     <tr>
                         <th>Label</th>
-                        <th>Term</th>
                         <th>Definition</th>
                         <th>Qualifier Term</th>
                     </tr>
@@ -15,7 +14,6 @@
                       {% for k,v in metadataTerms.iterrows() %}
                         <tr>
                             <td>{{ v['label'] }}</td>
-                            <td>{{ v['term'] }}</td>
                             <td>{{ v['definition'] }}</td>
                             <td>{{ v['qualified_term'] }}</td>
                         </tr>

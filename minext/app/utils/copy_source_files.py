@@ -3,7 +3,7 @@ import os
 import config as cfg
 
 '''
-Copies source data files and markdown content files from the MIDS repository (https://github.com/tdwg/mids) to the StaDocGen repository
+Copies source data files and markdown content files from the Mineralogy Extension repository (https://github.com/tdwg/mineralogy) to the StaDocGen repository
 This script is run manually as a prerequisite to the documentation generator process
 '''
 root_dir = cfg.get_project_root()
@@ -12,7 +12,6 @@ root_dir = cfg.get_project_root()
 download_urls =  [
     "https://raw.githubusercontent.com/tdwg/mineralogy/refs/heads/main/source/terms/minext-term-list.csv",
     "https://raw.githubusercontent.com/tdwg/mineralogy/refs/heads/main/source/terms/metadata-terms.csv",
-#    "https://raw.githubusercontent.com/tdwg/mineralogy/refs/heads/main/source/terms/minext-assertions.csv"
 ]
 download_md_urls =  [
     "https://raw.githubusercontent.com/tdwg/mineralogy/refs/heads/main/source/md/home-content.md",

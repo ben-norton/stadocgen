@@ -1,5 +1,6 @@
-<h3 id="3-mineral-scope-terms">Mineralogy Extension Specimen Terms</h3>
-<p>The tables below provides a tabulated quick reference of terms scoped to the specimen level, including names.</p>
+<h3 id="3-mineral-scope-terms">Specimen Terms</h3>
+<p>The tables below provides a tabulated quick reference of terms associated with the (Compound) Specimen material category.
+    These terms are being proposed as new Darwin Core terms (except properties belonging to the Material Assertion class).</p>
 
 <div class="table-outer-wrapper">
     <div class="term-table-wrapper">
@@ -13,12 +14,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for k, v in terms.iterrows() %}
-                        {%  if v['term_scope'] == 'Specimen' %}
+                    {% for k, v in specimenTerms.iterrows() %}
+                        {%  if(v['rdf_type'] == 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property') %}
                             <tr>
                                 <td><span href="#{{ v['compound_name'] }}"></span>{{ v['term_local_name'] }}</td>
                                 <td>{{ v['class_name'] }}</td>
-                                <td><a href="#">{{ v['term_uri'] }}</td>
+                                <td>{{ v['definition'] }}</td>
                             </tr>
                         {%  endif %}
                     {% endfor %}

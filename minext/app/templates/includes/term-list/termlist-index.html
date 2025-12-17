@@ -3,8 +3,8 @@
 <div class="class-set-wrapper">
     <h5><strong>Classes</strong></h5>
     <ul class="cls-list list-2-col">
-        {% for gc in termsCls %}
-            <li><a href="#{{ gc }}">minext:{{ gc }}</a></li>
+        {% for k,v in termsCls.iterrows() %}
+            <li><a href="#{{ v['class_name'] }}">{{ v['class_ns_name'] }}</a></li>
         {%  endfor %}
     </ul>
 </div>

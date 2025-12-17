@@ -19,14 +19,14 @@
                 <tbody>
                     <tr>
                         <th scope="row">Term IRI</th>
-                        <td>{{ v['term_iri']|urlize }}</td>
+                        <td><em>Pending</em></td>
                     </tr>
                     <!--
                     <tr>
                         <th scope="row">Modified</th>
                         <td>{{ v['term_modified'] }}</td>
                     </tr>
-<!--
+
                     <tr>
                         <th scope="row">Term Version IRI</th>
                           <td>
@@ -46,8 +46,8 @@
 
                     {% if(v['rdf_type'] == 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property') %}
                         <tr>
-                            <th scope="row">Scope</th>
-                            <td>{{ v['material_scope'] }}</td>
+                            <th scope="row">Material Category</th>
+                            <td>{{ v['material_category'] }}</td>
                         </tr>
                     {% endif %}
 
@@ -61,11 +61,11 @@
                         {% endif %}
                     {% endif %}
 
-                    {% if v['notes'] is number %}
+                    {% if v['note'] is number %}
                     {% else %}
 						<tr>
 							<th scope="row">Notes</th>
-							<td>{{ v['notes'] }}</td>
+							<td>{{ v['note'] }}</td>
 						</tr>
                     {% endif %}
 

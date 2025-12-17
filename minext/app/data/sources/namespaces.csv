@@ -2,12 +2,9 @@
 chrono,http://rs.tdwg.org/chrono/terms/
 dcterms,http://purl.org/dc/terms/
 dwc,http://rs.tdwg.org/dwc/terms/
-minext,http://rs.tdwg.org/mineralogy/terms/
-owl,http://www.w3.org/2002/07/owl#
+geoext,http://rs.tdwg.org/mineralogy/terms/
 rdf,http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rdfs,http://www.w3.org/2000/01/rdf-schema#
-rml,http://w3id.org/rml/core/
 skos,http://www.w3.org/2004/02/skos/core#
-tdwgutility,http://rs.tdwg.org/dwc/terms/attributes/
+tdwg,http://rs.tdwg.org/dwc/terms/attributes/
 vann,http://purl.org/vocab/vann/
-xsd,http://www.w3.org/2001/XMLSchema#

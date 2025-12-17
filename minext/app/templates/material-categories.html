@@ -8,25 +8,23 @@
 			<div class="col-lg-3 mx-auto">
                 {% if languageCode is not none %}
                     {% if languageCode == 'en' %}
-        				{% include 'includes/scopes/sidebar.html' %}
-                    {% else %}
-                        {% include languageCode+'/includes/term-scopes/sidebar-'+languageCode+'.html' %}
+        				{% include 'includes/material-categories/sidebar.html' %}
                     {% endif %}
                 {% endif %}
 			</div>
 			<div class="col-lg-9 order-lg-first mx-auto">
-			    <h1 id="ltc-list-of-terms">{{ title }} ({{ languageLabel|safe }})</h1>
+			    <h1 id="ltc-list-of-terms">{{ title }}</h1>
 				<div class="content-header-wrapper">
                     {%  if ( status == 'Draft') %}
                         <h2><span style="color:red">DRAFT</span></h2>
                     {% endif %}
 	                {{ headerMarkdown }}
-                    {% include 'includes/term-scopes/diagrams/compound-model.html' %}
+                    {% include 'includes/material-categories/diagrams/material-diagrams.html' %}
                 </div>
                 {% if languageCode is not none %}
                     {% if languageCode == 'en' %}
-                        {% include 'includes/term-scopes/specimen-terms-table.html' %}
-                        {% include 'includes/term-scopes/mineral-terms-table.html' %}
+                        {% include 'includes/material-categories/specimen-terms-table.html' %}
+                        {% include 'includes/material-categories/constituent-part-terms-table.html' %}
                     {% endif %}
                 {% endif %}
             </div>
