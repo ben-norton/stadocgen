@@ -63,8 +63,6 @@ def terms():
     meta_df = pd.read_csv(meta_csv, encoding='utf-8')
     published_metadata_df = meta_df[meta_df['is_published']==True]
 
-    print(published_metadata_df)
-
     # Terms
     terms_csv = 'data/output/minext-termlist.csv'
     terms_df = pd.read_csv(terms_csv, encoding='utf-8')
@@ -138,7 +136,6 @@ def quickReference():
 
     required_classes_df = terms_df.loc[(terms_df['is_required']==True) &
                                        (terms_df['rdf_type'] == 'http://www.w3.org/2000/01/rdf-schema#Class')]
-    print(required_classes_df.head())
 
     return render_template('quick-reference.html',
                            headerMarkdown=Markup(marked_text),
