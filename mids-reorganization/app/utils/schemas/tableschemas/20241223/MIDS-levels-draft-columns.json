@@ -1,0 +1,7 @@
+{
+    "level": "string",
+    "prefLabel": "string",
+    "shortDescription": "string",
+    "longDescription": "string",
+    "purpose": "string"
+}

@@ -1,0 +1,49 @@
+<h2 id="4-disciplines">4 Disciplines</h2>
+
+<h3 id="41-disciplines-terms">4.1 Discipline Terms</h3>
+<div class="disciplines-table-wrapper">
+    <div class="table-responsive print-avoid">
+        <table class="table table-compact table-terms">
+            <thead>
+                <tr>
+                    <th>Term</th>
+                    <th>Definition</th>
+                    <th>Note</th>
+                    <th>Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for idx, v in disciplinesTerms.iterrows() %}
+                    <tr id="{{ v['term'] }}">
+                        <td>{{ v['term'] }}</td>
+                        <td>{{ v['definition'] }}</td>
+                        <td>{% if v['note'] is number %}{% else %}{{ v['note'] }}{% endif %}</td>
+                        <td>{% if v['source'] is number %}{% else %}{{ v['source'] }}{% endif %}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<h3 id="41-disciplines-terms">4.2 Discipline Term Sources</h3>
+<div class="disciplines-table-wrapper">
+    <div class="table-responsive print-avoid">
+        <table class="table table-compact table-terms">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Citation/URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for idx, v in disciplinesSources.iterrows() %}
+                    <tr>
+                        <td>{{ v['title'] }}</td>
+                        <td>{{ v['citation_url'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+{
+    "fields": [
+        {
+            "name": "class_name",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "qualified_term",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "term_local_name",
+            "type": "string",
+            "format": "default"
+        }
+    ],
+    "missingValues": [
+        ""
+    ]
+}

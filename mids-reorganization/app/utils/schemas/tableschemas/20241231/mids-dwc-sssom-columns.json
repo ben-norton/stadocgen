@@ -1,0 +1,20 @@
+{
+    "sssom:subject_id": "string",
+    "sssom:subject_category": "string",
+    "sssom:predicate_id": "string",
+    "sssom:object_id": "string",
+    "sssom:object_category": "string",
+    "sssom:mapping_justification": "string",
+    "sssom:author_id": "string",
+    "sssom:author_label": "string",
+    "sssom:reviewer_id": "string",
+    "sssom:reviewer_label": "string",
+    "sssom:creator_id": "string",
+    "sssom:creator_label": "string",
+    "sssom:subject_type": "string",
+    "sssom:object_type": "string",
+    "sssom:mapping_date": "string",
+    "sssom:object_match_field": "string",
+    "sssom:comment": "string",
+    "semapv:RegexRemoval": "string"
+}

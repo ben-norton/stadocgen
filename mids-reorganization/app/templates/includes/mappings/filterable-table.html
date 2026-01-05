@@ -1,0 +1,63 @@
+<h3 id="2-3-filterable-quick-ref-table">2.3 Filterable Quick Reference Table</h3>
+<p>The table below provides a filterable table to serve as a quick reference to MIDS mappings. For details mappings with comprehensive metadata, please see the Darwin Core and ABCD Mappings tables.</p>
+<div class="filters">
+
+    <div class="form-inline d-flex align-items-center">
+         <div class="filter-group form-group margin-right-12">
+            <label for="namespaceFilter">Standard</label>
+            <select id="namespaceFilter" class="form-select">
+                <option value="">All Standards</option>
+                <option value="dwc">Darwin Core</option>
+                <option value="abcd">ABCD</option>
+            </select>
+        </div>
+        <div class="filter-group form-group margin-right-12">
+            <label for="levelFilter">Level</label>
+            <select id="levelFilter" class="form-select">
+                <option value="">All Levels</option>
+            </select>
+        </div>
+
+         <div class="filter-group form-group margin-right-12">
+            <label for="infoElementFilter">Information Element</label>
+            <select id="infoElementFilter" class="form-select">
+                <option value="">All Information Elements</option>
+            </select>
+        </div>
+
+        <div class="filter-group form-group margin-right-12">
+            <label for="termFilter">Search Terms</label>
+            <input type="text" id="termFilter" placeholder="Type to search..." class="form-control">
+        </div>
+
+         <div class="filter-group filter-btns">
+            <button onclick="resetFilters()" class="btn btn-sm btn-primary align-self-end">Reset Filters</button>
+        </div>
+    </div>
+
+</div>
+<div class="table-outer-wrapper">
+    <div class="term-table-wrapper">
+        <div class="table-responsive print-avoid">
+            <div class="table-container table-responsive">
+                <table id="mappingsTable" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Information Element</th>
+                            <th>Class</th>
+                            <th>Term</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td colspan="5" class="loading">Loading data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="stats" id="stats"></div>
+        </div>
+    </div>
+</div>
+

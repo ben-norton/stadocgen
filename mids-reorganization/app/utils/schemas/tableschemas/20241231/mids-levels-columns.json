@@ -1,0 +1,11 @@
+{
+    "term_local_name": "string",
+    "alt_label": "string",
+    "definition": "string",
+    "notes": "string",
+    "purpose": "string",
+    "label": "string",
+    "rdf_type": "string",
+    "term_ns_name": "string",
+    "namespace": "string"
+}

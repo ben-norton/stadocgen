@@ -1,0 +1,20 @@
+title:            "Minimum Information about a Digital Specimen"
+acronym:          "MIDS"
+links:
+  task_group:         "https://www.tdwg.org/community/cd/mids/"
+  landing_page:       "https://tdwg.github.io/mids/index.html" # Initial version of the published docs from a fork of stadocgen
+  github_repository:  "https://github.com/tdwg/mids"
+sources:
+  tabulated:
+    - "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/terms/information_elements/mids_information_elements_draft.csv"
+    - "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/terms/mids-levels/MIDS-levels-draft.csv"
+    - "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/mappings/abcd/biology/sssom_mids_abcd_biology_02.sssom.tsv"
+    - "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/mappings/dwc/biology/sssom_mids_dwc_biology_02.sssom.tsv"
+  markdown:       # Full URL of Source Markdown content files as YAML List
+    - "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/md/home-content.md"
+    - "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/md/information-elements-header.md"
+    - "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/md/mappings-header.md"
+    - "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/md/sssom-reference.md"
+    - "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/md/about-content.md"
+last_modified: "20250218"
+note: "See MIDS Website - Information Elements google doc for specifications https://docs.google.com/document/d/1SYjhJtB_dqCza3wju2M2k1mQCP6zstyPjePCiVyurl8/edit?tab=t.0#heading=h.nozqxpw2sbyb"

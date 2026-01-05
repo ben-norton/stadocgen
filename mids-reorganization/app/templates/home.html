@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block main %}
+<main class="docs-home">
+
+	{% include 'includes/home/page-header.html' %}
+	<div class="container content">
+		<div class="row">
+            <div class="col-md-12 col-lg-10 mx-auto">
+                <h2><span style="color:red">DRAFT</span></h2>
+                {{ home_markdown }}
+                <p><em>Last Modified: {{ lastModified }}</em></p>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

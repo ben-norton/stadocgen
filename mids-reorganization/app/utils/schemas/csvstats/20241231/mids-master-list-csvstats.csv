@@ -1,0 +1,248 @@
+  1. "namespace"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       27
+	Unique values:         1
+	Longest value:         5 characters
+	Most common values:    mids: (27x)
+
+  2. "term_local_name"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       27
+	Unique values:         26
+	Longest value:         22 characters
+	Most common values:    ScientificNameID (2x)
+	                       mids0 (1x)
+	                       mids1 (1x)
+	                       mids2 (1x)
+	                       mids3 (1x)
+
+  3. "label"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       27
+	Unique values:         26
+	Longest value:         24 characters
+	Most common values:    Scientific Name ID (2x)
+	                       MIDS Level 0 - Bare (1x)
+	                       MIDS Level 1 - Basic (1x)
+	                       MIDS Level 2 - Regular (1x)
+	                       MIDS Level 3 - Extended (1x)
+
+  4. "definition"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       27
+	Unique values:         26
+	Longest value:         437 characters
+	Most common values:    An identifier for the nomenclatural (not taxonomic) details of a scientific name. (2x)
+	                       A bare or skeletal record making the association between an identifier of a physical specimen and its digital representation, allowing for unambiguous attachment of all other information. (1x)
+	                       A basic record of specimen information enabling basic discoverability as well as how the user is permitted to use the data. (1x)
+	                       A regular level of information including data that have been agreed over time as essential for most scientific purposes. (1x)
+	                       An extended level of information about a specimen including identifiers enabling connections to be made to other data present or known about the specimen. (1x)
+
+  5. "usage"
+
+	Type of data:          Text
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       21
+	Unique values:         21
+	Longest value:         495 characters
+	Most common values:    None (6x)
+	                       It is strongly recommended to use identifiers from the recognised nomenclators for the appropriate taxonomic group (e.g. the International Plant Names Index (IPNI), MycoBank, AlgaeBase, Mindat, etc). (2x)
+	                       It is strongly recommended to use a globally unique persistent identifier, preferably resolvable, e.g. CETAF Stable Identifiers or DOIs. It is strongly recommended to map these to the DwC term materialSampleID. (1x)
+	                       It is strongly recommended to include a human readable term and a globally unique persistent and resolvable identifier from GrSciColl, GRID, ROR, etc. (1x)
+	                       It is recommended to follow standard nomenclators, e.g. the International Plant Names Index (IPNI), MycoBank, AlgaeBase, Mindat, etc (1x)
+
+  6. "notes"
+
+	Type of data:          Text
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       4
+	Unique values:         5
+	Longest value:         658 characters
+	Most common values:    None (23x)
+	                       Usually established prior to any formal digitisation and hence considered a pre-level. MIDS-0 is a bare level of information that exists to make an association between a physical specimen with its identifier (eg, barcode) and an entry in a catalogue or database as well as the institution in which the specimen is held. One early action in a digitisation process is the creation of a database record that acknowledges or coincides with the existence or accession of a physical specimen into a collection, but not necessarily with any other information digitised at that stage. Note, however, that image(s) can be generated and referenced at this early stage. (1x)
+	                       In addition to the creation of a basic digital record with an identifier (MIDS-0) enabling all other information (including images and/or other media types) to be associated with a single physical specimen, MIDS-1 includes the information often captured in the first stages of mass digitisation, defining the scope of the physical specimen and providing some information about the kind of object as well as a name attached to the specimen. Provides information about when the record was last updated as well as how the user is permitted to use the information. (1x)
+	                       Regular records include the latitude/longitude data which are critical for many research applications including machine-readable formats. For botanical specimens the inclusion of collector name, number and date are a priority, given their historical use in acting as the identifier for the specimen in literature. These terms are routinely used to identify the specimen in requests to curation staff. For geological and palaeontological specimens the inclusion of geological age is a priority. (1x)
+	                       An extended level of information about a specimen including identifiers enabling connections to be made to other data present or known about the specimen. (1x)
+
+  7. "examples"
+
+	Type of data:          Text
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       19
+	Unique values:         19
+	Longest value:         398 characters
+	Most common values:    None (8x)
+	                       urn:lsid:ipni.org:names:184409-1; mindat:1:1:1375:4 ; https://mindat.org/4ca61d6f-4208-8fb2-3b0eecbcs8f0 (2x)
+	                       http://herbarium.bgbm.org/object/B100277113; (O-F-2201154, 30eff5c2-97b4-4eeb-bb46-8c12a1cf0f37, 12254) (1x)
+	                       dwc:ownerInstitutionCode : RBGE, dwc:institutionID : https://www.gbif.org/grscicoll/institution/0237598a-853a-492c-af74-a723fe251799; dwc:ownerInstitutionCode : MNHN, dwc:institutionID : https://www.gbif.org/grscicoll/institution/fe534fe7-dccd-4d79-8313-c11b2ea854ab; dwc:ownerInstitutionCode : BZ, dwc:institutionID : https://www.gbif.org/grscicoll/institution/6a6ac6c5-1b8a-48db-91a2-f8661274ff80 (1x)
+	                       Colias croceus (Geoffroy, 1785), Ophthalmosaurus, Australian Baobab, Scottish rock, etc. (1x)
+
+  8. "rdf_type"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       27
+	Unique values:         2
+	Longest value:         51 characters
+	Most common values:    http://www.w3.org/1999/02/22-rdf-syntax-ns#Property (23x)
+	                       http://www.w3.org/1999/02/22-rdf-syntax-ns#Class (4x)
+
+  9. "is_required"
+
+	Type of data:          Boolean
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       23
+	Unique values:         2
+	Most common values:    True (23x)
+	                       None (4x)
+
+ 10. "is_repeatable"
+
+	Type of data:          Boolean
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       23
+	Unique values:         3
+	Most common values:    True (13x)
+	                       False (10x)
+	                       None (4x)
+
+ 11. "term_created"
+
+	Type of data:          Boolean
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       0
+	Unique values:         1
+	Most common values:    None (27x)
+
+ 12. "term_modified"
+
+	Type of data:          Boolean
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       0
+	Unique values:         1
+	Most common values:    None (27x)
+
+ 13. "compound_name"
+
+	Type of data:          Boolean
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       0
+	Unique values:         1
+	Most common values:    None (27x)
+
+ 14. "namespace_iri"
+
+	Type of data:          Boolean
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       0
+	Unique values:         1
+	Most common values:    None (27x)
+
+ 15. "term_iri"
+
+	Type of data:          Boolean
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       0
+	Unique values:         1
+	Most common values:    None (27x)
+
+ 16. "term_ns_name"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       27
+	Unique values:         26
+	Longest value:         27 characters
+	Most common values:    mids:ScientificNameID (2x)
+	                       mids:mids0 (1x)
+	                       mids:mids1 (1x)
+	                       mids:mids2 (1x)
+	                       mids:mids3 (1x)
+
+ 17. "term_version_iri"
+
+	Type of data:          Boolean
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       0
+	Unique values:         1
+	Most common values:    None (27x)
+
+ 18. "datatype"
+
+	Type of data:          Boolean
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       0
+	Unique values:         1
+	Most common values:    None (27x)
+
+ 19. "purpose"
+
+	Type of data:          Text
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       26
+	Unique values:         25
+	Longest value:         507 characters
+	Most common values:    For many biological collections the collector in combination with collectingNumber has been used as an identifier for the specimen in literature. It also helps in the identification and validation of the collecting location. (2x)
+	                       To uniquly identify the taxon name of a specimen in a machine readable format. (2x)
+	                       Allows for unambiguous attachment of all other information and to allow a user to discover the location of the physical specimen to access additional information or to request access to the physical specimen. (1x)
+	                       Creates a digital representation of the physical collections. Provides information about the number of specimens present for a taxon as well as some information about the kind of object, enabling curators and other users to find the specimens within the collections. Also enables costing calculations for storage, digitisation and other curation activities. If imaged, also enables similar search and browsing capabilities online as researchers and curators would have at the cabinets of physical specimens. (1x)
+	                       Key information fields that have been agreed over time as essential for most scientific purposes. (1x)
+
+ 20. "editorial_note"
+
+	Type of data:          Text
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       23
+	Unique values:         2
+	Longest value:         8 characters
+	Most common values:    original (23x)
+	                       None (4x)
+
+ 21. "alt_label"
+
+	Type of data:          Text
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       4
+	Unique values:         5
+	Longest value:         8 characters
+	Most common values:    None (23x)
+	                       Bare (1x)
+	                       Basic (1x)
+	                       Regular (1x)
+	                       Extended (1x)
+
+ 22. "scope_note"
+
+	Type of data:          Text
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       23
+	Unique values:         6
+	Longest value:         25 characters
+	Most common values:    All (14x)
+	                       Biology (5x)
+	                       None (4x)
+	                       Biology and Geology (2x)
+	                       Geology and Palaeontology (1x)
+
+ 23. "class_name"
+
+	Type of data:          Text
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       18
+	Unique values:         5
+	Longest value:         5 characters
+	Most common values:    None (9x)
+	                       mids1 (6x)
+	                       mids3 (6x)
+	                       mids2 (4x)
+	                       mids0 (2x)
+
+Row count: 27

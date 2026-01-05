@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block main %}
+    <main id="top">
+        {% include 'includes/global/page-header.html' %}
+        <div class="container content">
+            <div class="row">
+                <div class="col-lg-3 mx-auto sidebar-wrapper">
+                    {% include 'includes/mappings/sidebar.html' %}
+                </div>
+                <div class="col-lg-9 order-lg-first mx-auto main-content-wrapper">
+                    <div class="content-header-wrapper">
+                        <h2><span style="color:red">DRAFT</span></h2>
+                        <span id="1-mapping-specification"></span>
+                        {{ headerMarkdown }}
+                        {{ sssomReference }}
+                    </div>
+                    <h2 id="2-mappings-tables">Mapping Tables</h2>
+                    <a class="anchor" id="dwc-mappings-anchor"></a>
+                    {%  include 'includes/mappings/dwc-collapsible-sssom-table.html' %}
+
+                    <a class="anchor" id="abcd-mappings-anchor"></a>
+                    {%  include 'includes/mappings/abcd-collapsible-sssom-table.html' %}
+
+                    <a class="anchor" id="filter-mappings-anchor"></a>
+                    {%  include 'includes/mappings/filterable-table.html' %}
+
+                </div>
+            </div>
+        </div>
+    </main>
+{%  endblock %}
+{% block page_script %}
+    <script>
+
+
+	</script>
+{%  endblock %}

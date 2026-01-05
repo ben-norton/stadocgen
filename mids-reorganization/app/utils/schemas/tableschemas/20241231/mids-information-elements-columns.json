@@ -1,0 +1,15 @@
+{
+    "namespace": "string",
+    "term_local_name": "string",
+    "label": "string",
+    "definition": "string",
+    "purpose": "string",
+    "usage": "string",
+    "examples": "string",
+    "rdf_type": "string",
+    "is_required": "boolean",
+    "is_repeatable": "boolean",
+    "editorial_note": "string",
+    "scope_note": "string",
+    "term_ns_name": "string"
+}

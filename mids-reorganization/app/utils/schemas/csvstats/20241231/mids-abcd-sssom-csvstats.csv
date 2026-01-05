@@ -1,0 +1,184 @@
+  1. "sssom:subject_id"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       39
+	Unique values:         15
+	Longest value:         25 characters
+	Most common values:    mids:QualitativeLocation (6x)
+	                       mids:QuantitativeLocation (5x)
+	                       mids:License (4x)
+	                       mids:CollectingAgent (4x)
+	                       mids:Organization (3x)
+
+  2. "sssom:subject_category"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       39
+	Unique values:         4
+	Longest value:         5 characters
+	Most common values:    mids2 (21x)
+	                       mids1 (11x)
+	                       mids0 (5x)
+	                       mids3 (2x)
+
+  3. "sssom:predicate_id"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       39
+	Unique values:         3
+	Longest value:         18 characters
+	Most common values:    skos:narrowMatch (33x)
+	                       skos:exactMatch (4x)
+	                       owl:intersectionOf (2x)
+
+  4. "sssom:object_id"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       39
+	Unique values:         39
+	Longest value:         57 characters
+	Most common values:    abcd:UnitID (1x)
+	                       abcd:UnitGUID (1x)
+	                       abcd:SourceInstitutionID (1x)
+	                       abcd:Unit-Owner-OrganisationGUID (1x)
+	                       abcd:DataSet-Owner-OrganisationGUID (1x)
+
+  5. "sssom:object_category"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       39
+	Unique values:         2
+	Longest value:         12 characters
+	Most common values:    abcd:Unit (35x)
+	                       abcd:DataSet (4x)
+
+  6. "sssom:mapping_justification"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       39
+	Unique values:         1
+	Longest value:         20 characters
+	Most common values:    semapv:HumanCuration (39x)
+
+  7. "sssom:author_id"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       39
+	Unique values:         2
+	Longest value:         51 characters
+	Most common values:    orcid:0009-0007-3961-8923|orcid:0000-0002-0829-5849 (21x)
+	                       orcid:0000-0002-0829-5849 (18x)
+
+  8. "sssom:author_label"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       39
+	Unique values:         2
+	Longest value:         33 characters
+	Most common values:    Stefan Seifert|David Fichtmueller (21x)
+	                       David Fichtmueller (18x)
+
+  9. "sssom:creator_id"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       39
+	Unique values:         39
+	Longest value:         25 characters
+	Most common values:    orcid:0000-0002-3973-1252 (1x)
+	                       orcid:0000-0002-3973-1253 (1x)
+	                       orcid:0000-0002-3973-1254 (1x)
+	                       orcid:0000-0002-3973-1255 (1x)
+	                       orcid:0000-0002-3973-1256 (1x)
+
+ 10. "sssom:creator_label"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       39
+	Unique values:         1
+	Longest value:         14 characters
+	Most common values:    Mathias Dillen (39x)
+
+ 11. "sssom:subject_type"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       39
+	Unique values:         1
+	Longest value:         12 characters
+	Most common values:    rdf property (39x)
+
+ 12. "sssom:object_type"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       39
+	Unique values:         1
+	Longest value:         5 characters
+	Most common values:    xpath (39x)
+
+ 13. "sssom:object_source"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       39
+	Unique values:         39
+	Longest value:         137 characters
+	Most common values:    /DataSets/DataSet/Units/Unit/UnitID (1x)
+	                       /DataSets/DataSet/Units/Unit/UnitGUID (1x)
+	                       /DataSets/DataSet/Units/Unit/SourceInstitutionID (1x)
+	                       /DataSets/DataSet/Units/Unit/Owner/Organisation/OrganisationGUID (1x)
+	                       /DataSets/DataSet/Metadata/Owners/Owner/Organisation/OrganisationGUID (1x)
+
+ 14. "sssom:mapping_date"
+
+	Type of data:          Date
+	Contains null values:  False
+	Non-null values:       39
+	Unique values:         2
+	Smallest value:        2024-06-24
+	Largest value:         2024-06-26
+	Most common values:    2024-06-26 (27x)
+	                       2024-06-24 (12x)
+
+ 15. "sssom:object_match_field"
+
+	Type of data:          Text
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       1
+	Unique values:         2
+	Longest value:         64 characters
+	Most common values:    None (38x)
+	                       abcd:Gathering-LatitudeDecimal | abcd:Gathering-LongitudeDecimal (1x)
+
+ 16. "sssom:comment"
+
+	Type of data:          Text
+	Contains null values:  True (excluded from calculations)
+	Non-null values:       3
+	Unique values:         4
+	Longest value:         55 characters
+	Most common values:    None (36x)
+	                       alternative modified date on record level (1x)
+	                       All properties in object_match_field need to be present (1x)
+	                       WMS URL with center coordinate given (1x)
+
+ 17. "semapv:regexRemoval"
+
+	Type of data:          Text
+	Contains null values:  False
+	Non-null values:       39
+	Unique values:         1
+	Longest value:         36 characters
+	Most common values:    |unknown:undigitized|unknown|Unknown (39x)
+
+Row count: 39

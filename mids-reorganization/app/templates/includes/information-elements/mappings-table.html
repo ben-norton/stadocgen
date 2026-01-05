@@ -1,0 +1,34 @@
+<div class="sssom-table-wrapper ">
+    {% if v['mapping_justification'] is none %}
+        <!-- No content -->
+        <div class="table-responsive print-avoid">
+         <table class="table table-condensed table-sssom table-child caption-top linked-table-rows" data-toggle="table">
+            <caption>SSSOM Mappings</caption>
+            <thead>
+                <tr>
+                    <th>Object Category</th>
+                    <th>Object ID</th>
+                    <th>Predicate</th>
+                    <th>Mapping Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%  for k2,v2 in mappings.iterrows() %}
+                    {%  if v2['sssom_subject_id'] == v['term_ns_name'] %}
+                        {% set mappings_url = url_for('mappings') %}
+                        {%  set mapping_id = (v2.mapping_number|round(2)|string).rstrip('.0') %}
+                         {%  set mapping_anchor = "mapping-"+mapping_id %}
+
+                         <tr data-href="{{ url_for('mappings',_anchor=mapping_anchor) }}">
+                            <td data-th="Object Category: "><a href="{{ v2.sssom_object_category }}">{{  v2.sssom_object_category }}</a></td>
+                            <td data-th="Object ID">{{ v2.sssom_object_id }}</td>
+                            <td data-th="Predicate">{{  v2.sssom_predicate_id }}</td>
+                            <td data-th="Mapping Date:">{{ v2.sssom_mapping_date }}</td>
+                        </tr>
+                    {%  endif %}
+                {%  endfor %}
+            </tbody>
+        </table>
+        </div>
+    {% endif %}
+</div>

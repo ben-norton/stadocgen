@@ -1,0 +1,7 @@
+{
+    "MIDS level": "string",
+    "Record extent": "string",
+    "Short Definition": "string",
+    "Long Definition": "string",
+    "Purpose": "string"
+}

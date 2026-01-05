@@ -1,0 +1,163 @@
+<h3 id="2-1-dwc-mappings-table">2.1 Darwin Core Mapping Table</h3>
+<p>The table below provides Darwin Core to MIDS mappings with comprehensive metadata.</p>
+<div class="table-outer-wrapper">
+    <div class="term-table-wrapper">
+        <div class="table-responsive print-avoid">
+            <table class="table table-condensed table-sssom table-child striped-rows mappings-table">
+                <thead>
+                    <tr>
+                        <th>sssom:subject_category</th>
+                        <th>sssom:subject_id</th>
+                        <th>sssom:object_category</th>
+                        <th colspan="2">sssom:object_id</th>
+                    </tr>
+                </thead>
+                <tbody id="accordian-tbody">
+                    {% for idx, v in mappings.iterrows() %}
+                        {% if v['object_namespace'] == 'dwc' %}
+                        <tr class="accordion-toggle collapsed alt-rows"
+                            id="mapping-{{ (v['mapping_number']|round(2)|string).rstrip('.0')  }}"
+                            href="#collapse-{{ (v['mapping_number']|round(2)|string).rstrip('.0')  }}"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse-{{ (v['mapping_number']|round(2)|string).rstrip('.0')  }}"
+                            aria-expanded="false"
+                            aria-controls="collapse-{{ (v['mapping_number']|round(2)|string).rstrip('.0')  }}">
+
+                             <td data-th="Subject Category: ">{{ v['sssom_subject_category'] }}</td>
+                             <td data-th="Subject ID: ">{{ v['sssom_subject_id'] }}</td>
+                             <td data-th="Object Category: ">{{ v['sssom_object_category'] }}</td>
+                             <td data-th="Object ID: ">{{ v['sssom_object_id'] }}</td>
+                             <td class="indicator-td"><i class="fa"></i> </td>
+                        </tr>
+                        <tr class="hide-table-padding">
+                            <td colspan="5" class="nested-td-container mapping-collapse-{{ (v['mapping_number']|round(2)|string).rstrip('.0')  }}">
+                                <div class="table-responsive print-avoid">
+                                    <table class="table nested-table accordian-collapse collapse"
+                                       id="collapse-{{ (v['mapping_number']|round(2)|string).rstrip('.0')  }}">
+                                    <tbody>
+                                        <tr>
+                                            <th class="popover-th" aria-hidden="true" data-bs-toggle="popover"
+                                                data-bs-content="The ID of the predicate or relation that relates the subject and object of this match. (required)"
+                                                data-bs-title="sssom:predicate_id">sssom:predicate_id
+                                                <i class="fa fa-question-circle doc-help-tip"></i>
+                                            </th>
+                                            <td>{{  v['sssom_predicate_id'] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="popover-th" aria-hidden="true" data-bs-toggle="popover"
+                                                    data-bs-content="A mapping justification is an action (or the written representation of that action) of showing a mapping to be right or reasonable. (required)"
+                                                    data-bs-title="sssom:mapping_justification <span class='poplink close');'>x</span>">sssom:mapping_justification
+                                                 <i class="fa fa-question-circle doc-help-tip" ></i>
+                                            </th>
+                                            <td>{{ v['sssom_mapping_justification'] }}</td>
+                                        </tr>
+                                    	<tr>
+                                            <th class="popover-th" aria-hidden="true" data-bs-toggle="popover"
+                                                    data-bs-content="Identifies the persons or groups responsible for asserting the mappings. Recommended to be a list of ORCIDs or otherwise identifying URIs."
+                                                    data-bs-title="sssom:author_id <span class='poplink close');'>x</span>">sssom:author_id
+                                                 <i class="fa fa-question-circle doc-help-tip"></i>
+                                            </th>
+                                            <td>{{ v['sssom_author_id'] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="popover-th" aria-hidden="true" data-bs-toggle="popover"
+                                                    data-bs-content="A string identifying the author of this mapping. In the spirit of provenance, consider using author_id instead."
+                                                    data-bs-title="sssom:author_label <span class='poplink close');'>x</span>">sssom:author_label
+                                                 <i class="fa fa-question-circle doc-help-tip" ></i>
+                                            </th>
+                                            <td>{{ v['sssom_author_label'] }}</td>
+                                        </tr>
+                                         <tr>
+                                                <th class="popover-th" aria-hidden="true" data-bs-toggle="popover"
+                                                        data-bs-content="Identifies the persons or groups responsible for the creation of the mapping. The creator is the agent that put the mapping in its published form, which may be different from the author, which is a person that was actively involved in the assertion of the mapping. Recommended to be a list of ORCIDs or otherwise identifying URIs."
+                                                        data-bs-title="sssom:creator_id <span class='poplink close');'>x</span>">sssom:creator_id
+                                                     <i class="fa fa-question-circle doc-help-tip" ></i>
+                                                </th>
+                                                <td>{{ v['sssom_creator_id'] }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="popover-th" aria-hidden="true" data-bs-toggle="popover"
+                                                        data-bs-content="A string identifying the creator of this mapping. In the spirit of provenance, consider using creator_id instead."
+                                                        data-bs-title="sssom:creator_label <span class='poplink close');'>x</span>">sssom:creator_label
+                                                     <i class="fa fa-question-circle doc-help-tip" ></i>
+                                                </th>
+                                                <td>{{ v['sssom_creator_label'] }}</td>
+                                            </tr>
+                                             <tr>
+                                                    <th class="popover-th" aria-hidden="true" data-bs-toggle="popover"
+                                                            data-bs-content="The type of entity that is being mapped."
+                                                            data-bs-title="sssom:attribute <span class='poplink close');'>x</span>">sssom:subject_type
+                                                         <i class="fa fa-question-circle doc-help-tip" ></i>
+                                                    </th>
+                                                    <td>{{ v['sssom_subject_type'] }}</td>
+                                                </tr>
+                                             <tr>
+                                                    <th class="popover-th" aria-hidden="true" data-bs-toggle="popover"
+                                                            data-bs-content="The type of entity that is being mapped."
+                                                            data-bs-title="sssom:object_type <span class='poplink close');'>x</span>">sssom:object_type
+                                                         <i class="fa fa-question-circle doc-help-tip" ></i>
+                                                    </th>
+                                                    <td>{{ v['sssom_object_type'] if v['sssom_object_type'] }}</td>
+                                                </tr>
+                                             <tr>
+                                                <th class="popover-th" aria-hidden="true" data-bs-toggle="popover"
+                                                        data-bs-content="URI of vocabulary or identifier source for the object."
+                                                        data-bs-title="sssom:object_source <span class='poplink close');'>x</span>">sssom:object_source
+                                                     <i class="fa fa-question-circle doc-help-tip" ></i>
+                                                </th>
+                                                <td>{{ v['sssom_object_source'] if v['sssom_object_source'] }}</td>
+                                            </tr>
+                                         <tr>
+                                            <th class="popover-th" aria-hidden="true" data-bs-toggle="popover"
+                                                    data-bs-content="The date the mapping was asserted. This is different from the date the mapping was published or compiled in a SSSOM file."
+                                                    data-bs-title="sssom:mapping_date <span class='poplink close');'>x</span>">sssom:mapping_date
+                                                 <i class="fa fa-question-circle doc-help-tip" ></i>
+                                            </th>
+                                            <td>{{ v['sssom_mapping_date'] if v['sssom_mapping_date'] }}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="popover-th" aria-hidden="true" data-bs-toggle="popover"
+                                                    data-bs-content="A list of properties, annotations or attributes related to the object that was used to establish the match. This property is recommended for use in conjunction with mapping justifications related to lexical matching, such as semapv:LexicalMatching."
+                                                    data-bs-title="sssom:object_match_field <span class='poplink close');'>x</span>">sssom:object_match_field
+                                                 <i class="fa fa-question-circle doc-help-tip" ></i>
+                                            </th>
+                                            <td>{{ v['sssom_object_match_field']  if  v['sssom_object_match_field'] }}</td>
+                                        </tr>
+                                         <tr>
+                                            <th class="popover-th" aria-hidden="true" data-bs-toggle="popover"
+                                                    data-bs-content="Free text field containing either curator notes or text generated by tool providing additional informative information."
+                                                    data-bs-title="sssom:comment <span class='poplink close');'>x</span>">sssom:comment
+                                                 <i class="fa fa-question-circle doc-help-tip" ></i>
+                                            </th>
+                                            <td>{{ v['sssom_comment'] if v['sssom_comment'] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="popover-th" aria-hidden="true" data-bs-toggle="popover"
+                                                    data-bs-content="A preprocessing method transforming a string by matching a regular expression and then removing that match."
+                                                    data-bs-title="semapv.regexRemoval <span class='poplink close');'>x</span>"><a href="https://w3id.org/semapv/vocab/RegexRemoval">semapv.regexRemoval</a>
+                                                 <i class="fa fa-question-circle doc-help-tip" ></i>
+                                            </th>
+                                            <td>{{ v['semapv_regexRemoval'] if v['semapv_regexRemoval'] is not none }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="popover-th" aria-hidden="true" data-bs-toggle="popover"
+                                                    data-bs-content="Version IRI or version string of the source of the object term."
+                                                    data-bs-title="sssom:object_source_version <span class='poplink close');'>x</span>">sssom:object_source_version
+                                                 <i class="fa fa-question-circle doc-help-tip" ></i>
+                                            </th>
+                                            <td>{{ v['object_source_version'] if v['object_source_version'] }}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                </div>
+                            </td>
+                        </tr>
+                        {%  endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

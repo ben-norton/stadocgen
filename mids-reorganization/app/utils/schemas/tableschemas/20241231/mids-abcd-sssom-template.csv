@@ -1,0 +1,1 @@
+sssom:subject_id,sssom:subject_category,sssom:predicate_id,sssom:object_id,sssom:object_category,sssom:mapping_justification,sssom:author_id,sssom:author_label,sssom:creator_id,sssom:creator_label,sssom:subject_type,sssom:object_type,sssom:object_source,sssom:mapping_date,sssom:object_match_field,sssom:comment,semapv:regexRemoval

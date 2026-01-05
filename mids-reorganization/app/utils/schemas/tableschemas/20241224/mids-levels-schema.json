@@ -1,0 +1,32 @@
+{
+    "fields": [
+        {
+            "name": "level",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "prefLabel",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "shortDescription",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "longDescription",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "purpose",
+            "type": "string",
+            "format": "default"
+        }
+    ],
+    "missingValues": [
+        ""
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "namespace": "string",
+    "informationElement_localName": "string",
+    "label": "string",
+    "definition": "string",
+    "usage": "string",
+    "recommendations": "string",
+    "examples": "string",
+    "rdg_type": "string",
+    "tdwgutility_required": "string",
+    "tdwgutility_repeatable": "string",
+    "term_status": "string",
+    "term_added": "date",
+    "term_modified": "string"
+}

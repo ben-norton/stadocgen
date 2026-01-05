@@ -1,0 +1,32 @@
+{
+    "fields": [
+        {
+            "name": "MIDS level",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "Record extent",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "Short Definition",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "Long Definition",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "Purpose",
+            "type": "string",
+            "format": "default"
+        }
+    ],
+    "missingValues": [
+        ""
+    ]
+}

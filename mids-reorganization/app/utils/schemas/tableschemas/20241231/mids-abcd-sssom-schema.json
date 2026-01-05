@@ -1,0 +1,92 @@
+{
+    "fields": [
+        {
+            "name": "sssom:subject_id",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "sssom:subject_category",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "sssom:predicate_id",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "sssom:object_id",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "sssom:object_category",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "sssom:mapping_justification",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "sssom:author_id",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "sssom:author_label",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "sssom:creator_id",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "sssom:creator_label",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "sssom:subject_type",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "sssom:object_type",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "sssom:object_source",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "sssom:mapping_date",
+            "type": "date",
+            "format": "%Y-%m-%d"
+        },
+        {
+            "name": "sssom:object_match_field",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "sssom:comment",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "semapv:regexRemoval",
+            "type": "string",
+            "format": "default"
+        }
+    ],
+    "missingValues": [
+        ""
+    ]
+}

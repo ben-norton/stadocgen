@@ -1,0 +1,72 @@
+{
+    "fields": [
+        {
+            "name": "namespace",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "informationElement_localName",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "label",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "definition",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "usage",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "recommendations",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "examples",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "rdg_type",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "tdwgutility_required",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "tdwgutility_repeatable",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "term_status",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "term_added",
+            "type": "date",
+            "format": "%Y/%m/%d"
+        },
+        {
+            "name": "term_modified",
+            "type": "string",
+            "format": "default"
+        }
+    ],
+    "missingValues": [
+        ""
+    ]
+}

@@ -1,0 +1,43 @@
+<h2 id="7-discipline-schemas">7 Discipline Schemas</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <h3 id="71-biology-schema">7.1 Biology</h3>
+        <ul class="discipline-schema-list">
+            {% for k, v in schemas.iterrows() %}
+                {% if v['discipline'] == "Biology" %}
+                    <li id="{{ v['identifier'] }}">
+                        <span class="level-label {{ v['level'] }}">{{ v['level'] }}</span>
+                        <span class="element-label"><a href="#{{ v['informationElement'] }}">{{ v['informationElement'] }}</a></span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h3 id="71-paleontology-schema">7.2 Paleontology</h3>
+        <ul class="discipline-schema-list">
+            {% for k, v in schemas.iterrows() %}
+                {% if v['discipline'] == "Paleontology" %}
+                    <li id="{{ v['identifier'] }}">
+                        <span class="level-label {{ v['level'] }}">{{ v['level'] }}</span>
+                        <span class="element-label"><a href="#{{ v['informationElement'] }}">{{ v['informationElement'] }}</a></span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h3 id="71-geology-schema">7.3 Geology</h3>
+        <ul class="discipline-schema-list">
+            {% for k, v in schemas.iterrows() %}
+                {% if v['discipline'] == "Geology" %}
+                    <li id="{{ v['identifier'] }}">
+                        <span class="level-label {{ v['level'] }}">{{ v['level'] }}</span>
+                        <span class="element-label"><a href="#{{ v['informationElement'] }}">{{ v['informationElement'] }}</a></span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
