@@ -2,20 +2,18 @@
 This directory contains the data transformation scripts run prior to generating the documentation webpages.
 Last Modifed: 20250925
 
-: Source Files: [stadocgen root]/mids/app/data/source/mids-repo
+: Source Files: [stadocgen root]/mids/app/data/source
 : Target Directory: [stadocgen root]/mids/app/data/output
 
 ## Contents
 1. copy_source_files.py
 2. source_yaml_validator.py
-3. process_source_mappings.py
-4. levels_transformations.py
-5. information_elements_transformations.py
+3. process_files.py
 6. merge_source_files.py
 
 ## Basic Workflow
 Sequence: source_yaml_validator.py > process_source_mappings.py > levels_transformations.py > information_elements_transformations.py > merge_source_files.py 
-***Files in the data\source\mids-repo must be downloaded manually or using the copy-source-files.py script***
+***Files in the data\source must be downloaded manually or using the copy-source-files.py script***
 
 **source_yaml_validator.py**
 - Validates the source yaml files

@@ -4,7 +4,7 @@ mids-docs
 Source: https://github.com/DiSSCo/mids-documentation  
 Copy Date: 20241204  
 
-mids-repo
+sources
 Transformed versions of sources  
 Sources:  
 	https://github.com/tdwg/mids/tree/main/standard/information_elements  

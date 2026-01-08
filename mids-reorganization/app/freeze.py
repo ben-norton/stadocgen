@@ -58,10 +58,6 @@ def information_elements():
     discipline_terms_df = pd.read_csv(discipline_terms_tsv, sep='\t', lineterminator='\n', encoding='utf-8')
     discipline_terms_df = discipline_terms_df.replace(r'\n', ' ', regex=True)
 
-    discipline_sources_tsv = str(relpath) + 'data/output/disciplines_sources.tsv'
-    discipline_sources_df = pd.read_csv(discipline_sources_tsv, sep='\t', lineterminator='\n', encoding='utf-8')
-    discipline_sources_df = discipline_sources_df.replace(r'\n', ' ', regex=True)
-
     # Read Information Elements from Master List (see transformation scripts)
     information_elements_tsv = str(relpath) + 'data/output/master-list.tsv'
     information_elements_df = pd.read_csv(information_elements_tsv, sep='\t', lineterminator='\n', encoding='utf-8')
@@ -87,20 +83,29 @@ def information_elements():
                          how="left")
     merged_df.rename(columns={'examples_list_y': 'examples_list'}, inplace=True)
 
-    # Group Information Elements by Level
-    # grpdict2 = information_elements_df.groupby('class_pref_label')[
-    #    ['term_ns_name', 'term_local_name', 'namespace', 'compound_name', 'term_version_iri', 'term_modified']].apply(
-    #     lambda g: list(map(tuple, g.values.tolist()))).to_dict()
-
-    # information_elements_by_level = []
-    # for i in grpdict2:
-    #    information_elements_by_level.append({
-    #        'class': i,
-    #        'informationElementList': grpdict2[i]
-    #    })
     schemas_tsv = str(relpath) + 'data/output/schemas.tsv'
     schemas_df = pd.read_csv(schemas_tsv, sep='\t', lineterminator='\n', encoding='utf-8')
-    schemas = schemas_df.sort_values(by=['level','informationElement'])
+
+    # Simple Schemas Dataframe
+    schemas = schemas_df.sort_values(by=['level', 'informationElement'])
+
+    # Schemas by Level
+    schemas_grpdict = schemas_df.groupby('level')[
+        ['discipline','informationElement','identifier']].apply(
+             lambda g: list(map(tuple, g.values.tolist()))).to_dict()
+    schemas_by_level = []
+    for i in schemas_grpdict:
+        schemas_by_level.append({
+            'level': i,
+            'schemasList': schemas_grpdict[i]
+    })
+
+    sizes_df = schemas_df.groupby(['discipline','level']).size().to_frame('count')
+    max_counts = sizes_df.groupby('level').max()
+
+
+
+
 
     return render_template('information-elements.html',
                            headerMarkdown=Markup(marked_text),
@@ -112,12 +117,12 @@ def information_elements():
                            slug='information-elements',
                            levels=levels,
                            informationElements=merged_df,
-                           # informationElementsByLevel=information_elements_by_level,
                            examples=examples_df,
                            disciplinesTerms=discipline_terms_df,
-                           disciplinesSources=discipline_sources_df,
-                           schemas=schemas
+                           schemas=schemas,
+                           schemasByLevel=schemas_by_level
                            )
+
 @app.route('/mappings/')
 def mappings():
     mappings_mdfile = str(relpath) + 'md/mappings-header.md'
@@ -221,4 +226,4 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         freezer.freeze()
     else:
-        app.run(port=8000)
+        app.run(port=8001)

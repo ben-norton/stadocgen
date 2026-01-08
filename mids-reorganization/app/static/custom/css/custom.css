@@ -857,21 +857,22 @@ h3.heading-anchor-target {
 ul.discipline-schema-list {
 	list-style-type: none;
 	padding-left: 0;
+	margin-bottom: 0;
 }
 ul.discipline-schema-list li {
 	width: 100%;
 	line-height: 2;
 	}
-ul.discipline-schema-list li span.MIDS0 {
+ul.discipline-schema-list li span.MIDS0 a {
 	color: #852E47;
 }
-ul.discipline-schema-list li span.MIDS1 {
+ul.discipline-schema-list li span.MIDS1 a {
 	color: #4D2B8C;
 }
-ul.discipline-schema-list li span.MIDS2 {
+ul.discipline-schema-list li span.MIDS2 a {
 	color: #4A5A30;
 }
-ul.discipline-schema-list li span.MIDS3 {
+ul.discipline-schema-list li span.MIDS3 a {
 	color: #C2441C;
 }
 ul.discipline-schema-list li:nth-child(even) {

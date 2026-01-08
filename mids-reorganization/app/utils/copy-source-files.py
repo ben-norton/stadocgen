@@ -18,13 +18,10 @@ download_urls =  [
     "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/mappings/mids_dwc_biology_1.sssom.yml",
     "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/mappings/mids_dwc_geology_1.sssom.tsv",
     "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/mappings/mids_dwc_geology_1.sssom.yml",
+    "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/mappings/mids_dwc_paleontology_1.sssom.tsv",
+    "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/mappings/mids_dwc_paleontology_1.sssom.yml",
     "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/terms/discipline_terms.tsv",
-    "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/terms/discipline_sources.tsv",
-    "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/terms/schemas.tsv",
-    "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/terms/biology_schema.tsv",
-    "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/terms/paleontology_schema.tsv",
-    "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/terms/geology_schema.tsv"
-
+    "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/terms/schemas.tsv"
 ]
 download_md_urls =  [
     "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/md/about-content.md",
@@ -35,10 +32,9 @@ download_md_urls =  [
     "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/md/sssom-reference.md",
     "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/resources/glossary.yml",
     "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/resources/tools.yml",
-    "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/md/discipline-sources.md",
-    "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/md/discipline-terms.md",
+    "https://raw.githubusercontent.com/tdwg/mids/reorganization/source/md/disciplines-content.md"
 ]
-target_dir = str(root_dir) + '/mids-reorganization/app/data/source/mids-repo'
+target_dir = str(root_dir) + '/mids-reorganization/app/data/source'
 target_md_dir = str(root_dir) + '/mids-reorganization/app/md'
 
 for url in download_urls:

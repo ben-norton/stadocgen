@@ -1,13 +1,25 @@
-<h2 id="7-discipline-schemas">7 Discipline Schemas</h2>
+<h2 id="6-discipline-schemas">6 Discipline Schemas</h2>
 
 <div class="row">
     <div class="col-md-4">
-        <h3 id="71-biology-schema">7.1 Biology</h3>
+        <h3 id="61-biology-schema">6.1 Biology</h3>
+    </div>
+    <div class="col-md-4">
+        <h3 id="62-paleontology-schema">6.2 Paleontology</h3>
+    </div>
+    <div class="col-md-4">
+        <h3 id="63-geology-schema">6.3 Geology</h3>
+    </div>
+</div>
+<!-- --------------------------------------------------------------------------------------------------- -->
+<!-- MIDS0 -->
+<div class="row discipline-schema-row">
+    <div class="col-md-4">
         <ul class="discipline-schema-list">
             {% for k, v in schemas.iterrows() %}
-                {% if v['discipline'] == "Biology" %}
+                {% if v['discipline'] == "Biology" and v['level'] == 'MIDS0' %}
                     <li id="{{ v['identifier'] }}">
-                        <span class="level-label {{ v['level'] }}">{{ v['level'] }}</span>
+                        <span class="level-label {{ v['level'] }}"><a href="#{{ v['level'] }}">{{ v['level'] }}</a></span>
                         <span class="element-label"><a href="#{{ v['informationElement'] }}">{{ v['informationElement'] }}</a></span>
                     </li>
                 {% endif %}
@@ -15,12 +27,11 @@
         </ul>
     </div>
     <div class="col-md-4">
-        <h3 id="71-paleontology-schema">7.2 Paleontology</h3>
         <ul class="discipline-schema-list">
             {% for k, v in schemas.iterrows() %}
-                {% if v['discipline'] == "Paleontology" %}
+                {% if v['discipline'] == "Paleontology" and v['level'] == 'MIDS0' %}
                     <li id="{{ v['identifier'] }}">
-                        <span class="level-label {{ v['level'] }}">{{ v['level'] }}</span>
+                        <span class="level-label {{ v['level'] }}"><a href="#{{ v['level'] }}">{{ v['level'] }}</a></span>
                         <span class="element-label"><a href="#{{ v['informationElement'] }}">{{ v['informationElement'] }}</a></span>
                     </li>
                 {% endif %}
@@ -28,12 +39,133 @@
         </ul>
     </div>
     <div class="col-md-4">
-        <h3 id="71-geology-schema">7.3 Geology</h3>
         <ul class="discipline-schema-list">
             {% for k, v in schemas.iterrows() %}
-                {% if v['discipline'] == "Geology" %}
+                {% if v['discipline'] == "Geology" and v['level'] == 'MIDS0' %}
                     <li id="{{ v['identifier'] }}">
-                        <span class="level-label {{ v['level'] }}">{{ v['level'] }}</span>
+                        <span class="level-label {{ v['level'] }}"><a href="#{{ v['level'] }}">{{ v['level'] }}</a></span>
+                        <span class="element-label"><a href="#{{ v['informationElement'] }}">{{ v['informationElement'] }}</a></span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<!-- --------------------------------------------------------------------------------------------------- -->
+<!-- MIDS1 -->
+<div class="row discipline-schema-row">
+    <div class="col-md-4">
+        <ul class="discipline-schema-list">
+            {% for k, v in schemas.iterrows() %}
+                {% if v['discipline'] == "Biology" and v['level'] == 'MIDS1' %}
+                    <li id="{{ v['identifier'] }}">
+                        <span class="level-label {{ v['level'] }}"><a href="#{{ v['level'] }}">{{ v['level'] }}</a></span>
+                        <span class="element-label"><a href="#{{ v['informationElement'] }}">{{ v['informationElement'] }}</a></span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <ul class="discipline-schema-list">
+            {% for k, v in schemas.iterrows() %}
+                {% if v['discipline'] == "Paleontology" and v['level'] == 'MIDS1' %}
+                    <li id="{{ v['identifier'] }}">
+                        <span class="level-label {{ v['level'] }}"><a href="#{{ v['level'] }}">{{ v['level'] }}</a></span>
+                        <span class="element-label"><a href="#{{ v['informationElement'] }}">{{ v['informationElement'] }}</a></span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <ul class="discipline-schema-list">
+            {% for k, v in schemas.iterrows() %}
+                {% if v['discipline'] == "Geology" and v['level'] == 'MIDS1' %}
+                    <li id="{{ v['identifier'] }}">
+                        <span class="level-label {{ v['level'] }}"><a href="#{{ v['level'] }}">{{ v['level'] }}</a></span>
+                        <span class="element-label"><a href="#{{ v['informationElement'] }}">{{ v['informationElement'] }}</a></span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<!-- --------------------------------------------------------------------------------------------------- -->
+<!-- MIDS2 -->
+<div class="row discipline-schema-row">
+    <div class="col-md-4">
+        <ul class="discipline-schema-list">
+            {% for k, v in schemas.iterrows() %}
+                {% if v['discipline'] == "Biology" and v['level'] == 'MIDS2' %}
+                    <li id="{{ v['identifier'] }}">
+                        <span class="level-label {{ v['level'] }}"><a href="#{{ v['level'] }}">{{ v['level'] }}</a></span>
+                        <span class="element-label"><a href="#{{ v['informationElement'] }}">{{ v['informationElement'] }}</a></span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <ul class="discipline-schema-list">
+            {% for k, v in schemas.iterrows() %}
+                {% if v['discipline'] == "Paleontology" and v['level'] == 'MIDS2' %}
+                    <li id="{{ v['identifier'] }}">
+                        <span class="level-label {{ v['level'] }}"><a href="#{{ v['level'] }}">{{ v['level'] }}</a></span>
+                        <span class="element-label"><a href="#{{ v['informationElement'] }}">{{ v['informationElement'] }}</a></span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <ul class="discipline-schema-list">
+            {% for k, v in schemas.iterrows() %}
+                {% if v['discipline'] == "Geology" and v['level'] == 'MIDS2' %}
+                    <li id="{{ v['identifier'] }}">
+                        <span class="level-label {{ v['level'] }}"><a href="#{{ v['level'] }}">{{ v['level'] }}</a></span>
+                        <span class="element-label"><a href="#{{ v['informationElement'] }}">{{ v['informationElement'] }}</a></span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<!-- --------------------------------------------------------------------------------------------------- -->
+<!-- MIDS3 -->
+<div class="row discipline-schema-row">
+    <div class="col-md-4">
+        <ul class="discipline-schema-list">
+            {% for k, v in schemas.iterrows() %}
+                {% if v['discipline'] == "Biology" and v['level'] == 'MIDS3' %}
+                    <li id="{{ v['identifier'] }}">
+                        <span class="level-label {{ v['level'] }}"><a href="#{{ v['level'] }}">{{ v['level'] }}</a></span>
+                        <span class="element-label"><a href="#{{ v['informationElement'] }}">{{ v['informationElement'] }}</a></span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <ul class="discipline-schema-list">
+            {% for k, v in schemas.iterrows() %}
+                {% if v['discipline'] == "Paleontology" and v['level'] == 'MIDS3' %}
+                    <li id="{{ v['identifier'] }}">
+                        <span class="level-label {{ v['level'] }}"><a href="#{{ v['level'] }}">{{ v['level'] }}</a></span>
+                        <span class="element-label"><a href="#{{ v['informationElement'] }}">{{ v['informationElement'] }}</a></span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <ul class="discipline-schema-list">
+            {% for k, v in schemas.iterrows() %}
+                {% if v['discipline'] == "Geology" and v['level'] == 'MIDS3' %}
+                    <li id="{{ v['identifier'] }}">
+                        <span class="level-label {{ v['level'] }}"><a href="#{{ v['level'] }}">{{ v['level'] }}</a></span>
                         <span class="element-label"><a href="#{{ v['informationElement'] }}">{{ v['informationElement'] }}</a></span>
                     </li>
                 {% endif %}
