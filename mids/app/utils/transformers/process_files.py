@@ -5,6 +5,12 @@ from datetime import date
 from pathlib import Path
 import os
 
+# Process Source Files
+# This script runs a sequence of batch processes enclosed in three functions that were previously separate files.
+# The sequence is initiated by running the file, then each function is chained in the following sequence:
+# process_source_mappings() -> transform_levels() -> transform_information_elements()
+# Last Modified: 2026-01-08
+
 # Globals
 root = get_project_root()
 currentPath = Path().absolute()
@@ -24,6 +30,7 @@ def process_source_mappings():
 	# dwc_tsv = str(root) + '/mids/app/data/source/sssom_dwc_biology_mappings.sssom.tsv'
 	dwc_biology_tsv = str(root) + '/mids/app/data/source/mids_dwc_biology_1.sssom.tsv'
 	dwc_geology_tsv = str(root) + '/mids/app/data/source/mids_dwc_geology_1.sssom.tsv'
+	dwc_paleo_tsv = str(root) + '/mids/app/data/source/mids_dwc_paleontology_1.sssom.tsv'
 	abcd_biology_tsv = str(root) + '/mids/app/data/source/mids_abcd_biology_1.sssom.tsv'
 
 	# TARGET FILES
@@ -31,6 +38,8 @@ def process_source_mappings():
 	dwc_biology_unique = str(root) + '/mids/app/data/output/mids-dwc-biology-sssom-unique.tsv'
 	dwc_geology_sssom = str(root) + '/mids/app/data/output/mids-dwc-geology-sssom.tsv'
 	dwc_geology_unique = str(root) + '/mids/app/data/output/mids-dwc-geology-sssom-unique.tsv'
+	dwc_paleo_sssom = str(root) + '/mids/app/data/output/mids-dwc-paleontology-sssom.tsv'
+	dwc_paleo_unique = str(root) + '/mids/app/data/output/mids-dwc-paleontology-sssom-unique.tsv'
 	abcd_biology_sssom = str(root) + '/mids/app/data/output/mids-abcd-biology-sssom.tsv'
 	abcd_biology_unique = str(root) + '/mids/app/data/output/mids-abcd-biology-sssom-unique.tsv'
 
@@ -38,6 +47,7 @@ def process_source_mappings():
 	# READ TSV FILES
 	df_dwc_biology = pd.read_csv(dwc_biology_tsv, encoding='utf8',sep='\t')
 	df_dwc_geology = pd.read_csv(dwc_geology_tsv, encoding='utf8',sep='\t')
+	df_dwc_paleo = pd.read_csv(dwc_paleo_tsv, encoding='utf8',sep='\t')
 	df_abcd_biology = pd.read_csv(abcd_biology_tsv, encoding="utf8",sep='\t')
 
 	# ------------------------------------------------------------
@@ -57,6 +67,15 @@ def process_source_mappings():
 	                   }, inplace=True)
 	df_dwc_geology_mapping['term_local_name'] = df_dwc_geology_mapping['qualified_term'].str.replace('mids:', '')
 	df_dwc_geology_mapping.to_csv(dwc_geology_unique, index=False, encoding='utf8',sep='\t')
+
+	# DWC Paleontology
+	df_dwc_paleo_mapping = df_dwc_paleo[['sssom:subject_category', 'sssom:subject_id']].drop_duplicates()
+	df_dwc_paleo_mapping.rename(columns={'sssom:subject_id': 'qualified_term',
+	                                       'sssom:subject_category': 'class_name'
+	                                       }, inplace=True)
+	df_dwc_paleo_mapping['term_local_name'] = df_dwc_paleo_mapping['qualified_term'].str.replace('mids:', '')
+	df_dwc_paleo_mapping.to_csv(dwc_paleo_unique, index=False, encoding='utf8', sep='\t')
+
 
 	# ABCD Biology
 	df_abcd_biology = pd.read_csv(abcd_biology_tsv, encoding="utf8",sep='\t')
@@ -90,6 +109,19 @@ def process_source_mappings():
 	df_dwc_geology['object_namespace'] = 'dwc'
 	df_dwc_geology.to_csv(dwc_geology_sssom, index=False, encoding='utf8',sep='\t')
 
+	# DWC PALEONTOLOGY
+	df_dwc_paleo['object_source_version'] = 'http://rs.tdwg.org/dwc/terms'
+	# Replace colon in column names with underscores - jinja2 template reserved character
+	df_dwc_paleo.columns = df_dwc_paleo.columns.str.replace(':', '_', regex=True)
+	# Create persistent URLs
+	df_dwc_paleo['object_url'] = df_dwc_paleo['sssom_object_id'].str.replace('dwc:',
+	                                                                             'http://rs.tdwg.org/dwc/terms/')
+	df_dwc_paleo['subject_url'] = df_dwc_paleo['sssom_subject_id'].str.replace('mids:',
+	                                                                               'https://tdwg.github.io    /mids/information-elements#')
+	df_dwc_paleo['object_namespace'] = 'dwc'
+	df_dwc_paleo.to_csv(dwc_paleo_sssom, index=False, encoding='utf8', sep='\t')
+
+
 	# ABCD BIOLOGY
 	df_abcd_biology['object_source_version'] = 'http://www.tdwg.org/schemas/abcd/2.06'
 	# Replace colon in column names with underscores - jinja2 template reserved character
@@ -103,7 +135,6 @@ def process_source_mappings():
 	# Run next process
 	transform_levels()
 	return False
-
 
 '''
 	Transform MIDS Levels

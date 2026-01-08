@@ -9,33 +9,33 @@ This script is run manually as a prerequisite to the documentation generator pro
 root_dir = cfg.get_project_root()
 
 download_urls =  [
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/terms/information_elements.tsv",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/terms/levels.tsv",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/terms/examples.tsv",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/mappings/mids_abcd_biology_1.sssom.tsv",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/mappings/mids_abcd_biology_1.sssom.yml",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/mappings/mids_dwc_biology_1.sssom.tsv",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/mappings/mids_dwc_biology_1.sssom.yml",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/mappings/mids_dwc_geology_1.sssom.tsv",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/mappings/mids_dwc_geology_1.sssom.yml",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/mappings/mids_dwc_paleontology_1.sssom.tsv",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/mappings/mids_dwc_paleontology_1.sssom.yml",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/terms/discipline_terms.tsv",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/terms/schemas.tsv"
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/terms/information_elements.tsv",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/terms/levels.tsv",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/terms/examples.tsv",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/mappings/mids_abcd_biology_1.sssom.tsv",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/mappings/mids_abcd_biology_1.sssom.yml",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/mappings/mids_dwc_biology_1.sssom.tsv",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/mappings/mids_dwc_biology_1.sssom.yml",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/mappings/mids_dwc_geology_1.sssom.tsv",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/mappings/mids_dwc_geology_1.sssom.yml",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/mappings/mids_dwc_paleontology_1.sssom.tsv",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/mappings/mids_dwc_paleontology_1.sssom.yml",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/terms/discipline_terms.tsv",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/terms/schemas.tsv"
 ]
 download_md_urls =  [
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/md/about-content.md",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/md/home-content.md",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/md/information-elements-header.md",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/md/mappings-header.md",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/md/resources-content.md",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/md/sssom-reference.md",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/resources/glossary.yml",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/resources/tools.yml",
-    "https://raw.githubusercontent.com/tdwg/mids/main/source/md/disciplines-content.md"
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/md/about-content.md",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/md/home-content.md",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/md/information-elements-header.md",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/md/mappings-header.md",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/md/resources-content.md",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/md/sssom-reference.md",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/resources/glossary.yml",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/resources/tools.yml",
+    "https://raw.githubusercontent.com/tdwg/mids/refs/heads/main/source/md/disciplines-content.md"
 ]
-target_dir = str(root_dir) + '/mids-main/app/data/source'
-target_md_dir = str(root_dir) + '/mids-main/app/md'
+target_dir = str(root_dir) + '/mids/app/data/source'
+target_md_dir = str(root_dir) + '/mids/app/md'
 
 for url in download_urls:
     file_name = os.path.basename(url)

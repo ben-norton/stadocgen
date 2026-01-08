@@ -210,12 +210,15 @@ def get_filters():
     df_cleaned = mappings_df.dropna(how='all')
     unique_levels = df_cleaned['sssom_subject_category'].unique()
     unique_infoElements = df_cleaned['sssom_subject_id'].unique()
+    unique_disciplines = df_cleaned['discipline'].unique()
     levels = unique_levels.tolist()
     infoElements = unique_infoElements.tolist()
+    disciplines = unique_disciplines.tolist()
 
     return jsonify({
         'levels': levels,
-        'infoElements': infoElements
+        'infoElements': infoElements,
+        'disciplines': disciplines
     })
 
 

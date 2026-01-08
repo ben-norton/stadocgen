@@ -7,7 +7,7 @@ mids:MIDS1	mids:License	License
 mids:MIDS1	mids:Modified	Modified
 mids:MIDS2	mids:QualitativeLocation	QualitativeLocation
 mids:MIDS2	mids:QuantitativeLocation	QuantitativeLocation
-mids:MIDS3	mids:ChronometricAge	ChronometricAge
+mids:MIDS1	mids:Chronostratigraphy	Chronostratigraphy
 mids:MIDS2	mids:StratigraphicContext	StratigraphicContext
 mids:MIDS3	mids:GeographicalLocalityID	GeographicalLocalityID
 mids:MIDS3	mids:InstitutionID	InstitutionID
