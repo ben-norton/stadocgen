@@ -35,20 +35,16 @@ def get_yaml_files_in_folder(folder_path):
 
 	# return sorted(yaml_files)
 
-results = []
-def validate_yaml_syntax(yaml_file):
+def validate_yaml_syntax(filepath):
     try:
-        with open(yaml_file, 'r') as f:
+        with open(filepath, 'r') as f:
             yaml.safe_load(f)
-        print(f"'{yaml_file}' has valid syntax.")
-        results.append({yaml_file: "Valid YAML syntax"})    # Add valid to results list
+        print(f"YAML file '{filepath}' has valid syntax.")
+        return True
     except yaml.YAMLError as e:
-        print(f"YAML syntax error in '{yaml_file}': {e}")
-        entry = {yaml_file: {e}}
-        results.append(entry)   # Add error to results list
-    finally:
-        return results  # return results list for further processing if needed
+        print(f"YAML syntax error in '{filepath}': {e}")
+        print("Please fix before proceeding with source transformations")
+        return False
 
-#print(errors)
 yaml_path = str(project_path) + '/app/md'
 get_yaml_files_in_folder(yaml_path)

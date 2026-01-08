@@ -1,5 +1,4 @@
-<h2 id="7-information-element-index">7 Information Elements</h2>
-<h3 id="71-information-elements-schema">7.1 Information Elements Schema</h3>
+<h2 id="52-information-elements-schema">5.2 Information Elements Schema</h2>
 {% for k, v in informationElements.iterrows() %}
     {% if v['rdf_type'] == 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property' %}
         <span id="{{ v['term_local_name']|replace('.','_') }}"></span>
@@ -21,6 +20,15 @@
                         <tr>
                             <th scope="row">Label</th>
                             <td>{{ v['label'] }}</td>
+                        </tr>
+
+                         <tr>
+                            <th scope="row">Level</th>
+                            <td>
+                                <a href="#{{ v['class_name'] }}">
+                                    {{ v['class_pref_label'] }}
+                                </a>
+                             </td>
                         </tr>
 
                         <tr>
