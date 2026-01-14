@@ -14,7 +14,12 @@ Scripts to generate schemas of source and target csv files
 ## Workflow
 1. Refresh ltc_term_source file using the script in the LtC repository (/utils/refresh_terms_source.py)
 2. Run copy_source_files.py to copy the latest source files into StaDocGen
-3. Run the script terms_transformations.py to generate the transformed versions of the ltc source files
-4. Run the script, sssom_transformations.py to generate the transformed mappings 
-3. The output from steps 3 and 4 will be stored under data/output. The website generator only uses data stored in the output directory. 
+3. Run the scripts in the order specified below
+4. The output from steps 3 and 4 will be stored under data/output. The website generator only uses data stored in the output directory. 
 Therefore, the transformation scripts are required before the documentation pages will show the source data changes.
+
+terms_transformations.py generates the transformed versions of the ltc source files
+sssom_transformations.py generates the transformed mappings 
+translation_transformations.py generates the translations
+
+terms-transformations.py > sssom_transformations.py > translation_transformations.py

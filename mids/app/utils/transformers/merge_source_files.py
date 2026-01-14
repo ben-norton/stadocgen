@@ -13,6 +13,8 @@ currentPath = Path().absolute()
 projectPath = currentPath.parent.parent.parent
 
 def merge_sources():
+    ###--------------------------------------------------------------------------
+    ## Merge Information Elements and Levels
 
     # Source Files Path
     # levelsFile = str(projectPath) + '/app/data/output/levels.tsv'
@@ -41,6 +43,7 @@ def merge_sources():
     ## Save Merged File
     df_final.to_csv(termsFile, index=False, encoding='utf8',sep='\t')
 
+    ###--------------------------------------------------------------------------
     ### Merge Mappings
     dwc_biology_file = str(projectPath) + '/app/data/output/mids-dwc-biology-sssom.tsv'
     dwc_geology_file = str(projectPath) + '/app/data/output/mids-dwc-geology-sssom.tsv'
@@ -73,7 +76,7 @@ def merge_sources():
 
     # Concatenate SSSOM Dataframes
     df_mappings = pd.concat([df_abcd_biology,df_dwc_biology,df_dwc_geology,df_dwc_paleo])
-    df_mappings.drop_duplicates(subset=['sssom_subject_id', 'sssom_subject_category', 'sssom_predicate_id', 'sssom_object_id', 'sssom_object_category'], keep='first', inplace=True)
+#    df_mappings.drop_duplicates(subset=['sssom_subject_id', 'sssom_subject_category', 'sssom_predicate_id', 'sssom_object_id', 'sssom_object_category'], keep='first', inplace=True)
     df_mappings.reset_index(inplace=True,drop=True)
 
     # Add term column with namespace prefix

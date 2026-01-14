@@ -7,4 +7,5 @@ Merci
 
 **Point of Contact Traduction** pour le Latimer Core : Elie Saliba <elie.saliba@mnhn.fr>
 
-**Traducteurs du Latimer Core :** Traduction française: Elie Saliba <elie.saliba@mnhn.fr>
+**Traducteurs du Latimer Core :**
+* Traduction française: Elie Saliba [mailto:elie.saliba@mnhn.fr](elie.saliba@mnhn.fr)

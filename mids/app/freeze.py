@@ -1,3 +1,5 @@
+import json
+
 from flask import Flask, render_template, jsonify, Response
 from flask_frozen import Freezer
 from markupsafe import Markup
@@ -195,10 +197,13 @@ def about():
 @app.route('/api/data.json')
 def get_data():
     """Return all data as JSON"""
+    output_json = str(relpath) + 'api/data.json'
     mappings_tsv = str(relpath) + 'data/output/mappings.tsv'
     mappings_df = pd.read_csv(mappings_tsv, sep='\t', lineterminator='\r', encoding='utf-8', skipinitialspace=True, index_col=0)
     df_cleaned = mappings_df.dropna(how='all')
     json_string = df_cleaned.to_json(orient="records")
+    with open(output_json, 'w') as outfile:
+        outfile.write(json_string)
     return Response(json_string, mimetype='application/json')
 
 @app.route('/api/filters.json')
@@ -208,12 +213,14 @@ def get_filters():
     mappings_df = pd.read_csv(mappings_tsv, sep='\t', lineterminator='\r', encoding='utf-8', skipinitialspace=True, index_col=0)
     mappings_df = mappings_df.fillna('')
     df_cleaned = mappings_df.dropna(how='all')
+    # Get Unique attribute values from Columns to create filters
     unique_levels = df_cleaned['sssom_subject_category'].unique()
     unique_infoElements = df_cleaned['sssom_subject_id'].unique()
     unique_disciplines = df_cleaned['discipline'].unique()
-    levels = unique_levels.tolist()
-    infoElements = unique_infoElements.tolist()
-    disciplines = unique_disciplines.tolist()
+    # Create lists from unique value sets
+    levels = list(filter(None, unique_levels.tolist()))
+    infoElements = list(filter(None, unique_infoElements.tolist()))
+    disciplines = list(filter(None, unique_disciplines.tolist()))
 
     return jsonify({
         'levels': levels,

@@ -7,7 +7,11 @@ the /api directory.
 * python freeze.py build - Generates the static JSON files in the /api directory.
 * Make sure the proper extension *.json is added to the file name.
 * Copy the content of the /build directory in StaDocGen to the /docs directory in the MIDS repository, then commit MIDS.
-* The JavaScript code makes a request to the URL https://tdwg.github.io/mids/api/filters.json and https://tdwg.github.io/mids/api/data.json. If the files
-* are committed properly to the build directory, the fetch requests should work correctly and avoid triggering the CORS errors.
+* The JavaScript code makes a request to the URL https://tdwg.github.io/mids/api/filters.json and https://tdwg.github.io/mids/api/data.json. If the files are committed properly to the build directory, the fetch requests should work correctly and avoid triggering the CORS errors.
+
+* For the interactive mappings table to work, both json endpoints must be saved to files and included in the build directory.
+* When testing the json files can be stored using http://127.0.0.1:8001/api/filters.json and 
+
+
 
 Last Updated: 2025-10-15
