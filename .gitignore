@@ -251,6 +251,6 @@ app/test.py
 /minext/app/utils/schemas/tableschemas
 RF07102025192323338634628.ico
 Desktop.ini
-/.idea
-/.idea
+.DS_Store
+.vscode
 tdwg-metadata/~$tdwg-metadata-fields.xlsm

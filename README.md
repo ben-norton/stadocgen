@@ -71,6 +71,8 @@ I highly recommend using ConEmu https://conemu.github.io/ or Git Bash. You can a
 ### Before Running
 * Make sure to copy the latest version of the page markdown files from the standard repository. In the case of Latimer Core, these files reside in the LtC Repo here: [https://github.com/tdwg/ltc/tree/main/source/md](https://github.com/tdwg/ltc/tree/main/source/md)
 * If you haven't already, open the meta.yml metadata file and enter the appropriate information for your standard.
+* When terms are updated, also make sure to copy the latest version of the terms source CSVs from the standard repository to this `stadocgen` repo's corresponding `[standard]/app/data/sources` directlry. In the case of Latimer Core, these source files reside in the LtC Repo here: [https://github.com/tdwg/ltc/tree/fr-md-fix/source/terms](https://github.com/tdwg/ltc/tree/fr-md-fix/source/terms)
+  * Watch for notes about non-normative docs or translations in the corresponding `source` directory.
 
 ### Testing
 * Open the command line window and navigate to the instance root directory (e.g. (root)/ltc)

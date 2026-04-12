@@ -4,10 +4,10 @@ acronym: LtC
 documentation-landing-page: https://ltc.tdwg.org
 github-repo: https://github.com/tdwg/ltc
 source-data-files:
-  https://github.com/tdwg/ltc/blob/aee1adab55622363cc663fae7ed9e9c54e342f31/source/terms/ltc_terms_source.csv
-  https://github.com/tdwg/ltc/blob/aee1adab55622363cc663fae7ed9e9c54e342f31/source/terms/ltc_namespaces.csv
-  https://github.com/tdwg/ltc/blob/aee1adab55622363cc663fae7ed9e9c54e342f31/source/terms/ltc_datatypes.csv
-  https://github.com/tdwg/ltc/blob/aee1adab55622363cc663fae7ed9e9c54e342f31/source/terms/ltc.csv
+  https://github.com/tdwg/ltc/blob/d5e58c10731bd6ffafc26ce9f2b521579b7c5aa0/source/terms/ltc_terms_source.csv
+  https://github.com/tdwg/ltc/blob/d5e58c10731bd6ffafc26ce9f2b521579b7c5aa0/source/terms/ltc_namespaces.csv
+  https://github.com/tdwg/ltc/blob/d5e58c10731bd6ffafc26ce9f2b521579b7c5aa0/source/terms/ltc_datatypes.csv
+  https://github.com/tdwg/ltc/blob/d5e58c10731bd6ffafc26ce9f2b521579b7c5aa0/source/terms/ltc.csv
 source-md-files:
   https://github.com/tdwg/ltc/tree/main/source/md/*
 last-modified: 20241129
